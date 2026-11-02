@@ -107,7 +107,13 @@ tr.us td:first-child{color:var(--red)}
 
 /* plantel */
 .team{margin:0 0 14px;position:relative;background:var(--ink)}
-.team img{width:100%;display:block;aspect-ratio:16/8;object-fit:cover;object-position:50% 45%}
+.team{aspect-ratio:16/8;max-width:100%;overflow:hidden}
+.team img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity .8s}
+.team img.on{opacity:1}
+.team-dots{position:absolute;right:14px;bottom:14px;display:flex;gap:6px}
+.team-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.5);cursor:pointer}
+.team-dots button.on{background:#fff}
+@media (max-width:640px){.team{aspect-ratio:4/3}}
 .team figcaption{position:absolute;left:0;bottom:0;background:var(--red);color:#fff;font-family:var(--display);font-weight:900;font-size:1.2rem;text-transform:uppercase;letter-spacing:.03em;padding:8px 14px}
 .squad{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .player{background:var(--paper);padding:18px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
@@ -159,7 +165,10 @@ tr.us td:first-child{color:var(--red)}
 .btn-ig:hover{background:var(--red)}
 .colabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:16px}
 .colab{background:var(--paper);padding:18px;display:grid;gap:12px;align-content:start;min-width:0}
-.colab-h h3{font-size:1.8rem;margin-top:4px}
+.colab-h{text-align:center}
+.colab-h .eyebrow{display:block;color:var(--muted)}
+.colab-h h3{font-size:1.8rem;margin-top:6px}
+.colab .instagram-media{margin-left:auto!important;margin-right:auto!important}
 .colab .instagram-media{margin:0!important;min-width:0!important;width:100%!important;max-width:540px!important}
 .colab blockquote.instagram-media:not([style]){border:0;padding:0}
 .colab blockquote a{display:block;text-align:center;font-family:var(--display);font-weight:900;font-size:1.3rem;text-transform:uppercase;text-decoration:none;background:var(--ink);color:#fff;padding:14px}
@@ -189,7 +198,8 @@ tr.us td:first-child{color:var(--red)}
 .tile .go{font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 
 .join{margin-top:64px;background:var(--red);color:#fff}
-.join-in{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding-block:48px}
+.join-ph{width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:4px solid #fff}
+.join-in{display:grid;grid-template-columns:.9fr 1.1fr .8fr;gap:28px;align-items:center;padding-block:48px}
 .join-in > *{min-width:0}
 .join .eyebrow{color:#fff;opacity:.85}
 .join h2{font-size:clamp(2.8rem,7vw,5.2rem);margin-top:10px}
@@ -304,7 +314,14 @@ footer .handles a{color:var(--paper);text-decoration:none}
 
   <section id="plantel">
     <div class="sec-head"><h2 class="it">Plan<span>tel</span></h2><p>17 jugadores y cuerpo técnico confirmados para la Copa Potrero 2026.</p></div>
-    <figure class="team"><img src="fotos-grupal_2025.jpg" alt="Plantel de Liga Núñez en la Copa Potrero 2025"><figcaption>Plantel Liga Núñez · Copa Potrero 2025</figcaption></figure>
+    <figure class="team" id="teamShow">
+      <img src="fotos-plantel_cp2025.jpg" alt="Liga Núñez formado en la Copa Potrero 2025" class="on">
+      <img src="fotos-25_09.jpg" alt="Liga Núñez antes de un partido de la Copa Potrero 2025" loading="lazy">
+      <img src="fotos-25_b7.jpg" alt="Liga Núñez formado en la Copa Potrero 2025" loading="lazy">
+      <img src="fotos-24_0.jpg" alt="Ronda de Liga Núñez en la Copa Potrero 2024" loading="lazy">
+      <figcaption>Plantel Liga Núñez · Copa Potrero</figcaption>
+      <div class="team-dots" aria-hidden="true"></div>
+    </figure>
     <div class="squad" id="squad"></div>
   </section>
 
@@ -385,6 +402,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
 
 <section class="join" id="jugar">
   <div class="wrap join-in">
+    <img class="join-ph" src="fotos-grupal_2025.jpg" alt="Plantel de Liga Núñez" loading="lazy">
     <div class="join-txt">
       <span class="eyebrow">El torneo F8 más grande del país</span>
       <h2 class="it">¿Querés jugar en<br>Liga Núñez?</h2>
@@ -432,7 +450,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico']};
   staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('div');p.className='player dt';p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
   // Galería por año (lugares listos para cargar fotos)
-  var sets={ultima:['grupal_2025','25_09','24_6','25_02','24_7','25_06','24_8'],'2025':['grupal_2025','25_09','25_02','25_03','25_06','25_07','25_08','25_01','25_04','25_10','25_00'],'2024':['24_6','24_0','24_2','24_5','24_7','24_8']};
+  var sets={ultima:['plantel_cp2025','24_6','25_b0','25_02','24_7','25_06','24_8'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
   var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, una selección de 2024 y 2025.',
     '2025':'Copa Potrero 2025: partidos ante La Wilson, Las Piedras, Barche y Fiebre Amarilla.',
     '2024':'Copa Potrero 2024: el año que llegamos a cuartos de final.'};
@@ -444,6 +462,12 @@ footer .handles a{color:var(--paper);text-decoration:none}
   }
   document.querySelectorAll('.gal-tabs button').forEach(function(b){b.addEventListener('click',function(){gal(b.dataset.g);});});
   gal('ultima');
+  // slideshow plantel
+  (function(){var f=document.getElementById('teamShow');if(!f)return;var im=f.querySelectorAll('img'),dots=f.querySelector('.team-dots'),i=0,t;
+    function go(n){im[i].classList.remove('on');dots.children[i].classList.remove('on');i=n;im[i].classList.add('on');dots.children[i].classList.add('on');}
+    im.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Foto '+(k+1));if(!k)b.className='on';b.onclick=function(){go(k);clearInterval(t);t=setInterval(nx,5000)};dots.appendChild(b)});
+    function nx(){go((i+1)%im.length)}
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(nx,5000);})();
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
   var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
