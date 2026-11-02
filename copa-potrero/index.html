@@ -21,7 +21,7 @@
 body{background:var(--concrete);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
   background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1.2px),radial-gradient(rgba(255,255,255,.25) 1px,transparent 1.2px);
   background-size:7px 7px,11px 11px;background-position:0 0,3px 5px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1480px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:.005em;line-height:.88;margin:0;text-wrap:balance}
 .it{display:inline-block;transform:skewX(-9deg)}
 .eyebrow{font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
@@ -42,10 +42,10 @@ nav.menu a:hover{border-color:var(--red)}
 .card{position:relative;background:var(--ink);color:var(--paper);isolation:isolate}
 .swirl{position:absolute;left:4%;right:4%;top:-26px;height:34px;z-index:-1;overflow:hidden}
 .swirl canvas{width:100%;height:100%;display:block}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;padding:40px clamp(20px,4vw,48px) 36px;margin-top:34px}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;padding:40px clamp(20px,4vw,48px) 36px;margin-top:34px}
 .hero > *{min-width:0}
 .badge{display:inline-flex;align-items:center;gap:10px;color:var(--gold-2);font-family:var(--display);font-weight:900;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--gold);padding:6px 12px 5px}
-.hero h1{font-size:clamp(3.6rem,11vw,8.4rem);margin-top:22px}
+.hero h1{font-size:clamp(3.6rem,8vw,8.4rem);margin-top:22px}
 .hero h1 .x{color:var(--gold);font-size:.55em;vertical-align:.35em;margin:0 .1em}
 .hero .lede{max-width:46ch;margin:22px 0 0;font-size:1.02rem;color:#d9d7d0}
 .hero .lede em{font-style:italic;font-weight:800;color:var(--red)}
@@ -140,7 +140,7 @@ tr.us td:first-child{color:var(--red)}
 .gal-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px}
 .gal-tabs button{font:inherit;font-family:var(--display);font-weight:900;font-size:1.2rem;text-transform:uppercase;letter-spacing:.04em;background:var(--paper);color:var(--ink);border:0;padding:8px 16px;cursor:pointer}
 .gal-tabs button[aria-selected="true"]{background:var(--ink);color:var(--gold-2)}
-.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+.gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:10px}
 .ph{margin:0;aspect-ratio:4/3;max-width:100%;background:var(--ink);overflow:hidden}
 .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .ph:hover img{transform:scale(1.04)}
