@@ -338,11 +338,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var plantel=['Tomás Rodríguez','Lucas Fariña','Tomi Raimondo','Sebastián Porfirio','Fabio Sisca','Matías Miranda','Fede Carrizo','Bruno La Perla','Joaquín Esbry','Joaquín Burnes','Juan Basualdo','Bruno Gaita','Facu Zalazar','Mateo Flaherty','Vito','Mateo Grillo','Daniel Vidaurre'];
   var staff=['Monza','Carlos'];
   function ini(n){return n.split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();}
+  var nick={'Mateo Grillo':'El Jeque'};
   var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa'};
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
-  plantel.forEach(function(n){var p=document.createElement('div');p.className='player';p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">Jugador</span></span>';sq.appendChild(p);});
+  plantel.forEach(function(n){var p=document.createElement('div');p.className='player';p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
   var pres=document.createElement('div');pres.className='player dt';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
-  staff.forEach(function(n){var p=document.createElement('div');p.className='player dt';p.innerHTML='<span class="num">DT</span><span><span class="nm">'+n+'</span><br><span class="ps">Cuerpo técnico</span></span>';sq.appendChild(p);});
+  var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico']};
+  staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('div');p.className='player dt';p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
   // Galería por año (lugares listos para cargar fotos)
   var sets={ultima:['25_09','24_6','25_02','24_7','25_06','24_8'],'2025':['25_09','25_02','25_03','25_06','25_07','25_08','25_01','25_04','25_10','25_00'],'2024':['24_6','24_0','24_2','24_5','24_7','24_8']};
   var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, una selección de 2024 y 2025.',
