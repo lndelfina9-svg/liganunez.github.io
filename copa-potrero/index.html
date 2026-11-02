@@ -177,7 +177,21 @@ tr.us td:first-child{color:var(--red)}
 .tile p{margin:0;font-size:.88rem;opacity:.85;max-width:44ch}
 .tile .go{font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 
-footer{margin-top:64px;background:var(--ink);color:#b9b7b0}
+.join{margin-top:64px;background:var(--red);color:#fff}
+.join-in{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding-block:48px}
+.join-in > *{min-width:0}
+.join .eyebrow{color:#fff;opacity:.85}
+.join h2{font-size:clamp(2.8rem,7vw,5.2rem);margin-top:10px}
+.join p{max-width:46ch;margin:14px 0 0;font-size:1rem}
+.join-cta{display:grid;gap:10px}
+.btn{display:block;text-align:center;text-decoration:none;font-family:var(--display);font-weight:900;font-size:1.35rem;text-transform:uppercase;letter-spacing:.03em;padding:14px 18px}
+.btn-w{background:var(--ink);color:#fff}
+.btn-w:hover{background:#000}
+.btn-o{border:2px solid #fff;color:#fff}
+.btn-o:hover{background:rgba(255,255,255,.12)}
+.join-num{font-size:.85rem;font-weight:700;text-align:center;user-select:all}
+@media (max-width:860px){.join-in{grid-template-columns:1fr}}
+footer{margin-top:0;background:var(--ink);color:#b9b7b0}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-block:28px}
 footer img{height:28px;width:auto}
 footer .handles{display:flex;flex-wrap:wrap;gap:6px 18px;font-weight:600;font-size:.85rem}
@@ -209,7 +223,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="chips" aria-hidden="true"><i style="background:var(--ink)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
   </header>
   <nav class="menu" aria-label="Secciones">
-    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo y fixture</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#fotos">Fotos</a>
+    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo y fixture</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
   <div class="card hero">
@@ -317,6 +331,22 @@ footer .handles a{color:var(--paper);text-decoration:none}
     </div>
   </section>
 </div>
+
+<section class="join" id="jugar">
+  <div class="wrap join-in">
+    <div class="join-txt">
+      <span class="eyebrow">El torneo F8 más grande del país</span>
+      <h2 class="it">¿Querés jugar en<br>Liga Núñez?</h2>
+      <p>Viernes, sábados, domingos y lunes. Armá tu equipo, inscribite y sé parte de la comunidad que llega a la Copa Potrero.</p>
+    </div>
+    <div class="join-cta">
+      <a class="btn btn-w" href="https://wa.me/5491155676724" target="_blank" rel="noopener">Inscribí a tu equipo por WhatsApp</a>
+      <span class="join-num">WhatsApp: +54 9 11 5567-6724</span>
+      <a class="btn btn-o" href="https://www.instagram.com/liganunez/" target="_blank" rel="noopener">Seguinos en @liganunez</a>
+      <a class="btn btn-o" href="https://liganunez.github.io/" target="_blank" rel="noopener">Conocé la liga</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
