@@ -106,6 +106,9 @@ tr.us td:first-child{color:var(--red)}
 .match .res{font-family:var(--display);font-weight:900;font-size:1.6rem;color:#6d6b64}
 
 /* plantel */
+.team{margin:0 0 14px;position:relative;background:var(--ink)}
+.team img{width:100%;display:block;aspect-ratio:16/8;object-fit:cover;object-position:50% 45%}
+.team figcaption{position:absolute;left:0;bottom:0;background:var(--red);color:#fff;font-family:var(--display);font-weight:900;font-size:1.2rem;text-transform:uppercase;letter-spacing:.03em;padding:8px 14px}
 .squad{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .player{background:var(--paper);padding:18px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
 .player .num{font-family:var(--display);font-weight:900;font-size:2.8rem;line-height:1;width:72px;text-align:center;color:var(--red);font-variant-numeric:tabular-nums}
@@ -301,6 +304,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
 
   <section id="plantel">
     <div class="sec-head"><h2 class="it">Plan<span>tel</span></h2><p>17 jugadores y cuerpo técnico confirmados para la Copa Potrero 2026.</p></div>
+    <figure class="team"><img src="fotos-grupal_2025.jpg" alt="Plantel de Liga Núñez en la Copa Potrero 2025"><figcaption>Plantel Liga Núñez · Copa Potrero 2025</figcaption></figure>
     <div class="squad" id="squad"></div>
   </section>
 
@@ -428,7 +432,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico']};
   staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('div');p.className='player dt';p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
   // Galería por año (lugares listos para cargar fotos)
-  var sets={ultima:['25_09','24_6','25_02','24_7','25_06','24_8'],'2025':['25_09','25_02','25_03','25_06','25_07','25_08','25_01','25_04','25_10','25_00'],'2024':['24_6','24_0','24_2','24_5','24_7','24_8']};
+  var sets={ultima:['grupal_2025','25_09','24_6','25_02','24_7','25_06','24_8'],'2025':['grupal_2025','25_09','25_02','25_03','25_06','25_07','25_08','25_01','25_04','25_10','25_00'],'2024':['24_6','24_0','24_2','24_5','24_7','24_8']};
   var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, una selección de 2024 y 2025.',
     '2025':'Copa Potrero 2025: partidos ante La Wilson, Las Piedras, Barche y Fiebre Amarilla.',
     '2024':'Copa Potrero 2024: el año que llegamos a cuartos de final.'};
