@@ -43,14 +43,25 @@ nav.menu{display:flex;flex-wrap:wrap;gap:6px 18px;font-weight:600;font-size:.82r
 nav.menu a{text-decoration:none;border-bottom:2px solid transparent}
 nav.menu a:hover{border-color:var(--red)}
 
-.opener{margin-top:22px;position:relative;background:#000;border:4px solid var(--ink);aspect-ratio:16/9;max-width:100%;overflow:hidden}
-.opener video{width:100%;height:100%;object-fit:cover;display:block}
 /* hero card */
 .card{position:relative;background:var(--ink);color:var(--paper);isolation:isolate}
 .swirl{position:absolute;left:4%;right:4%;top:-26px;height:34px;z-index:-1;overflow:hidden}
 .swirl canvas{width:100%;height:100%;display:block}
 .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;padding:40px clamp(20px,4vw,48px) 36px;margin-top:34px}
 .hero > *{min-width:0}
+.hero{grid-template-columns:1fr;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);min-height:100svh;align-items:center;padding-block:60px;padding-inline:max(16px,calc((100vw - 1480px)/2 + 32px));overflow:hidden;background:#000}
+.hero .swirl{display:none}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,7,6,.92) 0%,rgba(8,7,6,.78) 50%,rgba(8,7,6,.55) 100%)}
+.hero .lede{color:#f1f0eb;font-size:1.12rem}
+.hero-facts{margin-top:0;padding:32px clamp(20px,4vw,48px)}
+.facts-row{grid-template-columns:repeat(4,minmax(0,1fr));border-left:0;padding-left:0;gap:24px}
+.facts-row .fact{border-left:2px solid #2f2e2b;padding-left:18px}
+.facts-row .fact:first-child{border-left:0;padding-left:0}
+@media (max-width:860px){.facts-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.facts-row{grid-template-columns:1fr}}
+html,body{overflow-x:clip}
+
 .badge{display:inline-flex;align-items:center;gap:10px;color:var(--gold-2);font-family:var(--display);font-weight:900;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--gold);padding:6px 12px 5px}
 .hero h1{font-size:clamp(3.6rem,8vw,8.4rem);margin-top:22px}
 .hero h1 .x{color:var(--gold);font-size:.55em;vertical-align:.35em;margin:0 .1em}
@@ -251,11 +262,8 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo y fixture</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
-  <figure class="opener" aria-label="Video de apertura de Liga Núñez en la Copa Potrero">
-    <video src="video-apertura.mp4" poster="video-apertura.jpg" autoplay muted loop playsinline preload="auto"></video>
-  </figure>
-
   <div class="card hero">
+    <video class="hero-bg" src="video-apertura.mp4" poster="video-apertura.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     <div class="swirl" aria-hidden="true"><canvas id="swirl"></canvas></div>
     <img class="symbol" src="data:image/png;base64,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" alt="">
     <div>
@@ -263,7 +271,10 @@ footer .handles a{color:var(--paper);text-decoration:none}
       <h1><span class="it">Liga<br>Núñez</span><span class="x it">×</span><br><span class="it" style="color:var(--gold-2)">Copa Potrero</span></h1>
       <p class="lede">Por tercer año seguido, la comunidad de Liga Núñez juega la Copa Potrero. Y este año es de local: la copa se juega en Núñez. Todo lo que necesitás saber, en un solo lugar. <em>De nuestra comunidad, a la Copa Potrero.</em></p>
     </div>
-    <div class="facts">
+  </div>
+
+  <div class="card hero-facts">
+    <div class="facts facts-row">
       <div class="fact"><div class="eyebrow">Fechas</div><div class="v">14 al 23 de noviembre</div></div>
       <div class="fact"><div class="eyebrow">Sede</div><div class="v">Ciudad Universitaria</div><div class="s">UBA · Av. Intendente Güiraldes 2160, Núñez</div></div>
       <div class="fact"><div class="eyebrow">Sorteo de grupos</div><div class="v">Mié 4 de noviembre</div><div class="s">En vivo por ESPN</div></div>
@@ -412,7 +423,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
 
 <section class="join" id="jugar">
   <div class="wrap join-in">
-    <img class="join-ph" src="fotos-grupal_2025.jpg" alt="Plantel de Liga Núñez" loading="lazy">
+    <img class="join-ph" src="fotos-25_02.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
     <div class="join-txt">
       <span class="eyebrow">El torneo F8 más grande del país</span>
       <h2 class="it">¿Querés jugar en<br>Liga Núñez?</h2>
