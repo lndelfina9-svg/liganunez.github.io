@@ -425,7 +425,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var staff=['Monza','Carlos'];
   function ini(n){return n.split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();}
   var nick={'Mateo Grillo':'El Jeque'};
-  var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa'};
+  var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Monza':'monza'};
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
   plantel.forEach(function(n){var p=document.createElement('div');p.className='player';p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
   var pres=document.createElement('div');pres.className='player dt';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
