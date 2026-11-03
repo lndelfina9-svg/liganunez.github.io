@@ -212,7 +212,9 @@ tr.us td:first-child{color:var(--red)}
 .tile .go{font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 
 .join{margin-top:64px;background:var(--red);color:#fff}
-.join-ph{grid-column:1/-1;width:100%;max-width:100%;aspect-ratio:21/8;object-fit:cover;object-position:50% 40%;display:block;border:4px solid #fff}
+.join-ph{grid-column:1/-1;width:100%;max-width:100%;aspect-ratio:21/8;display:block;border:4px solid #fff;position:relative;overflow:hidden;background:#000}
+.join-show img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity .9s}
+.join-show img.on{opacity:1}
 @media (max-width:640px){.join-ph{aspect-ratio:4/3}}
 .join-in{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding-block:48px}
 .join-in > *{min-width:0}
@@ -424,7 +426,17 @@ footer .handles a{color:var(--paper);text-decoration:none}
 
 <section class="join" id="jugar">
   <div class="wrap join-in">
-    <img class="join-ph" src="fotos-25_02.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
+    <div class="join-ph join-show" id="joinShow">
+      <img src="fotos-25_02.jpg" alt="Liga Núñez jugando en la Copa Potrero" class="on">
+      <img src="fotos-25_b6.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-24_d7_10.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-25_03.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-25_b3.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-24_5.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-25_07.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-25_b0.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+      <img src="fotos-24_d7_8.jpg" alt="Liga Núñez jugando en la Copa Potrero" loading="lazy">
+    </div>
     <div class="join-txt">
       <span class="eyebrow">El torneo F8 más grande del país</span>
       <h2 class="it">¿Querés jugar en<br>Liga Núñez?</h2>
@@ -490,6 +502,10 @@ footer .handles a{color:var(--paper);text-decoration:none}
     im.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Foto '+(k+1));if(!k)b.className='on';b.onclick=function(){go(k);clearInterval(t);t=setInterval(nx,5000)};dots.appendChild(b)});
     function nx(){go((i+1)%im.length)}
     if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(nx,5000);})();
+  // slideshow Jugá en LN
+  (function(){var f=document.getElementById('joinShow');if(!f)return;var im=f.querySelectorAll('img'),i=0;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    setInterval(function(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on');},3500);})();
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
   var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
