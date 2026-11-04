@@ -164,6 +164,17 @@ tr.us td:first-child{color:var(--red)}
 .tr-vs{display:flex;align-items:center;gap:8px}
 .tr-vs img{width:52px;height:52px;border-radius:50%;display:block}
 .tr-vs span{font-family:var(--display);font-weight:900;font-size:1.1rem;text-transform:uppercase;color:var(--muted)}
+.tr-btn{background:none;color:var(--ink);font-family:inherit;cursor:pointer}
+.tr-btn:hover,.tr-btn[aria-expanded="true"]{background:var(--ink);color:#fff}
+.tr-soon{border-color:#bdbab2;color:#8a877f}
+.am-strip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.am-strip img{height:240px;width:auto;max-width:none;flex:0 0 auto;scroll-snap-align:start;cursor:zoom-in;display:block;background:#111}
+@media (max-width:640px){.am-strip img{height:180px}}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,7,6,.94);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:16px;background:none;border:2px solid #fff;color:#fff;font:800 .8rem var(--body);letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;cursor:pointer}
+.lb .nav{top:50%;transform:translateY(-50%);font-size:1.4rem;padding:6px 14px}
+.lb .prev{left:16px;right:auto}.lb .next{right:16px}
 .tr-mat{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:2px solid var(--ink);padding:6px 10px}
 .gal-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px}
 .gal-tabs button{font:inherit;font-family:var(--display);font-weight:900;font-size:1.2rem;text-transform:uppercase;letter-spacing:.04em;background:var(--paper);color:var(--ink);border:0;padding:8px 16px;cursor:pointer}
@@ -296,13 +307,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
   <section id="amistosos">
     <div class="sec-head"><h2 class="it">Amis<span>tosos</span></h2><p>La preparación arrancó hace rato. Cada partido amistoso tiene su material.</p></div>
     <div class="trainings">
-      <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><div class="tr-mat">Fotos y video</div></div>
-      <div class="tr"><div class="tr-date"><b>18/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-el_guayo.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Guayo</h3><p>Sede a confirmar</p></div><div class="tr-mat">Fotos y video</div></div>
-      <div class="tr"><div class="tr-date"><b>22/09</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-gb_sports.png" alt=""></div><div class="tr-body"><h3 class="it">vs GB Sports</h3><p>Mataderos</p></div><div class="tr-mat">Fotos y video</div></div>
-      <div class="tr"><div class="tr-date"><b>25/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-martillazo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Martillazo</h3><p>Ituzaingó</p></div><div class="tr-mat">Fotos y video</div></div>
-      <div class="tr"><div class="tr-date"><b>06/10</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-streamers.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argentina Streamers</h3><p>SB5 Sports</p></div><div class="tr-mat">Fotos y video</div></div>
-      <div class="tr"><div class="tr-date"><b>14/10</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-argeave.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argeave</h3><p>SB5 Sports</p></div><div class="tr-mat">Fotos y video</div></div>
-      <div class="tr"><div class="tr-date"><b>03/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-uba.png" alt=""></div><div class="tr-body"><h3 class="it">vs UBA</h3><p>Ciudad Universitaria · la sede de la Copa</p></div><div class="tr-mat">Fotos y video</div></div>
+      <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="9" aria-expanded="false">Ver fotos · 9</button></div>
+      <div class="tr"><div class="tr-date"><b>18/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-el_guayo.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Guayo</h3><p>Sede a confirmar</p></div><button type="button" class="tr-mat tr-btn" data-am="guayo" data-n="8" aria-expanded="false">Ver fotos · 8</button></div>
+      <div class="tr"><div class="tr-date"><b>22/09</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-gb_sports.png" alt=""></div><div class="tr-body"><h3 class="it">vs GB Sports</h3><p>Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="gb" data-n="6" aria-expanded="false">Ver fotos · 6</button></div>
+      <div class="tr"><div class="tr-date"><b>25/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-martillazo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Martillazo</h3><p>Ituzaingó</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
+      <div class="tr"><div class="tr-date"><b>06/10</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-streamers.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argentina Streamers</h3><p>SB5 Sports</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
+      <div class="tr"><div class="tr-date"><b>14/10</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-argeave.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argeave</h3><p>SB5 Sports</p></div><button type="button" class="tr-mat tr-btn" data-am="argeave" data-n="8" aria-expanded="false">Ver fotos · 8</button></div>
+      <div class="tr"><div class="tr-date"><b>03/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-uba.png" alt=""></div><div class="tr-body"><h3 class="it">vs UBA</h3><p>Ciudad Universitaria · la sede de la Copa</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
     </div>
   </section>
 
@@ -507,6 +518,18 @@ footer .handles a{color:var(--paper);text-decoration:none}
   (function(){var f=document.getElementById('joinShow');if(!f)return;var im=f.querySelectorAll('img'),i=0;
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     setInterval(function(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on');},3500);})();
+  // fotos de amistosos
+  (function(){var pre='fotos-';var lb=null,list=[],at=0;
+    function show(){lb.querySelector('img').src=list[at];}
+    function open(arr,i){list=arr;at=i;lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.innerHTML='<img alt="Foto del amistoso"><button type="button" class="x">Cerrar</button><button type="button" class="nav prev" aria-label="Anterior">‹</button><button type="button" class="nav next" aria-label="Siguiente">›</button>';document.body.appendChild(lb);show();
+      lb.addEventListener('click',function(e){if(e.target.classList.contains('prev')){at=(at+list.length-1)%list.length;show();}else if(e.target.classList.contains('next')){at=(at+1)%list.length;show();}else if(e.target.tagName!=='IMG'){close();}});}
+    function close(){if(lb){lb.remove();lb=null;}}
+    document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();if(e.key==='ArrowRight'){at=(at+1)%list.length;show();}if(e.key==='ArrowLeft'){at=(at+list.length-1)%list.length;show();}});
+    document.querySelectorAll('.tr-btn').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),nx=row.nextElementSibling;
+      if(nx&&nx.classList.contains('am-strip')){nx.remove();b.setAttribute('aria-expanded','false');b.textContent='Ver fotos · '+b.dataset.n;return;}
+      var arr=[];for(var i=1;i<=+b.dataset.n;i++)arr.push(pre+'am_'+b.dataset.am+'_'+i+'.jpg');
+      var st=document.createElement('div');st.className='am-strip';arr.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.loading='lazy';im.alt='Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
+      row.after(st);b.setAttribute('aria-expanded','true');b.textContent='Cerrar fotos';});});})();
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
   var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
