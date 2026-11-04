@@ -164,6 +164,16 @@ tr.us td:first-child{color:var(--red)}
 .tr-vs{display:flex;align-items:center;gap:8px}
 .tr-vs img{width:52px;height:52px;border-radius:50%;display:block}
 .tr-vs span{font-family:var(--display);font-weight:900;font-size:1.1rem;text-transform:uppercase;color:var(--muted)}
+.cr{width:28px;height:28px;border-radius:50%;vertical-align:middle;margin-right:10px;display:inline-block}
+.allg-h{font-size:2rem;margin:34px 0 12px}
+.allg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.allg .g{background:var(--paper);padding:14px 16px;min-width:0}
+.allg .g b{font-family:var(--display);font-weight:900;font-size:1.3rem;text-transform:uppercase;display:block;margin-bottom:8px;color:var(--red)}
+.allg .g.us{background:var(--red);color:#fff}.allg .g.us b{color:#fff}
+.allg ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-weight:600;font-size:.9rem}
+.allg li{display:flex;align-items:center;min-width:0}.allg .cr{width:24px;height:24px;flex:0 0 24px}
+@media (max-width:860px){.allg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.allg{grid-template-columns:1fr}}
 .tr-btn{background:none;color:var(--ink);font-family:inherit;cursor:pointer}
 .tr-btn:hover,.tr-btn[aria-expanded="true"]{background:var(--ink);color:#fff}
 .tr-soon{border-color:#bdbab2;color:#8a877f}
@@ -273,7 +283,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="chips" aria-hidden="true"><i style="background:var(--ink)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
   </header>
   <nav class="menu" aria-label="Secciones">
-    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo y fixture</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
+    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo C</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
   <div class="card hero">
@@ -291,7 +301,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="facts facts-row">
       <div class="fact"><div class="eyebrow">Fechas</div><div class="v">14 al 23 de noviembre</div></div>
       <div class="fact"><div class="eyebrow">Sede</div><div class="v">Ciudad Universitaria</div><div class="s">UBA · Av. Intendente Güiraldes 2160, Núñez</div></div>
-      <div class="fact"><div class="eyebrow">Sorteo de grupos</div><div class="v">Mié 4 de noviembre</div><div class="s">En vivo por ESPN</div></div>
+      <div class="fact"><div class="eyebrow">Nuestro grupo</div><div class="v">Grupo C</div><div class="s">La Wilson · Social y Deportivo · La Martona · El Kiosco</div></div>
       <div class="fact"><div class="eyebrow" id="cd-label">Faltan para el debut</div>
         <div class="count" id="countdown" aria-live="polite"><div><b id="cd-d">--</b><span>días</span></div><div><b id="cd-h">--</b><span>horas</span></div><div><b id="cd-m">--</b><span>min</span></div></div>
       </div>
@@ -318,30 +328,41 @@ footer .handles a{color:var(--paper);text-decoration:none}
   </section>
 
   <section id="grupo">
-    <div class="sec-head"><h2 class="it">Grupo <span>y fixture</span></h2><p>Se define en el sorteo del 4/11. Cada grupo tiene cinco equipos y se juega todos contra todos.</p></div>
+    <div class="sec-head"><h2 class="it">Grupo <span>y fixture</span></h2><p>Sorteo del 4/11: Liga Núñez juega en el Grupo C. Cinco equipos, todos contra todos, del 14 al 18 de noviembre.</p></div>
     <div class="split">
       <div class="panel">
-        <span class="pending">Después del sorteo</span>
-        <h3 class="it">Grupo ?</h3>
+        <span class="pending">Fase de grupos</span>
+        <h3 class="it">Grupo C</h3>
         <table>
           <thead><tr><th>Equipo</th><th class="n">PJ</th><th class="n">DG</th><th class="n">Pts</th></tr></thead>
           <tbody>
-            <tr class="us"><td>Liga Núñez</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
-            <tr><td>Rival a definir</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
-            <tr><td>Rival a definir</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
-            <tr><td>Rival a definir</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
-            <tr><td>Rival a definir</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td><img class="cr" src="escudos-cp-la_wilson.png" alt="">La Wilson</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr class="us"><td><img class="cr" src="escudos-cp-liga_nunez.png" alt="">Liga Núñez</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td><img class="cr" src="escudos-cp-social_y_deportivo.png" alt="">Social y Deportivo</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td><img class="cr" src="escudos-cp-la_martona.png" alt="">La Martona</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td><img class="cr" src="escudos-cp-el_kiosco.png" alt="">El Kiosco</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
           </tbody>
         </table>
       </div>
       <div class="panel dark">
-        <span class="pending">Después del sorteo</span>
+        <span class="pending">Orden a confirmar</span>
         <h3 class="it">Nuestros partidos</h3>
-        <div class="match"><div class="when">Fecha 1<small>Hora a confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> a definir</div><div class="res">–</div></div>
-        <div class="match"><div class="when">Fecha 2<small>Hora a confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> a definir</div><div class="res">–</div></div>
-        <div class="match"><div class="when">Fecha 3<small>Hora a confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> a definir</div><div class="res">–</div></div>
-        <div class="match"><div class="when">Fecha 4<small>Hora a confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> a definir</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Fecha 1<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> La Wilson</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Fecha 2<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> Social y Deportivo</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Fecha 3<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> La Martona</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Fecha 4<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> El Kiosco</div><div class="res">–</div></div>
       </div>
+    </div>
+    <h3 class="it allg-h">Todos los grupos</h3>
+    <div class="allg">
+      <div class="g"><b>Grupo A</b><ul><li><img class="cr" src="escudos-cp-el_guayo.png" alt="">El Guayo</li><li><img class="cr" src="escudos-cp-argeave.png" alt="">Argeave</li><li><img class="cr" src="escudos-cp-la_jaula.png" alt="">La Jaula</li><li><img class="cr" src="escudos-cp-la_banda_de_yoba.png" alt="">La Banda de Yoba</li><li><img class="cr" src="escudos-cp-martillazo_fc.png" alt="">Martillazo FC</li></ul></div>
+      <div class="g"><b>Grupo B</b><ul><li><img class="cr" src="escudos-cp-mammana_fc.png" alt="">Mammana FC</li><li><img class="cr" src="escudos-cp-baires.png" alt="">Baires</li><li><img class="cr" src="escudos-cp-la_farma.png" alt="">La Farma</li><li><img class="cr" src="escudos-cp-villango_fc.png" alt="">Villango FC</li><li><img class="cr" src="escudos-cp-universidad_bs_as.png" alt="">Universidad Bs. As.</li></ul></div>
+      <div class="g us"><b>Grupo C</b><ul><li><img class="cr" src="escudos-cp-la_wilson.png" alt="">La Wilson</li><li><img class="cr" src="escudos-cp-liga_nunez.png" alt="">Liga Núñez</li><li><img class="cr" src="escudos-cp-social_y_deportivo.png" alt="">Social y Deportivo</li><li><img class="cr" src="escudos-cp-la_martona.png" alt="">La Martona</li><li><img class="cr" src="escudos-cp-el_kiosco.png" alt="">El Kiosco</li></ul></div>
+      <div class="g"><b>Grupo D</b><ul><li><img class="cr" src="escudos-cp-la_crema.png" alt="">La Crema</li><li><img class="cr" src="escudos-cp-alto_pasto.png" alt="">Alto Pasto</li><li><img class="cr" src="escudos-cp-los_eucaliptos.png" alt="">Los Eucaliptos</li><li><img class="cr" src="escudos-cp-rayo_barcelona.png" alt="">Rayo Barcelona</li><li><img class="cr" src="escudos-cp-mas_futbol.png" alt="">Más Fútbol</li></ul></div>
+      <div class="g"><b>Grupo E</b><ul><li><img class="cr" src="escudos-cp-tap_san_pedro.png" alt="">Tap San Pedro</li><li><img class="cr" src="escudos-cp-mamon.png" alt="">Mamón</li><li><img class="cr" src="escudos-cp-streamers.png" alt="">Streamers</li><li><img class="cr" src="escudos-cp-gadd_afc.png" alt="">Gadd AFC</li><li><img class="cr" src="escudos-cp-goat_fc.png" alt="">Goat FC</li></ul></div>
+      <div class="g"><b>Grupo F</b><ul><li><img class="cr" src="escudos-cp-san_alberto.png" alt="">San Alberto</li><li><img class="cr" src="escudos-cp-fed_colombiana.png" alt="">Fed. Colombiana</li><li><img class="cr" src="escudos-cp-rfc.png" alt="">RFC</li><li><img class="cr" src="escudos-cp-northchamp.png" alt="">Northchamp</li><li><img class="cr" src="escudos-cp-reconquista.png" alt="">Reconquista</li></ul></div>
+      <div class="g"><b>Grupo G</b><ul><li><img class="cr" src="escudos-cp-la_rosario.png" alt="">La Rosario</li><li><img class="cr" src="escudos-cp-gb_sports.png" alt="">GB Sports</li><li><img class="cr" src="escudos-cp-ciclon.png" alt="">Ciclón</li><li><img class="cr" src="escudos-cp-biri_biri.png" alt="">Biri Biri</li><li><img class="cr" src="escudos-cp-guemes_fc.png" alt="">Güemes FC</li></ul></div>
+      <div class="g"><b>Grupo H</b><ul><li><img class="cr" src="escudos-cp-operativo_panda.png" alt="">Operativo Panda</li><li><img class="cr" src="escudos-cp-picapiedra.png" alt="">Picapiedra</li><li><img class="cr" src="escudos-cp-las_piedras.png" alt="">Las Piedras</li><li><img class="cr" src="escudos-cp-moron_sur.png" alt="">Morón Sur</li><li><img class="cr" src="escudos-cp-parceros_jg.png" alt="">Parceros JG</li></ul></div>
     </div>
   </section>
 
