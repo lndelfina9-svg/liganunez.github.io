@@ -311,6 +311,47 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .day .ln{display:block;margin-top:8px;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .day.lnday .ln{color:var(--red)}
 .mnote{font-size:.78rem;color:var(--muted);margin:10px 0 0}
+/* plantel en fichas (estilo presentación de peleadores) */
+.squad{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.player.pc{display:block;padding:0;aspect-ratio:3/4;max-width:100%;overflow:visible;background:linear-gradient(180deg,#3a5a4a 0%,#22392e 70%);border:1px solid rgba(220,200,164,.18);color:#f2ead9;transition:transform .25s}
+.player.pc.dt{background:linear-gradient(180deg,#2a2a28 0%,#121211 75%)}
+.pc .pc-ph{position:absolute;inset:0;overflow:hidden;display:block}
+.pc .pc-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .35s ease;filter:saturate(.92) contrast(1.04)}
+.pc .pc-ph svg{position:absolute;left:50%;bottom:-4%;width:70%;transform:translateX(-50%);fill:rgba(220,200,164,.16)}
+.pc .pc-ph b{position:absolute;top:9%;left:0;right:0;text-align:center;font-family:var(--display);font-weight:900;font-size:3.4rem;color:rgba(220,200,164,.5)}
+.pc .pc-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,18,14,.92) 92%)}
+.pc .pc-nm{position:absolute;left:10px;right:10px;bottom:14px;z-index:1;text-align:center;font-family:var(--display);font-weight:900;font-size:1.45rem;line-height:.95;text-transform:uppercase;color:#fff}
+.pc .pc-tag{position:absolute;left:10px;right:10px;bottom:calc(14px + 2.9rem);z-index:1;text-align:center;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.pc .cr{position:absolute;width:26px;height:26px;z-index:2;opacity:0;transition:opacity .2s}
+.pc .cr.a{top:-2px;left:-2px;border-top:3px solid var(--gold);border-left:3px solid var(--gold)}
+.pc .cr.b{bottom:-2px;right:-2px;border-bottom:3px solid var(--gold);border-right:3px solid var(--gold)}
+.player.pc:hover,.player.pc:focus-visible{transform:translateY(-4px);outline:none;z-index:2}
+.player.pc:hover .cr,.player.pc:focus-visible .cr{opacity:1}
+.player.pc:hover .pc-ph img{transform:scale(1.07)}
+.player.pc .vb{z-index:3;top:8px;right:8px;background:var(--gold-2);color:var(--ink)}
+@media (max-width:520px){.squad{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pc .pc-nm{font-size:1.2rem}.pc .pc-tag{bottom:calc(14px + 2.4rem)}}
+.pm-box.pf{width:min(560px,100%);grid-template-columns:1fr}
+.pm-box.pf .pm-vid iframe{aspect-ratio:9/16;max-height:62vh}
+.pm-box.pf .pm-vid.h iframe{aspect-ratio:16/9}
+.pf-ph{background:linear-gradient(180deg,#3a5a4a,#1d3428);aspect-ratio:4/3.4;max-height:58vh;overflow:hidden;display:grid;place-items:center}
+.pf-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.pf-ph b{font-family:var(--display);font-weight:900;font-size:6rem;color:rgba(220,200,164,.45)}
+.pf-info{padding:22px 24px 26px;display:grid;gap:12px}
+.pf-info .rol{font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#dcc8a4}
+.pf-info h3{font-size:clamp(2.6rem,9vw,3.8rem);line-height:.9;margin:0;text-transform:uppercase;color:#f2ead9}
+.pf-nick{margin:-4px 0 0;font-size:1rem;color:#dcc8a4}
+.pf-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(220,200,164,.2);border:1px solid rgba(220,200,164,.2)}
+.pf-stats div{background:#1d3428;padding:10px 8px;display:grid;gap:4px;min-width:0}
+.pf-stats span{font-size:.56rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dcc8a4}
+.pf-stats b{font-family:var(--display);font-weight:900;font-size:1.5rem;line-height:1;color:#f2ead9}
+.pf-dato{margin:0;font-size:.92rem;line-height:1.45}
+.pf-fx{display:grid;gap:0;border-top:1px solid rgba(220,200,164,.25)}
+.pf-fx>span{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#dcc8a4;padding:12px 0 6px}
+.pf-fx div{display:grid;grid-template-columns:96px 1fr auto;gap:10px;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(220,200,164,.12);font-size:.86rem}
+.pf-fx b{font-family:var(--display);font-weight:900;font-size:1.05rem;text-transform:uppercase;white-space:nowrap}
+.pf-fx em{font-style:normal;font-weight:700}
+.pf-fx small{color:rgba(242,234,217,.6);font-size:.72rem}
+@media (max-width:520px){.pf-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-fx div{grid-template-columns:86px 1fr;gap:2px 10px}.pf-fx small{grid-column:2}}
 /* historia */
 .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .yr{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
@@ -630,10 +671,16 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var nick={'Mateo Grillo':'El Jeque'};
   var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Monza':'monza'};
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
-  plantel.forEach(function(n){var p=document.createElement('button');p.type='button';p.className='player';p.dataset.n=n;p.dataset.r=nick[n]?'Jugador · '+nick[n]:'Jugador';p.dataset.i=ini(n);p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
-  var pres=document.createElement('button');pres.type='button';pres.className='player dt';pres.dataset.n='Federico Figueroa';pres.dataset.r='Presidente';pres.dataset.i='PR';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
-  var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico']};
-  staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('button');p.type='button';p.className='player dt';p.dataset.n=n;p.dataset.r=r[1];p.dataset.i=r[0];p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
+  // Plantel estilo fichas: foto (o frame del video), nombre abajo, ficha al tocar
+  var card={'Fabio Sisca':'video_sisca','Matías Miranda':'video_tute','Mateo Flaherty':'video_mateo','Juan Basualdo':'video_pepe','Carlos':'video_carlos'};
+  var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico'],'Federico Figueroa':['PR','Presidente']};
+  function pcard(n,rol,tag,staffy){var p=document.createElement('button');p.type='button';p.className='player pc'+(staffy?' dt':'');p.dataset.n=n;p.dataset.r=rol;p.dataset.i=tag;
+    var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
+    p.innerHTML='<span class="pc-ph">'+(src?'<img src="'+src+'" alt="" loading="lazy">':'<svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="40" r="20"/><path d="M12 120c2-30 18-46 38-46s36 16 38 46z"/></svg><b>'+tag+'</b>')+'</span>'+
+      '<span class="pc-tag">'+(staffy?rol:(nick[n]?'“'+nick[n]+'”':'Jugador'))+'</span><span class="pc-nm">'+n+'</span><i class="cr a"></i><i class="cr b"></i>';
+    sq.appendChild(p);}
+  plantel.forEach(function(n){pcard(n,nick[n]?'Jugador · '+nick[n]:'Jugador',ini(n));});
+  ['Carlos','Monza','Federico Figueroa'].forEach(function(n){pcard(n,roles[n][1],roles[n][0],1);});
   // Galería por año (lugares listos para cargar fotos)
   var sets={ultima:['am_guayo_6','am_baires_3','am_martillazo_4','am_guayo_2','am_baires_5','am_martillazo_8','am_guayo_5','am_guayo_1','am_martillazo_5'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
   var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, los pibes en los amistosos de la previa.',
@@ -705,11 +752,18 @@ footer .handles a{color:var(--paper);text-decoration:none}
   function vframe(k){var v=VID[k];return '<div class="pm-vid'+(v[2]?' h':'')+'"><iframe src="https://drive.google.com/file/d/'+v[0]+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+v[1]+'"></iframe></div>';}
   Object.keys(REEL).forEach(function(id){var r=document.getElementById(id);if(!r)return;REEL[id].forEach(function(k){var v=VID[k],b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver video: '+v[1]);b.innerHTML='<img src="portadas-'+k+'.jpg" alt="" loading="lazy"><span class="pl2"></span>';
     b.addEventListener('click',function(){modal(vframe(k)+'<div class="pm-info"><span class="rol">'+(v[3]||'Conocé al plantel')+'</span><h3 class="it">'+v[1]+'</h3></div>');});r.appendChild(b);});});
-  function perfil(n,rol,ini){var d=datos[n]||{},keys=Object.keys(d),k=videoDe[n];
-    var info='<div class="pm-info">'+(fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="">':'<span class="num">'+ini+'</span>')+'<span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+
-      (keys.length?'<dl>'+keys.map(function(x){return '<dt>'+x+'</dt><dd>'+d[x]+'</dd>'}).join('')+'</dl>':'')+
-      '<p class="soon">'+(keys.length?'':(k?'Datos del media day: muy pronto.':'Datos y video del media day: muy pronto.'))+'</p></div>';
-    modal((k?vframe(k):'')+info,k?'':'nov');}
+  var lnFix=[['Dom 15/11','El Kiosco','10:30 · Cancha 4'],['Lun 16/11','La Martona','10:00 · Cancha 3'],['Mar 17/11','La Wilson','11:30 · Cancha 1'],['Fecha 4','Social y Deportivo','Día y hora a confirmar']];
+  function perfil(n,rol,ini){var d=datos[n]||{},k=videoDe[n],st=/Presidente|técnico|Ayudante/.test(rol);
+    var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
+    var top=k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>';
+    var nk=d['Apodo']||nick[n];
+    var stats=st?[]:['Posición','Número','Edad','Pierna hábil'];
+    var info='<div class="pf-info"><span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+(nk?'<p class="pf-nick">“'+nk+'”</p>':'')+
+      (stats.length?'<div class="pf-stats">'+stats.map(function(x){return '<div><span>'+x+'</span><b>'+(d[x]||'—')+'</b></div>'}).join('')+'</div>':'')+
+      (d['Dato']?'<p class="pf-dato">'+d['Dato']+'</p>':'')+
+      '<div class="pf-fx"><span>Sus partidos · Grupo C</span>'+lnFix.map(function(f){return '<div><b>'+f[0]+'</b><em>vs '+f[1]+'</em><small>'+f[2]+'</small></div>'}).join('')+'</div>'+
+      (Object.keys(d).length?'':'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
+    modal(top+info,'pf');}
   document.querySelectorAll('#squad .player').forEach(function(p){if(videoDe[p.dataset.n]){var v=document.createElement('span');v.className='vb';v.textContent='▶ Video';p.appendChild(v);}});
   document.getElementById('squad').addEventListener('click',function(e){var p=e.target.closest('.player');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
