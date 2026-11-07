@@ -284,6 +284,10 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .reel .pl2{position:absolute;top:10px;right:10px;z-index:1;width:30px;height:30px;border-radius:50%;background:var(--gold-2);display:grid;place-items:center}
 .reel .pl2::after{content:"";border-left:10px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
 @media (max-width:640px){.reel button{width:136px}}
+.brand-h h3{color:var(--ink)}.brand-h h3 span{color:var(--red)}.brand-h p{color:var(--muted)}
+.reel-b{margin-top:4px}.reel-b button{width:200px;background:var(--ink)}
+.reel-b .pl2{background:var(--red)}.reel-b .pl2::after{border-left-color:#fff}
+.reel i{position:absolute;left:10px;top:12px;z-index:1;font-style:normal;font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(10,20,15,.75);color:#f2ead9;padding:3px 6px}
 .player{cursor:pointer;position:relative;border:0;text-align:left;font:inherit;width:100%}
 .player:hover{outline:2px solid var(--gold);outline-offset:-2px}
 .player .vb{position:absolute;top:8px;right:8px;font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--gold-2);padding:3px 6px}
@@ -503,6 +507,8 @@ footer .handles a{color:var(--paper);text-decoration:none}
       </div>
     </div>
     <script async src="https://www.instagram.com/embed.js"></script>
+    <div class="meet-h brand-h"><h3 class="it">Las marcas <span>en la cancha</span></h3><p>Lo que armamos con nuestros sponsors. Tocá un video para verlo.</p></div>
+    <div class="reel reel-b" id="reelB"></div>
     <div class="community"><b class="it">¿Jugás en Liga Núñez y tenés una marca?</b><p>Este camino también puede ser para vos. Escribinos por Instagram a @liganunez.</p></div>
   </section>
 
@@ -678,17 +684,19 @@ footer .handles a{color:var(--paper);text-decoration:none}
     var w=document.createElement('div');w.className='am-rec';w.dataset.for=b.dataset.rec;w.innerHTML='<video controls playsinline autoplay poster="fotos-recap_'+b.dataset.rec+'.jpg" src="video-recap_'+b.dataset.rec+'.mp4"></video>';
     row.after(w);b.setAttribute('aria-expanded','true');b.textContent='Cerrar recap';});});
   // Conocé al plantel: videos y perfiles
-  var VID={carrizo:['1YErsHMQF9MYSPks3oBs1Zs0mmwu6G0vU','Fede Carrizo',1],sisca:['1IDbxAqHcB91uei9_JC191Vmy1HV4achP','Fabio Sisca'],porfi:['14DYa44bFU6EbJ7K5Ep1ccNRRMGQZHwzw','Sebastián Porfirio',1],carlos:['1IQ8JJNKn73pHLzlkj1NAlyWAKsttIMbr','Carlos Díaz',1]};
+  var VID={carrizo:['1YErsHMQF9MYSPks3oBs1Zs0mmwu6G0vU','Fede Carrizo',1],sisca:['1IDbxAqHcB91uei9_JC191Vmy1HV4achP','Fabio Sisca'],porfi:['14DYa44bFU6EbJ7K5Ep1ccNRRMGQZHwzw','Sebastián Porfirio',1],carlos:['1IQ8JJNKn73pHLzlkj1NAlyWAKsttIMbr','Carlos Díaz',1],tute:['1S6Wawe5Lxfu2UDl3F4CPpAYbRqTN0W0q','Matías Miranda'],pepe:['1sAkOOQNBlJn4tqrguOKerrRvJ4XhWKGA','Juan Agustín Basualdo',1],ortigoza:['1L96P_I31rIYSVKgNpzVdm8JDDYmJySp5','Néstor Ortigoza',0,'Entrevista'],bergessio:['1dDtDMradJDzdmkO3HnJG_tkWeViX2rF3','Gonzalo Bergessio',0,'Entrevista'],topomafia:['18T-0ZJr8yWYylHTr3daOoVKq2iiLZJ7o','El Topo',0,'El Topo'],churros:['1aI6glUrHpKO2qzgB8zMWOkWXx2x_NSuQ','Churros El Topo',0,'El Topo'],pecheras:['1RcNzfcecpOTHLXEj-LO9pYLQggeVzi67','Pecheras Vision',0,'Vision']};
+  var REEL={reel:['carrizo','sisca','tute','porfi','pepe','carlos','ortigoza','bergessio'],reelB:['topomafia','churros','pecheras']};
+  var POSTER={ortigoza:'origoza'};
   // video de cada perfil (nombre del plantel -> clave de VID)
-  var videoDe={'Fede Carrizo':'carrizo','Fabio Sisca':'sisca','Sebastián Porfirio':'porfi','Carlos':'carlos'};
+  var videoDe={'Fede Carrizo':'carrizo','Fabio Sisca':'sisca','Sebastián Porfirio':'porfi','Carlos':'carlos','Matías Miranda':'tute','Juan Basualdo':'pepe'};
   // datos del media day: {'Nombre':{'Posición':'...','Apodo':'...','Pierna hábil':'...','Dato':'...'}}
   var datos={};
   function modal(html,cls){var m=document.createElement('div');m.className='pm';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.innerHTML='<div class="pm-box '+(cls||'')+'"><button type="button" class="pm-x">Cerrar</button>'+html+'</div>';document.body.appendChild(m);
     function close(){m.remove();document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}
     m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('pm-x'))close();});document.addEventListener('keydown',esc);}
   function vframe(k){var v=VID[k];return '<div class="pm-vid'+(v[2]?' h':'')+'"><iframe src="https://drive.google.com/file/d/'+v[0]+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+v[1]+'"></iframe></div>';}
-  (function(){var r=document.getElementById('reel');if(!r)return;Object.keys(VID).forEach(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver video: '+VID[k][1]);b.innerHTML='<img src="jugadores-video_'+k+'.jpg" alt="" loading="lazy"><span class="pl2"></span><b>'+VID[k][1]+'</b>';
-    b.addEventListener('click',function(){modal(vframe(k)+'<div class="pm-info"><span class="rol">Conocé al plantel</span><h3 class="it">'+VID[k][1]+'</h3></div>');});r.appendChild(b);});})();
+  Object.keys(REEL).forEach(function(id){var r=document.getElementById(id);if(!r)return;REEL[id].forEach(function(k){var v=VID[k],b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver video: '+v[1]);b.innerHTML='<img src="jugadores-video_'+(POSTER[k]||k)+'.jpg" alt="" loading="lazy">'+(v[3]?'<i>'+v[3]+'</i>':'')+'<span class="pl2"></span><b>'+v[1]+'</b>';
+    b.addEventListener('click',function(){modal(vframe(k)+'<div class="pm-info"><span class="rol">'+(v[3]||'Conocé al plantel')+'</span><h3 class="it">'+v[1]+'</h3></div>');});r.appendChild(b);});});
   function perfil(n,rol,ini){var d=datos[n]||{},keys=Object.keys(d),k=videoDe[n];
     var info='<div class="pm-info">'+(fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="">':'<span class="num">'+ini+'</span>')+'<span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+
       (keys.length?'<dl>'+keys.map(function(x){return '<dt>'+x+'</dt><dd>'+d[x]+'</dd>'}).join('')+'</dl>':'')+
