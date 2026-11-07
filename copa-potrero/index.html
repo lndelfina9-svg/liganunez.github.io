@@ -242,24 +242,63 @@ tr.us td:first-child{color:var(--red)}
 .vcap span{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
 .vcap b{font-family:var(--display);font-weight:900;font-size:1.5rem;text-transform:uppercase;line-height:1.05}
 .vid.on{outline:3px solid var(--red);outline-offset:-3px}
-/* camiseta alternativa Oneshot: verde y beige */
-section.kit{--ink:#1d3428;--ink-2:#274236;--red:#9b7d52;--paper:#f4eee2;--muted:#56645a;--gold:#c9b28c;--gold-2:#dcc8a4;
-  background:#d9ccb3 repeating-linear-gradient(90deg,transparent 0 119px,rgba(29,52,40,.13) 119px 120px);
-  box-shadow:0 0 0 100vmax #d9ccb3;clip-path:inset(0 -100vmax);padding-block:56px;margin-top:56px;color:var(--ink)}
+/* camiseta alternativa Oneshot: verde con detalles beige */
+section.kit{--ink:#1f3a2e;--ink-2:#2a4a3b;--red:#8c6d42;--paper:#f2ead9;--muted:#5a665d;--gold:#c9b28c;--gold-2:#dcc8a4;
+  background:#22392e repeating-linear-gradient(90deg,transparent 0 119px,rgba(220,200,164,.07) 119px 120px);
+  box-shadow:0 0 0 100vmax #22392e;clip-path:inset(0 -100vmax);padding-block:56px;margin-top:56px;color:var(--paper)}
 section.kit + section{padding-top:44px}
-section.kit .sec-head p{color:var(--muted)}
-section.kit .tr-rec{color:var(--paper)}
-section.kit .team figcaption{background:var(--ink);color:var(--gold-2)}
-.kit-tag{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
-.kit-tag i{width:12px;height:12px;background:var(--ink);display:inline-block}.kit-tag i+i{background:#c3ae8a;margin-left:-6px}
+section.kit .sec-head h2{color:var(--paper)}
+section.kit .sec-head h2 span{color:var(--gold-2)}
+section.kit .sec-head p,section.kit .gal-note,section.kit .champs{color:rgba(242,234,217,.75)}
+section.kit .tr,section.kit .tr *{color:var(--ink)}
+section.kit .tr-date b{color:var(--red)}
+section.kit .tr-btn:hover,section.kit .tr-btn[aria-expanded="true"]{background:var(--ink);color:var(--paper)}
+section.kit .tr-rec{background:var(--ink);border-color:var(--ink);color:var(--gold-2)}
+section.kit .team figcaption{background:var(--gold-2);color:var(--ink)}
+section.kit .kit-card{background:#172b22;outline:1px solid rgba(220,200,164,.25)}
+.kit-tag{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:10px}
+.kit-tag i{width:12px;height:12px;background:#3d6a52;display:inline-block;outline:1px solid var(--gold-2)}.kit-tag i+i{background:#c3ae8a;margin-left:-6px}
 .kit-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--ink);color:var(--paper);margin:0 0 14px}
-.kit-card img{width:100%;height:100%;object-fit:cover;display:block;background:#5b5b5b}
+.kit-card img{width:100%;height:100%;max-height:380px;object-fit:cover;object-position:60% 55%;display:block;background:#5b5b5b}
 .kit-card div{padding:26px 24px;display:grid;align-content:center;gap:10px}
 .kit-card .eyebrow{color:var(--gold-2);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
 .kit-card h3{font-size:clamp(1.8rem,4vw,2.8rem);line-height:.95;color:var(--paper)}
 .kit-card h3 span{color:var(--gold-2)}
 .kit-card p{margin:0;font-size:.92rem;opacity:.85;max-width:44ch}
 @media (max-width:720px){.kit-card{grid-template-columns:1fr}}
+section.kit .player:not(.dt){color:var(--ink)}
+/* conocé al plantel */
+.meet-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
+.meet-h h3{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--paper)}.meet-h h3 span{color:var(--gold-2)}
+.meet-h p{margin:0;font-size:.86rem;color:rgba(242,234,217,.75)}
+.reel{display:flex;gap:10px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin-bottom:22px}
+.reel button{flex:0 0 auto;width:168px;aspect-ratio:9/16;position:relative;border:0;padding:0;cursor:pointer;background:#0d1712;scroll-snap-align:start;overflow:hidden}
+.reel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.reel button:hover img{transform:scale(1.04)}
+.reel button::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,20,15,.9))}
+.reel b{position:absolute;left:10px;right:10px;bottom:10px;z-index:1;color:#fff;font-family:var(--display);font-weight:900;font-size:1.15rem;text-transform:uppercase;line-height:1;text-align:left}
+.reel .pl2{position:absolute;top:10px;right:10px;z-index:1;width:30px;height:30px;border-radius:50%;background:var(--gold-2);display:grid;place-items:center}
+.reel .pl2::after{content:"";border-left:10px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+@media (max-width:640px){.reel button{width:136px}}
+.player{cursor:pointer;position:relative;border:0;text-align:left;font:inherit;width:100%}
+.player:hover{outline:2px solid var(--gold);outline-offset:-2px}
+.player .vb{position:absolute;top:8px;right:8px;font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--gold-2);padding:3px 6px}
+.player.dt .vb{background:var(--gold-2);color:var(--ink)}
+.pm{position:fixed;inset:0;z-index:60;background:rgba(8,14,11,.86);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.pm-box{background:#1d3428;color:#f2ead9;width:min(920px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);position:relative}
+.pm-box.nov{grid-template-columns:1fr;width:min(460px,100%)}
+.pm-vid{background:#000;display:grid;place-items:center;min-height:300px}
+.pm-vid iframe{width:100%;border:0;display:block;aspect-ratio:9/16;max-height:80vh}
+.pm-vid.h iframe{aspect-ratio:16/9}
+.pm-info{padding:26px 24px;display:grid;align-content:start;gap:14px}
+.pm-info .av,.pm-info .num{width:96px;height:96px;border-radius:50%;object-fit:cover;background:#f2ead9;color:#1d3428;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:2.4rem}
+.pm-info h3{font-size:2.4rem;line-height:.95;margin:0}
+.pm-info .rol{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#dcc8a4}
+.pm-info dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:.92rem}
+.pm-info dt{color:#dcc8a4;font-weight:700}.pm-info dd{margin:0}
+.pm-info .soon{font-size:.86rem;opacity:.75;margin:0;border-top:1px solid rgba(220,200,164,.3);padding-top:12px}
+.pm-x{position:absolute;top:8px;right:8px;z-index:2;background:#f2ead9;color:#1d3428;border:0;font:800 .7rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;padding:8px 10px;cursor:pointer}
+@media (max-width:720px){.pm-box{grid-template-columns:1fr}.pm-vid iframe{max-height:62vh}}
 /* historia */
 .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .yr{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
@@ -364,7 +403,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   </section>
 
   <section id="amistosos" class="kit">
-    <div class="kit-tag"><i></i><i></i>Camiseta alternativa · Oneshot</div>
+    <div class="kit-tag"><i></i><i></i>Camiseta nueva · Oneshot</div>
     <div class="sec-head"><h2 class="it">Amis<span>tosos</span></h2><p>La preparación arrancó hace rato. Cada partido amistoso tiene su material.</p></div>
     <div class="trainings">
       <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="9" aria-expanded="false">Ver fotos · 9</button></div>
@@ -428,7 +467,9 @@ footer .handles a{color:var(--paper);text-decoration:none}
       <figcaption>Plantel Liga Núñez · Copa Potrero</figcaption>
       <div class="team-dots" aria-hidden="true"></div>
     </figure>
-    <div class="kit-card"><img src="fotos-camiseta_oneshot.jpg" alt="Diseño de la camiseta alternativa de Liga Núñez, beige con vivos verdes, sponsor Oneshot y número 12" loading="lazy"><div><span class="eyebrow">Nueva · by Oneshot Sports</span><h3 class="it">Verde y <span>beige</span></h3><p>Además de la roja y negra, Liga Núñez juega la Copa Potrero 2026 con la camiseta alternativa que hizo nuestro sponsor Oneshot.</p></div></div>
+    <div class="meet-h"><h3 class="it">Conocé <span>al plantel</span></h3><p>Los videos que venimos subiendo al Instagram. Tocá uno para verlo, o tocá a cualquier jugador para ver su perfil.</p></div>
+    <div class="reel" id="reel"></div>
+    <div class="kit-card"><img src="fotos-camiseta_oneshot_verde.jpg" alt="Camiseta verde de Liga Núñez con cuello beige y escudo verde y beige, hecha por Oneshot" loading="lazy"><div><span class="eyebrow">Nueva · by Oneshot Sports</span><h3 class="it">Verde <span>y beige</span></h3><p>La camiseta nueva de Liga Núñez para la Copa Potrero 2026, hecha por nuestro sponsor Oneshot. Verde con cuello y escudo en beige.</p></div></div>
     <div class="squad" id="squad"></div>
   </section>
 
@@ -573,10 +614,10 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var nick={'Mateo Grillo':'El Jeque'};
   var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Monza':'monza'};
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
-  plantel.forEach(function(n){var p=document.createElement('div');p.className='player';p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
-  var pres=document.createElement('div');pres.className='player dt';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
+  plantel.forEach(function(n){var p=document.createElement('button');p.type='button';p.className='player';p.dataset.n=n;p.dataset.r=nick[n]?'Jugador · '+nick[n]:'Jugador';p.dataset.i=ini(n);p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
+  var pres=document.createElement('button');pres.type='button';pres.className='player dt';pres.dataset.n='Federico Figueroa';pres.dataset.r='Presidente';pres.dataset.i='PR';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
   var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico']};
-  staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('div');p.className='player dt';p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
+  staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('button');p.type='button';p.className='player dt';p.dataset.n=n;p.dataset.r=r[1];p.dataset.i=r[0];p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
   // Galería por año (lugares listos para cargar fotos)
   var sets={ultima:['plantel_cp2025','24_g0','24_6','25_b0','25_02','24_7','25_06','24_8'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
   var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, una selección de 2024 y 2025.',
@@ -633,6 +674,25 @@ footer .handles a{color:var(--paper);text-decoration:none}
     if(ex){ex.remove();b.setAttribute('aria-expanded','false');b.textContent='▶ Recap';return;}
     var w=document.createElement('div');w.className='am-rec';w.dataset.for=b.dataset.rec;w.innerHTML='<video controls playsinline autoplay poster="fotos-recap_'+b.dataset.rec+'.jpg" src="video-recap_'+b.dataset.rec+'.mp4"></video>';
     row.after(w);b.setAttribute('aria-expanded','true');b.textContent='Cerrar recap';});});
+  // Conocé al plantel: videos y perfiles
+  var VID={conferencia:['1vaF_og-IY9CTgY7Dp-RzkMBvGL4dVDnG','Conferencia de prensa',1],carrizo:['1YErsHMQF9MYSPks3oBs1Zs0mmwu6G0vU','Fede Carrizo',1],sisca:['1IDbxAqHcB91uei9_JC191Vmy1HV4achP','Fabio Sisca'],tute:['1S6Wawe5Lxfu2UDl3F4CPpAYbRqTN0W0q','Tute'],porfi:['14DYa44bFU6EbJ7K5Ep1ccNRRMGQZHwzw','Porfi · entrevista',1],mateo:['1-x_NHtMXatKSWTtmpNT06TffCnXuMoxN','Mateo'],pepe:['1sAkOOQNBlJn4tqrguOKerrRvJ4XhWKGA','Pepe',1],carlos:['1IQ8JJNKn73pHLzlkj1NAlyWAKsttIMbr','Carlos Díaz · DT',1],bergessio:['1dDtDMradJDzdmkO3HnJG_tkWeViX2rF3','Bergessio'],origoza:['1L96P_I31rIYSVKgNpzVdm8JDDYmJySp5','Origoza'],topomafia:['18T-0ZJr8yWYylHTr3daOoVKq2iiLZJ7o','El Topomafia'],churros:['1aI6glUrHpKO2qzgB8zMWOkWXx2x_NSuQ','Churros El Topo'],cqc:['1QBBygrIn17tMhStQ1XqHSD8XSLI3xpsT','CQC',1],pecheras:['1RcNzfcecpOTHLXEj-LO9pYLQggeVzi67','Visión: pecheras'],cancha:['1y3qXd6ALvii6a71ZsZ_Jig_GZKdf806q','En la cancha'],backstage:['1aXDUmwPC87iBiB8Hh7OkbJ9aZ0Ob4ukd','Detrás de escena']};
+  // video de cada perfil (nombre del plantel -> clave de VID)
+  var videoDe={'Fede Carrizo':'carrizo','Fabio Sisca':'sisca','Sebastián Porfirio':'porfi','Carlos':'carlos'};
+  // datos del media day: {'Nombre':{'Posición':'...','Apodo':'...','Pierna hábil':'...','Dato':'...'}}
+  var datos={};
+  function modal(html,cls){var m=document.createElement('div');m.className='pm';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.innerHTML='<div class="pm-box '+(cls||'')+'"><button type="button" class="pm-x">Cerrar</button>'+html+'</div>';document.body.appendChild(m);
+    function close(){m.remove();document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}
+    m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('pm-x'))close();});document.addEventListener('keydown',esc);}
+  function vframe(k){var v=VID[k];return '<div class="pm-vid'+(v[2]?' h':'')+'"><iframe src="https://drive.google.com/file/d/'+v[0]+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+v[1]+'"></iframe></div>';}
+  (function(){var r=document.getElementById('reel');if(!r)return;Object.keys(VID).forEach(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver video: '+VID[k][1]);b.innerHTML='<img src="jugadores-video_'+k+'.jpg" alt="" loading="lazy"><span class="pl2"></span><b>'+VID[k][1]+'</b>';
+    b.addEventListener('click',function(){modal(vframe(k)+'<div class="pm-info"><span class="rol">Conocé al plantel</span><h3 class="it">'+VID[k][1]+'</h3></div>');});r.appendChild(b);});})();
+  function perfil(n,rol,ini){var d=datos[n]||{},keys=Object.keys(d),k=videoDe[n];
+    var info='<div class="pm-info">'+(fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="">':'<span class="num">'+ini+'</span>')+'<span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+
+      (keys.length?'<dl>'+keys.map(function(x){return '<dt>'+x+'</dt><dd>'+d[x]+'</dd>'}).join('')+'</dl>':'')+
+      '<p class="soon">'+(keys.length?'':(k?'Datos del media day: muy pronto.':'Datos y video del media day: muy pronto.'))+'</p></div>';
+    modal((k?vframe(k):'')+info,k?'':'nov');}
+  document.querySelectorAll('#squad .player').forEach(function(p){if(videoDe[p.dataset.n]){var v=document.createElement('span');v.className='vb';v.textContent='▶ Video';p.appendChild(v);}});
+  document.getElementById('squad').addEventListener('click',function(e){var p=e.target.closest('.player');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
   var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
