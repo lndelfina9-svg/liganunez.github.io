@@ -242,6 +242,24 @@ tr.us td:first-child{color:var(--red)}
 .vcap span{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
 .vcap b{font-family:var(--display);font-weight:900;font-size:1.5rem;text-transform:uppercase;line-height:1.05}
 .vid.on{outline:3px solid var(--red);outline-offset:-3px}
+/* camiseta alternativa Oneshot: verde y beige */
+section.kit{--ink:#1d3428;--ink-2:#274236;--red:#9b7d52;--paper:#f4eee2;--muted:#56645a;--gold:#c9b28c;--gold-2:#dcc8a4;
+  background:#d9ccb3 repeating-linear-gradient(90deg,transparent 0 119px,rgba(29,52,40,.13) 119px 120px);
+  box-shadow:0 0 0 100vmax #d9ccb3;clip-path:inset(0 -100vmax);padding-block:56px;margin-top:56px;color:var(--ink)}
+section.kit + section{padding-top:44px}
+section.kit .sec-head p{color:var(--muted)}
+section.kit .tr-rec{color:var(--paper)}
+section.kit .team figcaption{background:var(--ink);color:var(--gold-2)}
+.kit-tag{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+.kit-tag i{width:12px;height:12px;background:var(--ink);display:inline-block}.kit-tag i+i{background:#c3ae8a;margin-left:-6px}
+.kit-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--ink);color:var(--paper);margin:0 0 14px}
+.kit-card img{width:100%;height:100%;object-fit:cover;display:block;background:#5b5b5b}
+.kit-card div{padding:26px 24px;display:grid;align-content:center;gap:10px}
+.kit-card .eyebrow{color:var(--gold-2);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.kit-card h3{font-size:clamp(1.8rem,4vw,2.8rem);line-height:.95;color:var(--paper)}
+.kit-card h3 span{color:var(--gold-2)}
+.kit-card p{margin:0;font-size:.92rem;opacity:.85;max-width:44ch}
+@media (max-width:720px){.kit-card{grid-template-columns:1fr}}
 /* historia */
 .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .yr{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
@@ -345,7 +363,8 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="legend"><span><i style="background:var(--ink)"></i>Fase de grupos</span><span><i style="background:var(--red)"></i>Eliminación directa</span><span><i style="background:var(--gold)"></i>Final</span></div>
   </section>
 
-  <section id="amistosos">
+  <section id="amistosos" class="kit">
+    <div class="kit-tag"><i></i><i></i>Camiseta alternativa · Oneshot</div>
     <div class="sec-head"><h2 class="it">Amis<span>tosos</span></h2><p>La preparación arrancó hace rato. Cada partido amistoso tiene su material.</p></div>
     <div class="trainings">
       <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="9" aria-expanded="false">Ver fotos · 9</button></div>
@@ -396,7 +415,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     </div>
   </section>
 
-  <section id="plantel">
+  <section id="plantel" class="kit">
     <div class="sec-head"><h2 class="it">Plan<span>tel</span></h2><p>17 jugadores y cuerpo técnico confirmados para la Copa Potrero 2026.</p></div>
     <figure class="team" id="teamShow">
       <img src="fotos-plantel_cp2025.jpg" alt="Liga Núñez formado en la Copa Potrero 2025" class="on">
@@ -409,6 +428,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
       <figcaption>Plantel Liga Núñez · Copa Potrero</figcaption>
       <div class="team-dots" aria-hidden="true"></div>
     </figure>
+    <div class="kit-card"><img src="fotos-camiseta_oneshot.jpg" alt="Diseño de la camiseta alternativa de Liga Núñez, beige con vivos verdes, sponsor Oneshot y número 12" loading="lazy"><div><span class="eyebrow">Nueva · by Oneshot Sports</span><h3 class="it">Verde y <span>beige</span></h3><p>Además de la roja y negra, Liga Núñez juega la Copa Potrero 2026 con la camiseta alternativa que hizo nuestro sponsor Oneshot.</p></div></div>
     <div class="squad" id="squad"></div>
   </section>
 
@@ -442,7 +462,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="community"><b class="it">¿Jugás en Liga Núñez y tenés una marca?</b><p>Este camino también puede ser para vos. Escribinos por Instagram a @liganunez.</p></div>
   </section>
 
-  <section id="historia">
+  <section id="historia" class="kit">
     <div class="sec-head"><h2 class="it">Nuestra <span>historia</span></h2><p>Tres ediciones de la Copa Potrero, tres veces con Liga Núñez adentro.</p></div>
     <div class="years">
       <div class="yr"><div class="y it">2024</div><div class="stage">Semifinal</div><p>Primera edición, en el Club Municipal Lionel Messi de Derqui, Pilar. Liga Núñez se metió entre los 4 mejores de 40 equipos y cayó en semis con Villa La Ñata.</p></div>
@@ -470,7 +490,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <p class="vnote">Más partidos y resúmenes en el canal de YouTube de la <a href="https://www.youtube.com/results?search_query=copa+potrero+liga+nu%C3%B1ez" target="_blank" rel="noopener">Copa Potrero</a>.</p>
   </section>
 
-  <section id="instagram">
+  <section id="instagram" class="kit">
     <div class="sec-head"><h2 class="it">En <span>Instagram</span></h2><p>Lo último de Liga Núñez camino a la Copa Potrero. Todo el contenido, en @liganunez.</p></div>
     <div class="colabs">
       <div class="colab">
