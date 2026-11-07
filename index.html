@@ -195,7 +195,7 @@ tr.us td:first-child{color:var(--red)}
 .ph:hover img{transform:scale(1.04)}
 .ph:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
 .gal-note{font-size:.8rem;color:var(--muted);margin:10px 0 0}
-@media (max-width:640px){.tr{grid-template-columns:80px 1fr}.tr-vs{grid-column:2}.tr-vs img{width:40px;height:40px}.tr-body{grid-column:2}.tr-mat{grid-column:2}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.tr-acts{grid-column:2}.tr{grid-template-columns:80px 1fr}.tr-vs{grid-column:2}.tr-vs img{width:40px;height:40px}.tr-body{grid-column:2}.tr-mat{grid-column:2}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .btn-ig{margin-top:16px;background:var(--ink);color:#fff;max-width:420px}
 .btn-ig:hover{background:var(--red)}
 .colabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:16px}
@@ -211,6 +211,103 @@ tr.us td:first-child{color:var(--red)}
 .community b{font-family:var(--display);font-size:1.6rem;text-transform:uppercase}
 .community p{margin:0;flex:1 1 280px;font-size:.9rem;color:var(--muted)}
 
+.tr-acts{display:flex;gap:8px;flex-wrap:wrap}
+.tr-rec{background:var(--red);border-color:var(--red);color:#fff;font-family:inherit;cursor:pointer}
+.tr-rec:hover,.tr-rec[aria-expanded="true"]{background:var(--ink);border-color:var(--ink)}
+.am-rec{display:flex;justify-content:center;background:var(--ink);padding:14px;margin-bottom:6px}
+.am-rec video{height:min(70vh,560px);width:auto;max-width:100%;display:block;background:#000}
+/* videos */
+.vtabs{display:flex;gap:8px;margin-bottom:16px}
+.vtabs button{font-family:var(--display);font-weight:900;font-size:1.3rem;text-transform:uppercase;background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:6px 16px;cursor:pointer}
+.vtabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.vid{background:var(--ink);color:var(--paper);min-width:0;display:flex;flex-direction:column}
+.vid .yt{position:relative;aspect-ratio:16/9;max-width:100%;background:#000;cursor:pointer;border:0;padding:0;display:block;width:100%}
+.vid .yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .2s}
+.vid .yt:hover img{opacity:1}
+.vid .yt .pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:var(--red);border-radius:12px;display:grid;place-items:center}
+.vid .yt .pl::after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+.vid iframe{aspect-ratio:16/9;width:100%;border:0;display:block}
+.vid .vt{padding:12px 14px 14px;display:grid;gap:4px}
+.vid .vt b{font-family:var(--display);font-weight:900;font-size:1.35rem;text-transform:uppercase;line-height:1.05}
+.vid .vt span{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.vid .vt a{color:var(--paper);opacity:.7;font-size:.8rem;margin-top:2px}
+.vid.semi{outline:3px solid var(--gold);outline-offset:-3px}
+.vnote{font-size:.85rem;color:var(--muted);margin:14px 0 0}
+.vnote a{color:var(--ink);font-weight:700}
+.vfeat{background:var(--ink);color:var(--paper);margin-bottom:22px}
+.vframe{aspect-ratio:16/9;max-width:100%;background:#000}
+.vframe iframe{width:100%;height:100%;border:0;display:block}
+.vcap{display:flex;gap:6px 14px;align-items:baseline;flex-wrap:wrap;padding:12px 16px 14px}
+.vcap span{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.vcap b{font-family:var(--display);font-weight:900;font-size:1.5rem;text-transform:uppercase;line-height:1.05}
+.vid.on{outline:3px solid var(--red);outline-offset:-3px}
+/* camiseta alternativa Oneshot: verde con detalles beige */
+section.kit{--ink:#1f3a2e;--ink-2:#2a4a3b;--red:#8c6d42;--paper:#f2ead9;--muted:#5a665d;--gold:#c9b28c;--gold-2:#dcc8a4;
+  background:#22392e repeating-linear-gradient(90deg,transparent 0 119px,rgba(220,200,164,.07) 119px 120px);
+  box-shadow:0 0 0 100vmax #22392e;clip-path:inset(0 -100vmax);padding-block:56px;margin-top:56px;color:var(--paper)}
+section.kit + section{padding-top:44px}
+section.kit .sec-head h2{color:var(--paper)}
+section.kit .sec-head h2 span{color:var(--gold-2)}
+section.kit .sec-head p,section.kit .gal-note,section.kit .champs{color:rgba(242,234,217,.75)}
+section.kit .tr,section.kit .tr *{color:var(--ink)}
+section.kit .tr-date b{color:var(--red)}
+section.kit .tr-btn:hover,section.kit .tr-btn[aria-expanded="true"]{background:var(--ink);color:var(--paper)}
+section.kit .tr-rec{background:var(--ink);border-color:var(--ink);color:var(--gold-2)}
+section.kit .team figcaption{background:var(--gold-2);color:var(--ink)}
+section.kit .kit-card{background:#172b22;outline:1px solid rgba(220,200,164,.25)}
+.kit-tag{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:10px}
+.kit-tag i{width:12px;height:12px;background:#3d6a52;display:inline-block;outline:1px solid var(--gold-2)}.kit-tag i+i{background:#c3ae8a;margin-left:-6px}
+.kit-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--ink);color:var(--paper);margin:0 0 14px}
+.kit-card img{width:100%;height:100%;max-height:380px;object-fit:cover;object-position:60% 55%;display:block;background:#5b5b5b}
+.kit-card div{padding:26px 24px;display:grid;align-content:center;gap:10px}
+.kit-card .eyebrow{color:var(--gold-2);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.kit-card h3{font-size:clamp(1.8rem,4vw,2.8rem);line-height:.95;color:var(--paper)}
+.kit-card h3 span{color:var(--gold-2)}
+.kit-card p{margin:0;font-size:.92rem;opacity:.85;max-width:44ch}
+@media (max-width:720px){.kit-card{grid-template-columns:1fr}}
+section.kit .player:not(.dt),section.kit .yr:not(.now),section.kit .colab,section.kit .community,section.kit .gal-tabs button{color:var(--ink)}
+section.kit .yr:not(.now) .y{color:var(--red)}
+section.kit .yr.now{background:#152a20;outline:1px solid rgba(220,200,164,.3)}
+section.kit .gal-tabs button[aria-selected="true"]{background:var(--gold-2);color:var(--ink)}
+section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-ig:hover{background:var(--paper)}
+/* conocé al plantel */
+.meet-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
+.meet-h h3{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--paper)}.meet-h h3 span{color:var(--gold-2)}
+.meet-h p{margin:0;font-size:.86rem;color:rgba(242,234,217,.75)}
+.reel{display:flex;gap:10px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin-bottom:22px}
+.reel button{flex:0 0 auto;width:168px;aspect-ratio:9/16;position:relative;border:0;padding:0;cursor:pointer;background:#0d1712;scroll-snap-align:start;overflow:hidden}
+.reel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.reel button:hover img{transform:scale(1.04)}
+.reel button{box-shadow:0 10px 24px rgba(0,0,0,.25)}
+
+.reel b{position:absolute;left:10px;right:10px;bottom:10px;z-index:1;color:#fff;font-family:var(--display);font-weight:900;font-size:1.15rem;text-transform:uppercase;line-height:1;text-align:left}
+.reel .pl2{position:absolute;top:10px;right:10px;z-index:1;width:30px;height:30px;border-radius:50%;background:var(--gold-2);display:grid;place-items:center}
+.reel .pl2::after{content:"";border-left:10px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+@media (max-width:640px){.reel button{width:136px}}
+.brand-h h3{color:var(--ink)}.brand-h h3 span{color:var(--red)}.brand-h p{color:var(--muted)}
+.reel-b{margin-top:4px}.reel-b button{width:200px;background:var(--ink)}
+.reel-b .pl2{background:var(--red)}.reel-b .pl2::after{border-left-color:#fff}
+.reel i{position:absolute;left:10px;top:12px;z-index:1;font-style:normal;font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(10,20,15,.75);color:#f2ead9;padding:3px 6px}
+.player{cursor:pointer;position:relative;border:0;text-align:left;font:inherit;width:100%}
+.player:hover{outline:2px solid var(--gold);outline-offset:-2px}
+.player .vb{position:absolute;top:8px;right:8px;font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--gold-2);padding:3px 6px}
+.player.dt .vb{background:var(--gold-2);color:var(--ink)}
+.pm{position:fixed;inset:0;z-index:60;background:rgba(8,14,11,.86);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.pm-box{background:#1d3428;color:#f2ead9;width:min(920px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);position:relative}
+.pm-box.nov{grid-template-columns:1fr;width:min(460px,100%)}
+.pm-vid{background:#000;display:grid;place-items:center;min-height:300px}
+.pm-vid iframe{width:100%;border:0;display:block;aspect-ratio:9/16;max-height:80vh}
+.pm-vid.h iframe{aspect-ratio:16/9}
+.pm-info{padding:26px 24px;display:grid;align-content:start;gap:14px}
+.pm-info .av,.pm-info .num{width:96px;height:96px;border-radius:50%;object-fit:cover;background:#f2ead9;color:#1d3428;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:2.4rem}
+.pm-info h3{font-size:2.4rem;line-height:.95;margin:0}
+.pm-info .rol{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#dcc8a4}
+.pm-info dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:.92rem}
+.pm-info dt{color:#dcc8a4;font-weight:700}.pm-info dd{margin:0}
+.pm-info .soon{font-size:.86rem;opacity:.75;margin:0;border-top:1px solid rgba(220,200,164,.3);padding-top:12px}
+.pm-x{position:absolute;top:8px;right:8px;z-index:2;background:#f2ead9;color:#1d3428;border:0;font:800 .7rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;padding:8px 10px;cursor:pointer}
+@media (max-width:720px){.pm-box{grid-template-columns:1fr}.pm-vid iframe{max-height:62vh}}
 /* historia */
 .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .yr{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
@@ -283,7 +380,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="chips" aria-hidden="true"><i style="background:var(--ink)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
   </header>
   <nav class="menu" aria-label="Secciones">
-    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo C</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
+    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo C</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
   <div class="card hero">
@@ -314,16 +411,17 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="legend"><span><i style="background:var(--ink)"></i>Fase de grupos</span><span><i style="background:var(--red)"></i>Eliminación directa</span><span><i style="background:var(--gold)"></i>Final</span></div>
   </section>
 
-  <section id="amistosos">
+  <section id="amistosos" class="kit">
+    <div class="kit-tag"><i></i><i></i>Camiseta nueva · Oneshot</div>
     <div class="sec-head"><h2 class="it">Amis<span>tosos</span></h2><p>La preparación arrancó hace rato. Cada partido amistoso tiene su material.</p></div>
     <div class="trainings">
-      <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="9" aria-expanded="false">Ver fotos · 9</button></div>
-      <div class="tr"><div class="tr-date"><b>18/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-el_guayo.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Guayo</h3><p>Sede a confirmar</p></div><button type="button" class="tr-mat tr-btn" data-am="guayo" data-n="8" aria-expanded="false">Ver fotos · 8</button></div>
-      <div class="tr"><div class="tr-date"><b>22/09</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-gb_sports.png" alt=""></div><div class="tr-body"><h3 class="it">vs GB Sports</h3><p>Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="gb" data-n="6" aria-expanded="false">Ver fotos · 6</button></div>
-      <div class="tr"><div class="tr-date"><b>25/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-martillazo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Martillazo</h3><p>Ituzaingó</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
+      <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="48" aria-expanded="false">Ver fotos · 48</button></div>
+      <div class="tr"><div class="tr-date"><b>18/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-el_guayo.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Guayo</h3><p>Sede a confirmar</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec" data-rec="guayo" aria-expanded="false">▶ Recap</button><button type="button" class="tr-mat tr-btn" data-am="guayo" data-n="22" aria-expanded="false">Ver fotos · 22</button></div></div>
+      <div class="tr"><div class="tr-date"><b>22/09</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-gb_sports.png" alt=""></div><div class="tr-body"><h3 class="it">vs GB Sports</h3><p>Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="gb" data-n="39" aria-expanded="false">Ver fotos · 39</button></div>
+      <div class="tr"><div class="tr-date"><b>25/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-martillazo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Martillazo</h3><p>Ituzaingó</p></div><button type="button" class="tr-mat tr-btn" data-am="martillazo" data-n="50" aria-expanded="false">Ver fotos · 50</button></div>
+      <div class="tr"><div class="tr-date"><b>28/09</b><span>Lunes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"></div><div class="tr-body"><h3 class="it">Entrenamiento</h3><p>SB5 Sports · práctica del plantel</p></div><button type="button" class="tr-mat tr-btn" data-am="entreno" data-n="19" aria-expanded="false">Ver fotos · 19</button></div>
       <div class="tr"><div class="tr-date"><b>06/10</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-streamers.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argentina Streamers</h3><p>SB5 Sports</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
-      <div class="tr"><div class="tr-date"><b>14/10</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-argeave.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argeave</h3><p>SB5 Sports</p></div><button type="button" class="tr-mat tr-btn" data-am="argeave" data-n="8" aria-expanded="false">Ver fotos · 8</button></div>
-      <div class="tr"><div class="tr-date"><b>03/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-uba.png" alt=""></div><div class="tr-body"><h3 class="it">vs UBA</h3><p>Ciudad Universitaria · la sede de la Copa</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
+      <div class="tr"><div class="tr-date"><b>14/10</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-argeave.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argeave</h3><p>SB5 Sports</p></div><button type="button" class="tr-mat tr-btn" data-am="argeave" data-n="49" aria-expanded="false">Ver fotos · 49</button></div>
     </div>
   </section>
 
@@ -366,19 +464,22 @@ footer .handles a{color:var(--paper);text-decoration:none}
     </div>
   </section>
 
-  <section id="plantel">
+  <section id="plantel" class="kit">
     <div class="sec-head"><h2 class="it">Plan<span>tel</span></h2><p>17 jugadores y cuerpo técnico confirmados para la Copa Potrero 2026.</p></div>
     <figure class="team" id="teamShow">
-      <img src="fotos-plantel_cp2025.jpg" alt="Liga Núñez formado en la Copa Potrero 2025" class="on">
-      <img src="fotos-plantel_cp2025_b.jpg" alt="Liga Núñez formado en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-24_g0.jpg" alt="Liga Núñez formado en la Copa Potrero 2024" loading="lazy">
-      <img src="fotos-25_09.jpg" alt="Liga Núñez antes de un partido de la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-25_b7.jpg" alt="Liga Núñez formado en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-24_g4.jpg" alt="Ronda de Liga Núñez en la Copa Potrero 2024" loading="lazy">
-      <img src="fotos-24_g6.jpg" alt="Liga Núñez saliendo a la cancha en la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch4.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" class="on">
+      <img src="fotos-24_ch5.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch3.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch1.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch13.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch7.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch8.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch12.jpg" alt="Liga Núñez con el cheque de la Copa Potrero 2024" loading="lazy">
       <figcaption>Plantel Liga Núñez · Copa Potrero</figcaption>
       <div class="team-dots" aria-hidden="true"></div>
     </figure>
+    <div class="meet-h"><h3 class="it">Conocé <span>al plantel</span></h3><p>Los videos que venimos subiendo al Instagram. Tocá uno para verlo, o tocá a cualquier jugador para ver su perfil.</p></div>
+    <div class="reel" id="reel"></div>
     <div class="squad" id="squad"></div>
   </section>
 
@@ -409,13 +510,15 @@ footer .handles a{color:var(--paper);text-decoration:none}
       </div>
     </div>
     <script async src="https://www.instagram.com/embed.js"></script>
+    <div class="meet-h brand-h"><h3 class="it">Las marcas <span>en la cancha</span></h3><p>Lo que armamos con nuestros sponsors. Tocá un video para verlo.</p></div>
+    <div class="reel reel-b" id="reelB"></div>
     <div class="community"><b class="it">¿Jugás en Liga Núñez y tenés una marca?</b><p>Este camino también puede ser para vos. Escribinos por Instagram a @liganunez.</p></div>
   </section>
 
-  <section id="historia">
+  <section id="historia" class="kit">
     <div class="sec-head"><h2 class="it">Nuestra <span>historia</span></h2><p>Tres ediciones de la Copa Potrero, tres veces con Liga Núñez adentro.</p></div>
     <div class="years">
-      <div class="yr"><div class="y it">2024</div><div class="stage">Cuartos de final</div><p>Primera edición, en el Club Municipal Lionel Messi de Derqui, Pilar. Liga Núñez entró entre los 8 mejores de 40 equipos.</p></div>
+      <div class="yr"><div class="y it">2024</div><div class="stage">Semifinal</div><p>Primera edición, en el Club Municipal Lionel Messi de Derqui, Pilar. Liga Núñez se metió entre los 4 mejores de 40 equipos y cayó en semis con Villa La Ñata.</p></div>
       <div class="yr"><div class="y it">2025</div><div class="stage">Fase de grupos</div><p>Segunda edición, otra vez en Pilar. Jugamos contra La Wilson, Las Piedras, Barche y Fiebre Amarilla.</p></div>
       <div class="yr now"><div class="y it">2026</div><div class="stage">De local, en Núñez</div><p>Tercera participación seguida, ahora en Ciudad Universitaria y con tres sponsors propios.</p></div>
     </div>
@@ -429,7 +532,18 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <p class="gal-note" id="gal-note"></p>
   </section>
 
-  <section id="instagram">
+  <section id="videos">
+    <div class="sec-head"><h2 class="it">Partidos <span>en video</span></h2><p>Los partidos de Liga Núñez en las dos primeras Copas Potrero. Arriba corren todos en loop; tocá cualquiera para verlo con sonido.</p></div>
+    <div class="vfeat"><div class="vframe"><iframe id="vmain" title="Liga Núñez en la Copa Potrero" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><div class="vcap"><span id="vcap-k">Reproduciendo en loop</span><b id="vcap-t">Todos los partidos de Liga Núñez</b></div></div>
+    <div class="vtabs" role="tablist" aria-label="Videos por año">
+      <button type="button" role="tab" aria-selected="true" data-v="2024">2024</button>
+      <button type="button" role="tab" aria-selected="false" data-v="2025">2025</button>
+    </div>
+    <div class="vgrid" id="vgrid"></div>
+    <p class="vnote">Más partidos y resúmenes en el canal de YouTube de la <a href="https://www.youtube.com/results?search_query=copa+potrero+liga+nu%C3%B1ez" target="_blank" rel="noopener">Copa Potrero</a>.</p>
+  </section>
+
+  <section id="instagram" class="kit">
     <div class="sec-head"><h2 class="it">En <span>Instagram</span></h2><p>Lo último de Liga Núñez camino a la Copa Potrero. Todo el contenido, en @liganunez.</p></div>
     <div class="colabs">
       <div class="colab">
@@ -460,15 +574,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
 <section class="join" id="jugar">
   <div class="wrap join-in">
     <div class="join-ph join-show" id="joinShow">
-      <img src="fotos-hd_1.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" class="on">
-      <img src="fotos-hd_2.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_3.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_4.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_5.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_6.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_7.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_8.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
-      <img src="fotos-hd_9.jpg" alt="Liga Núñez jugando en la Copa Potrero 2025" loading="lazy">
+      <img src="fotos-24_ch3.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" class="on">
+      <img src="fotos-24_ch1.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch12.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch7.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch13.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch8.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" loading="lazy">
+      <img src="fotos-24_ch4.jpg" alt="Liga Núñez festejando en la Copa Potrero 2024" loading="lazy">
     </div>
     <div class="join-txt">
       <span class="eyebrow">El torneo F8 más grande del país</span>
@@ -512,15 +624,15 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var nick={'Mateo Grillo':'El Jeque'};
   var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Monza':'monza'};
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
-  plantel.forEach(function(n){var p=document.createElement('div');p.className='player';p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
-  var pres=document.createElement('div');pres.className='player dt';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
+  plantel.forEach(function(n){var p=document.createElement('button');p.type='button';p.className='player';p.dataset.n=n;p.dataset.r=nick[n]?'Jugador · '+nick[n]:'Jugador';p.dataset.i=ini(n);p.innerHTML=av(n,ini(n))+'<span><span class="nm">'+n+'</span><br><span class="ps">'+(nick[n]?'Jugador · '+nick[n]:'Jugador')+'</span></span>';sq.appendChild(p);});
+  var pres=document.createElement('button');pres.type='button';pres.className='player dt';pres.dataset.n='Federico Figueroa';pres.dataset.r='Presidente';pres.dataset.i='PR';pres.innerHTML=av('Federico Figueroa','PR')+'<span><span class="nm">Federico Figueroa</span><br><span class="ps">Presidente</span></span>';sq.appendChild(pres);
   var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico']};
-  staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('div');p.className='player dt';p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
+  staff.forEach(function(n){var r=roles[n]||['DT','Cuerpo técnico'];var p=document.createElement('button');p.type='button';p.className='player dt';p.dataset.n=n;p.dataset.r=r[1];p.dataset.i=r[0];p.innerHTML=av(n,r[0])+'<span><span class="nm">'+n+'</span><br><span class="ps">'+r[1]+'</span></span>';sq.appendChild(p);});
   // Galería por año (lugares listos para cargar fotos)
-  var sets={ultima:['plantel_cp2025','24_g0','24_6','25_b0','25_02','24_7','25_06','24_8'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
-  var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, una selección de 2024 y 2025.',
+  var sets={ultima:['24_ch4','24_ch3','24_ch2','24_ch1','24_ch14','24_ch12','24_ch13','24_ch7','24_ch8'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_ch5','24_ch3','24_ch1','24_ch2','24_ch7','24_ch8','24_ch12','24_ch13','24_ch14','24_ch10','24_ch16','24_ch11','24_ch15','24_ch9','24_ch6','24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
+  var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, los cheques de 2024: cuartos y semifinal.',
     '2025':'Copa Potrero 2025: partidos ante La Wilson, Las Piedras, Barche y Fiebre Amarilla.',
-    '2024':'Copa Potrero 2024: el año que llegamos a cuartos de final.'};
+    '2024':'Copa Potrero 2024: el año que llegamos a semifinales.'};
   function gal(k){
     var g=document.getElementById('gallery');g.innerHTML='';
     (sets[k]||[]).forEach(function(f,i){var d=document.createElement('figure');d.className='ph';d.innerHTML='<img src="fotos-'+f+'.jpg" alt="Liga Núñez en la Copa Potrero '+(f.slice(0,2)==='24'?'2024':'2025')+'" loading="'+(i<3?'eager':'lazy')+'">';g.appendChild(d);});
@@ -539,7 +651,8 @@ footer .handles a{color:var(--paper);text-decoration:none}
   (function(){var f=document.getElementById('joinShow');if(!f)return;var im=f.querySelectorAll('img'),i=0;
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     setInterval(function(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on');},3500);})();
-  // fotos de amistosos
+  // fotos de amistosos (directo de las carpetas del Drive)
+  var AMF={"baires":["15JHbJmuBugQ4bWgjx0XN39m0sQTjh7ru","1SR0-q20Gry7PgI77CYMFJNLBc15Vd0W1","1KlbWxAyD9Ld6i4y_wPc9m1yPTOfic4t7","13RGYzUavp1pRWxrTW1DgUwshc3Z0tOR7","1OnNy7e1GB0M1riC5qwVFHqPyxsJ3TFxd","1pFUaCv_-ORnzuCqjeuoaoOq-zLc2kYtR","1eQRqMdaSUgL9Nq-mKzb7vfN24ehwklOV","14fkrV7Zg1Rje-NmHT5r1Jb-Xj8HsJlt1","1STipjjQZmootNtJAAuSGKG_KDIK2oKe0","1V787s3hWEefLpctloWxYUPhk-29jgPDK","1zm6bOO4BibJD_b2Ef1a1jLwc_Cxx93KC","1zwZlZ_5bERp-UJ-uMbfZpYH4pdJpQ5ND","1eGWJB31ec_wtB8OMo9AZTVwENj4tyuhJ","1ueoqXWp1HfbYwXe_v6K-EkGtXr9CPLZv","13euNy2s6ZjCZMHOnjFstSAkEZZsTNG6v","1i_SsF-BjHA2HY_iqS5mB2x0T0rVxgtN2","10zMguGAFbZV0ewq7PgSemBTxK-Xo8rpw","1II0QVpCkUYstsQCp3cbQd9wkkJtGXVXZ","1Le5rLVpCTzUawTkQsdtG4dDaWpqGLet6","1t70KTtjOXwCcGyxeszjPG4TGGiP_v5iU","1Uc00QYmjSfoA5SsSoG9jskSqtPUsduyV","1bPDCXP7eMSyxKeF7aYEiqI6QAk6vx9Tr","1Aj_bpwkVEI_Jb3pic6FlvTNNtgmFzfOO","13wlbxrfhTcMxLtb5teWymsSjI7xo73jL","1NzeHRC1EJLzdJm0jU2kRz_zkpgxkIoz6","1T6QVKKJAIi5LMf11sWXJkG0NfwucwYk5","1Uv0U2QcZcIoP6s1nvbC_krKb4BGUBbTr","1-00qRpjil9hVaOdpVqp9I8zvT7cfu7Qf","1Njv47gjb5ZSQHgHP3O5vpztj-LN94UOB","1dErvRo2mCDoMTK_17Q99rtScia0dDvBK","17TY-12L8vhcHEKtQyUP_LU3NOxb9UT0l","1csAFLNA3ZBsEUPhbp01QnE8kIA_jSCc9","1c354vOQh41CEr3NBD6fFfR6KIDMbZuBm","1Ip9RIakxnl7GXb3bEdqvzWfmTHs32W2i","1vw5OHFZsI3N4nVgRgtda7pU9L55T-8_v","1zl0I-JTI4iYgj4dg9qERsjwLAOVP3Gdv","170qoaAMLU5RxgdR0XlGtCvHyWmXrlu3p","1dbuoy6xlUYbYingeBrDkmvRavdXg9MbR","11AF6plkcwTnSe5p4-VmdwYboJCo0Dthl","12WFhgK5-3hINlzZWeSIuZcw-FUsoRC7Z","1NpaRmT0FCycljrCfe85pY-KutnOjEo_C","1rXNCQorswawcdvqdrhXD8hnsw0-wzaeM","1px8EGPJJ4OpYksuIsiZ8Rg-11sMxHkO8","1cB3DOGVKdpfUK6GgjijmAaA15CNE2xbk","1DuyMJaSPkGxIP1oVOc9GFE0pYYEkuIFr","1KA8sLpcQaSoNAmiMbEQogWRdsLSnyHst","1ECqQHFi9R4tDp-D6Fh2BsETvBF9Eul-J","1PjZ9nZhqFp3TOn79goFCfZnQ0aZDJoTs"],"guayo":["1NZK2itKLXFdASBJ_Cx7Ci6aszOXLbSR0","1Fy_5g29Ct2gu72QFI0QZPf2Z62SbXSDZ","184ScC-7UewZqRF0-Nh4xJwWJsBRXoYnr","1FlWhdVhDqiZOiTyzw0LD_fq0P_fPG6T3","1T1RNdJ7KIj12WRcGSHWxfiyPmsJT0JOH","1ERO1OoOVg9EJK47apV1HpHA1oF_NuUnN","1W5yD-jYiXPX9jT-uf-CAIQEZXwo53XiZ","1ve9IurtczoOZoSYIJQzhkakHVH_0UI8O","16R9Glt62rrxw3E9rE5GkCsyNOIWwQz-i","1dQMTOeP7MrcvNBP_01PKtuSCQ1AYQa9X","1x-EaqGQNhPMZAgINb1zh-kkUZ9xcsU-l","1DIEWKMPLIXVYko1JtKFyF_P7Ny437RlD","1IXchANmlvfs7Nj_SoG3XNgyaC030Os2M","1eIP35JURFMGs0gFTzVjZz0YqBdt3wQIk","1GhuJRPwex8jZj1B7UOHXowtokC1j3IlX","1lZHJU4MMx-mjeSYY3MeuHpDKP9ndToCL","1RXkRrYw9BD9xVNJpPdmiUffX3RJOAn9q","1gqBuj2Jx3SWTh5vnSXbwu7WLGBSYL3Z-","1aGEfASZU9XA1mGoghRFM8ityDwfNTTZY","1vFC_y7fbpUMa7OSkacHRq5jZirhX3-7H","1KTV15VDq9VTDy8ewy-fJlSXa3MATpNFT","1AIDSaKLUYFTMmAw0ENXmAZbBq8haTzZu"],"gb":["1eGV7kxnIVaIornwLfmbWgGbjfSPC4KHG","1W6KF5so9mZXcAWzlxBvN-scAXPBPTDx0","1PoVo257voNihvemdpCwFjBV3YsB96cWt","1AUvklg63ZOPY5LhpHtQkrA9a_eHkOYNg","1QZjgbXJPMqCw9syuzDnhXY6tAv1Sb1sf","1xEa0KWNruKRTEUO8P2TwOLh6hTlUOm-w","1GgCoKDACtXMHV-1Y3sbMAmv51XRxbWBY","1_m3AcIFZKp7HQceGr-yGywVMGFKBkjHV","1qHM_Mj270R7rX3hI7n73TWiseZOuN9m9","1d7G0RXHw54Enivu8yQwwXR4VNHKGU0LY","1lDOnmjf1G2LuAJQffBRO6X9pTw3p30pp","1RyQXB7hBLVqUsGXEoQUYsuhdMYkxHAyQ","1GRnBg_Nr0pGvfrGCBE7w4wadGWdlQIFX","1dFk9Ssjmp-uH_sH0S9RMET5cyYRCgAPL","1vUeUGtTAlGp-316wbkFLFdBFeFdEnled","11ZTqopLDGDMiFD4cPyCEH4ydAo4yMWrs","1kkX-KvmVhoBI__UyeLF9QZy7P41Tx2gP","1LDUMlYofiU_UORzhfJRtuDFHCyEWFRad","1Kez5np2f5KdaFYFVxMeCd5JzEHFWjjXU","15qkmjJY1Zsuv81kNZb0cBoV0wKKanJpz","1zaI7hb6eJs5M4rYqu7uETX0KFPZFSkiZ","1IIzZ0wtmMcWzE8Ds3fL1U3k7S802LmH5","1KKBNPN9fJbZFmRl02ptuhKcKpgHuuEht","1gxEuuLO7dWE24mhfr6jhrSOpX21Rk3zm","1ED3ZQ-tNEzZxk9m4uNAckIdnnpJdsECf","17QjXKWw_yogqqfWjL320ms_niXK7WYL6","157pyIrmLIt0u_wUTLTgrGwO-yo9m1-FU","1wnW1Fd2KhyyVU5lLsxAyMaHWQ0_tl__z","1ar-GzNskQPtsObfGKVeuo26FaZqCth7Q","1d2aqEk2FuFYjkv8n7dp92A2Vu5GhcTCZ","1PU847QlIykgIdg-afaeTFLBBbx8hGlw7","1iwakHFr9prF0IkTVT2ixvDacRl_omabL","1xWEK7c97ppetHI-0BYhe8eGlrBbM0vHW","1pxTZCzXYe_tWmdjmElnFLLZfilTCfqwW","1S6p9K6-turItslYGT1jD9b6xe8bc9BGq","13LS-6bAshHAZB_i__VWh-jbMRaKPcyx0","1iUQKTm9QPHKYywiKjQGoSL7iKlxOC1Oo","1SG5KfN89hNcDw0DPnRUhJ4Fvuf8umaRd","12MLJ9tK9jQNksuCM6G5wMxzfQuyW969N"],"martillazo":["1bIpD4i_0JbnfJGlslBq4HDuSN1O4zVvC","16Q3Yfglq7T2u5TQf2AliqoOxcNR_4Xw0","1yIqIVtkeVKvRqCrepS_uB5-3jozGRAa8","1AjFEIhwLgd8b8Fg8NV391YFXGKyjv3Wt","1OxwdJxtNPzBuhpw_t9TiVBP6ssdUmMPM","1308EqMmRmwame1WXphr44mtDWVjj_Ehx","1dVoyJmI44HDQS0SLO-byX-MZWIimQtNQ","1BPkCasmEgv31nUUaWuGhOzM3wQk0I3r4","1vFwADIx_zNNfSFR0l1HKIMYwsXsUFUJ4","1XeH8RWghbfVVci_SLmY4ikHeCn5JVVBG","1IGZtKWC-VWkzLqvFPbxWwoQMh0id0k0w","1iYNhZAfDAYj2U70i-lVlYjEkyOiX-HHB","1L42kjfkktVBJYNjz6r8l1fyQu2dUJz6Y","12fEPaBkbGXiika4ka_Fv8K7MQr87JV8w","1LZefj4jlCy_c-jjmIxaRJROlNpXNYMvg","1DpuzzL3y3_uCz09HeUbShoBISlCev1je","1rulE6KjH45cRpnq-e-HanUlI_VEtzEcK","1msqh7O91j3W_KYQa1lY2C7ravNxiMHYW","1ffhcYseVTtK6kH4QgL_DYzpgr2WoX_7N","1-tUOIRw_Vrz8us-ZTSCyfesmLgNBHDqv","1ydMaxQXOfKmWGdEm_YpTrMKq2urJPVo4","1BovOWiVS67b-sSCRE_bbY_H1Lqz1Bcan","12rJCJC2EOqL6DqSqWovZjVyRPuQuGlbx","1p76vtwEYLf-Sl4lY6T5ASGI9AxlKGWDW","1hIDLRJfZs6h8rD3wDTsDCXTc2kG6zc-q","15zP2bWKBs-Y0q-8XH5zbe8AxclV8YUcb","1eNqiBnIUojkxYX_AaSz6R3-GZcEcXCZz","1ir_nIzvteHPEZ-6t97bnV9ABfxObMmFo","1QQVBdU7go1vWPSrW3nksk4jpk2ao39EY","14rEaTJX0kfx09fQViAya1aFJhZg8sEHf","1G4eSmZycD10Zqewu4GTukL9g9igul1cu","1WAhnxdq9BSZmzhOvaJdqgiuRQWYBug0f","1TCgs_EKSZOOYsT4PM42XORn_jOVIxxSY","1zWt5Cvp2BTrEZUKlx_xc7X4jQUkM5DGy","1GECgxIjURpCj3LKPZg2-juSY10LoW-aQ","1uqWISRtnvhSBcu0EPdF2wb4tE4rm8gSH","1TKmVr4IVHZPBR0pSlPvxkVCwMBXPpq2G","1QisHkkxz28czpxAhEndQ8EuGYkC-7WIY","1Nq1toun27ENCqvisyXXo-T3PZ3acbMBC","1bulgkzZ2h9chzICX-DB7SQyinIrxKz9E","1ZZOnRS_F_BmyqkckmDy_RTwRthz9Iaos","1URtCfVhYElCgOcuLUtGF2domuRtBZ4G_","16PqWxq0fbpaIekDMOCzD5ChW69ZN-g5h","1Um2TVZsPRocbg7Bj0aJB0tD5cd8viaYN","1K_7ICVz2B-mBLHA3cBcrqRrIGZBNY7t4","1Ww5InhgotEECfvksRsc0mnYfPXUSWw9L","1O92XmfEQeYnRDDzIMcATmeqBhVzslmGM","1G6zxvYJKog98FyRajLe5NaXpGkc7qTHa","1hLdw6-F_b_I5u46eBjdpqFhEQPPeKxka","1O3AKpNsoqm1YvTnvJBptB7sxN254IYe4"],"argeave":["1F581sGA32Kx2MwubuQ1-zNWLIO3YRm90","1qMgOlbJqO3ECWdWEfHAbIl7OHCnj8gVh","1yQ1-S28cnei2TJNwFhRmtq4fHrPHFtK8","1bATu2nkhz9DOAdfwmVmSNTgtcA2kTEd2","16ije23QMShFz5zkEtoF6FAg3NMXWObdP","1amT_ex4smnCYUFrfFqlCYF34ZCHCQyzP","1u-J8283V1Yz140DRtj4gYiyWQxmRV1Sz","1ELe8Ie9zHC2ZJ-80qGUSuQmwEbgEZT95","11lTWsQKvdK23zF6oQ9gjKnCZpVxtbzpl","1zNAjRqOgK6nQYuieTkm1bgi16nDZBMIe","1zAAX05487Z5Fw_WtCeqVxqDiMKOpVs4m","1XJxZV2Kpl2YqN1wWH_CTVUsopd7X4t3m","1XRYZTePoWmKduo2ptxTirw0HXUmfNZuS","1QYCfHGtyNc8KLr6_bkxf1UUwlLDCgMCZ","1Xx-NVh5Yw95CIRfOGRqew5ewSKag96UT","1QYW6rWMUVaDTAnJjJSppFYBdhc5lPcdT","1N_6razXaRNUh-dj94t1CUW4arOyX8bql","1qC7W4aTvmpj2qHoBH4hDbjCp41KziqvM","1jogpJ0oaBkPyr6AB64_vvWlpeJ17pUTS","12RG3i8BzNIBWF5xA8ea7zzesSvtUmffq","1Mf4dEG_3oi1bLxsI7oW-93Mw_vWNHvgM","1GbSraxdWwxuqovsfRSLyoj2SXPEWCacJ","1VYX1bKdZI-CKM0CvFVJsLynTrJ_T7U5i","1FEXQFwiTefVSIj3GHJy-iBAkLo17AZZM","1p2K4meJcCH_edUzZ2TUZuQ-kswo1Dqfu","1C_bVd8AzTlL2uRg6hEd7NDY3YFEW-T2O","1HGLZ2D5he9VyfvKAJYujyMEbqF4qvUy-","1iPMbYP5O9XVeVXbnk67MO8h2llxgIeGX","1gSzGPpeGtbJZwN4ZU3Oly38egWKXLbiH","1uknB95-QfMBYx2XI1CmsuQKBWkXyPYyn","179MJGAo2e8zSYyc5m-ds5VAnf8UcWTKl","1-l8fdyrBsvNMm7h3pQ1jH3rYqDYiW9hl","1zoLyfau63i0WcZOm8D43MVp9Eld5WVT9","1JhWmlUSZ1M6TsrkWvlwpWzwUGr8XNu6S","1FzJ7NSlx8GXKnl5tjh4WRmEwHRL3YssM","1otc86l784MhZ1IsNJFVqNVxH7z8mTuKn","1OuEpAnKeZw-KLhQJNm1B2GE9_1d5QYC8","1GCbpLLm_qgLehSPauTi0ZlHArF4LwNqZ","14-6VKPheD8N6BgtPeePXU-JqKwGv-jQX","1AEfjA6gfr7nDOZKP7Nc8sCSdzKZQxdVp","1TR3XrrWtuPOutdR-yEDfdZ_KaDKzEUPK","1BCiXZAqF81mnNC_OdMmr9wAs5jBSN5zJ","1yqSKo1fRk0ca14ndDbdJKNXRCsv9CBh-","11-wJ51yDYEzsRB-7hYkmTNtipc5faPG1","18ZvERpICq8XI53HyA9D6x_eHanD9Ssu-","1GRw_9G7HVinD_bybogU2LgkYcMN_LmnT","1YkkuYcSUMSlsQBHVwTUAcQTFK6OaZwTX","12XnnG3oSZq4whAxHtYEFMM-Rx0W-Ydgc","1VbVjqWcVwT6QOvfHGEt5JrvT5Kjeb32e"],"entreno":["1eQewSyhNUwzQHvwoFQkG9CmytmumGfcq","1XBh630a6rLahGMsBBXfqx7y7Z-_F7JC3","1MIdD1QIvxBuSdoA4OVCdhFuBwLN0vuFE","1GVbWc4GPU3_bBTodlyKe49kAPPYsXZTF","1LceaTvYnBRsg65ERVTzNOIJCWBnmK8cu","17DdS3-1qfCRDTpil-yYFEqXomKhBw-Xn","1whV6XuH0q41M0AwfLhQVl6XCUu47M_KK","1KnkGyLdVaDs_RSQbJMk2YpU4EHWN6txE","16hjfdm4IHdgmDfPT5GTVH69DuHjj0VGd","1055gtoDax4sKiUnY0PArKZ1YmgS9Gzx-","1ra6oA_PhvqtjN0Kj0WtpW-Wyqvs9VhCH","18NuJ1wyttLMvdoHagzDetfj9xy0cfwpv","1TCsfGQwiUbHjlCQ6H7pUm64MD3yA4BMp","1NY5YTZuvAeKcTqdCF_gxoQMA3DCaG405","1LEyU6pRD9w8GlvmIKm9mc9i-kRRNCvQ7","1jgCpg6eU4qfrlNNMQR2V29V6zystuTV7","1whuZiPJzr9EHMK6tYk7TpzyPBev-AsWu","1aT1i18gCKyV0ayoZjcbZHoX8y9BgShw-","1t5mawJuFtrmWDvc3R1UUD31NXU2b4y6M"]};
   (function(){var pre='fotos-';var lb=null,list=[],at=0;
     function show(){lb.querySelector('img').src=list[at];}
     function open(arr,i){list=arr;at=i;lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.innerHTML='<img alt="Foto del amistoso"><button type="button" class="x">Cerrar</button><button type="button" class="nav prev" aria-label="Anterior">‹</button><button type="button" class="nav next" aria-label="Siguiente">›</button>';document.body.appendChild(lb);show();
@@ -548,9 +661,51 @@ footer .handles a{color:var(--paper);text-decoration:none}
     document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();if(e.key==='ArrowRight'){at=(at+1)%list.length;show();}if(e.key==='ArrowLeft'){at=(at+list.length-1)%list.length;show();}});
     document.querySelectorAll('.tr-btn').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),nx=row.nextElementSibling;
       if(nx&&nx.classList.contains('am-strip')){nx.remove();b.setAttribute('aria-expanded','false');b.textContent='Ver fotos · '+b.dataset.n;return;}
-      var arr=[];for(var i=1;i<=+b.dataset.n;i++)arr.push(pre+'am_'+b.dataset.am+'_'+i+'.jpg');
-      var st=document.createElement('div');st.className='am-strip';arr.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.loading='lazy';im.alt='Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
+      var ids=AMF[b.dataset.am]||[],arr=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w2000'}),sm=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w800'});
+      var st=document.createElement('div');st.className='am-strip';sm.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.referrerPolicy='no-referrer';im.loading='lazy';im.alt='Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
       row.after(st);b.setAttribute('aria-expanded','true');b.textContent='Cerrar fotos';});});})();
+  // videos YouTube
+  (function(){var V={'2024':[['wQN2hoBsr6w','vs Villa La Ñata','Semifinal',1],['p_n_MV6Scvo','vs Picapiedra','Cuartos de final'],['yGMY-fihVC4','vs Argeave','Pase a cuartos'],['EDkpfH6X_IQ','vs La Gambeta','Definición por penales'],['rCZqTL1dXps','vs Monteyeres','Pase a octavos'],['uj8XkJ0ov14','vs Fenikks','Fase de grupos'],['Kwqp8U0DVUw','vs La Crema','Fase de grupos']],
+    '2025':[['S8HEAzYCT2Q','vs La Wilson','Fase de grupos · rival 2026'],['RWfg07xqZxU','vs Las Piedras','Fase de grupos'],['wltd2FQha9U','vs Barche','Fase de grupos'],['8crmQbx-Ffg','vs Fiebre Amarilla','Fase de grupos']]};
+    var g=document.getElementById('vgrid'),Y='https://www.youtube-nocookie.com/embed/';if(!g)return;
+    function draw(y){g.innerHTML='';V[y].forEach(function(v){var d=document.createElement('article');d.className='vid'+(v[3]?' semi':'');
+      d.innerHTML='<button type="button" class="yt" aria-label="Ver Liga Núñez '+v[1]+'"><img src="https://i.ytimg.com/vi/'+v[0]+'/hqdefault.jpg" alt="" loading="lazy"><span class="pl"></span></button><div class="vt"><span>Copa Potrero '+y+' · '+v[2]+'</span><b>Liga Núñez '+v[1]+'</b><a href="https://www.youtube.com/watch?v='+v[0]+'" target="_blank" rel="noopener">Ver en YouTube</a></div>';
+      d.querySelector('.yt').addEventListener('click',function(){var m=document.getElementById('vmain');m.src=Y+v[0]+'?autoplay=1&rel=0&playsinline=1';m.title='Liga Núñez '+v[1];
+        document.getElementById('vcap-k').textContent='Copa Potrero '+y+' · '+v[2];document.getElementById('vcap-t').textContent='Liga Núñez '+v[1];
+        document.querySelectorAll('.vid.on').forEach(function(e){e.classList.remove('on')});d.classList.add('on');
+        document.querySelector('.vfeat').scrollIntoView({behavior:'smooth',block:'start'});});
+      g.appendChild(d);});
+      document.querySelectorAll('.vtabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.v===y?'true':'false');});}
+    document.querySelectorAll('.vtabs button').forEach(function(b){b.addEventListener('click',function(){draw(b.dataset.v);});});
+    draw('2024');
+    var all=V['2024'].concat(V['2025']).map(function(v){return v[0]});
+    document.getElementById('vmain').src=Y+all[0]+'?autoplay=1&mute=1&loop=1&playlist='+all.join(',')+'&rel=0&playsinline=1';})();
+  // recaps de amistosos
+  document.querySelectorAll('.tr-rec').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),ex=row.parentNode.querySelector('.am-rec[data-for="'+b.dataset.rec+'"]');
+    if(ex){ex.remove();b.setAttribute('aria-expanded','false');b.textContent='▶ Recap';return;}
+    var w=document.createElement('div');w.className='am-rec';w.dataset.for=b.dataset.rec;w.innerHTML='<video controls playsinline autoplay poster="fotos-recap_'+b.dataset.rec+'.jpg" src="video-recap_'+b.dataset.rec+'.mp4"></video>';
+    row.after(w);b.setAttribute('aria-expanded','true');b.textContent='Cerrar recap';});});
+  // Conocé al plantel: videos y perfiles
+  var VID={carrizo:['1YErsHMQF9MYSPks3oBs1Zs0mmwu6G0vU','Fede Carrizo',1],sisca:['1IDbxAqHcB91uei9_JC191Vmy1HV4achP','Fabio Sisca'],porfi:['14DYa44bFU6EbJ7K5Ep1ccNRRMGQZHwzw','Sebastián Porfirio',1],carlos:['1IQ8JJNKn73pHLzlkj1NAlyWAKsttIMbr','Carlos Díaz',1],tute:['1S6Wawe5Lxfu2UDl3F4CPpAYbRqTN0W0q','Matías Miranda'],mateo:['1-x_NHtMXatKSWTtmpNT06TffCnXuMoxN','Mateo Flaherty'],pepe:['1sAkOOQNBlJn4tqrguOKerrRvJ4XhWKGA','Juan Agustín Basualdo',1],topomafia:['18T-0ZJr8yWYylHTr3daOoVKq2iiLZJ7o','El Topo',0,'El Topo'],churros:['1aI6glUrHpKO2qzgB8zMWOkWXx2x_NSuQ','Churros El Topo',0,'El Topo'],pecheras:['1RcNzfcecpOTHLXEj-LO9pYLQggeVzi67','Wolfi',0,'Wolfi']};
+  var REEL={reel:['carrizo','sisca','tute','mateo','porfi','pepe','carlos'],reelB:['topomafia','churros','pecheras']};
+  var POSTER={ortigoza:'origoza'};
+  // video de cada perfil (nombre del plantel -> clave de VID)
+  var videoDe={'Fede Carrizo':'carrizo','Fabio Sisca':'sisca','Sebastián Porfirio':'porfi','Carlos':'carlos','Matías Miranda':'tute','Juan Basualdo':'pepe','Mateo Flaherty':'mateo'};
+  // datos del media day: {'Nombre':{'Posición':'...','Apodo':'...','Pierna hábil':'...','Dato':'...'}}
+  var datos={};
+  function modal(html,cls){var m=document.createElement('div');m.className='pm';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.innerHTML='<div class="pm-box '+(cls||'')+'"><button type="button" class="pm-x">Cerrar</button>'+html+'</div>';document.body.appendChild(m);
+    function close(){m.remove();document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}
+    m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('pm-x'))close();});document.addEventListener('keydown',esc);}
+  function vframe(k){var v=VID[k];return '<div class="pm-vid'+(v[2]?' h':'')+'"><iframe src="https://drive.google.com/file/d/'+v[0]+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+v[1]+'"></iframe></div>';}
+  Object.keys(REEL).forEach(function(id){var r=document.getElementById(id);if(!r)return;REEL[id].forEach(function(k){var v=VID[k],b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver video: '+v[1]);b.innerHTML='<img src="portadas-'+k+'.jpg" alt="" loading="lazy"><span class="pl2"></span>';
+    b.addEventListener('click',function(){modal(vframe(k)+'<div class="pm-info"><span class="rol">'+(v[3]||'Conocé al plantel')+'</span><h3 class="it">'+v[1]+'</h3></div>');});r.appendChild(b);});});
+  function perfil(n,rol,ini){var d=datos[n]||{},keys=Object.keys(d),k=videoDe[n];
+    var info='<div class="pm-info">'+(fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="">':'<span class="num">'+ini+'</span>')+'<span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+
+      (keys.length?'<dl>'+keys.map(function(x){return '<dt>'+x+'</dt><dd>'+d[x]+'</dd>'}).join('')+'</dl>':'')+
+      '<p class="soon">'+(keys.length?'':(k?'Datos del media day: muy pronto.':'Datos y video del media day: muy pronto.'))+'</p></div>';
+    modal((k?vframe(k):'')+info,k?'':'nov');}
+  document.querySelectorAll('#squad .player').forEach(function(p){if(videoDe[p.dataset.n]){var v=document.createElement('span');v.className='vb';v.textContent='▶ Video';p.appendChild(v);}});
+  document.getElementById('squad').addEventListener('click',function(e){var p=e.target.closest('.player');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
   var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
