@@ -113,8 +113,8 @@ tr.us td{font-weight:800}
 tr.us td:first-child{color:var(--red)}
 .match{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #2f2e2b}
 .match:last-child{border-bottom:0}
-.match .when{font-family:var(--display);font-weight:900;font-size:1.5rem;line-height:1;text-transform:uppercase;width:72px}
-.match .when small{display:block;font-family:var(--body);font-size:.62rem;font-weight:600;letter-spacing:.12em;color:#9a988f}
+.match .when{font-family:var(--display);font-weight:900;font-size:1.5rem;line-height:1;text-transform:uppercase;width:118px;white-space:nowrap}
+.match .when small{display:block;font-family:var(--body);font-size:.62rem;font-weight:600;letter-spacing:.08em;color:#9a988f;margin-top:4px;white-space:normal}
 .match .vs{font-weight:800;text-transform:uppercase;font-size:.9rem;min-width:0}
 .match .vs span{color:#9a988f;font-weight:500}
 .match .res{font-family:var(--display);font-weight:900;font-size:1.6rem;color:#6d6b64}
@@ -308,6 +308,9 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .pm-info .soon{font-size:.86rem;opacity:.75;margin:0;border-top:1px solid rgba(220,200,164,.3);padding-top:12px}
 .pm-x{position:absolute;top:8px;right:8px;z-index:2;background:#f2ead9;color:#1d3428;border:0;font:800 .7rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;padding:8px 10px;cursor:pointer}
 @media (max-width:720px){.pm-box{grid-template-columns:1fr}.pm-vid iframe{max-height:62vh}}
+.day .ln{display:block;margin-top:8px;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.day.lnday .ln{color:var(--red)}
+.mnote{font-size:.78rem;color:var(--muted);margin:10px 0 0}
 /* historia */
 .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .yr{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
@@ -406,7 +409,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   </div>
 
   <section id="cronograma">
-    <div class="sec-head"><h2 class="it">Crono<span>grama</span></h2><p>Diez días seguidos. El horario de cada partido de Liga Núñez se completa después del sorteo.</p></div>
+    <div class="sec-head"><h2 class="it">Crono<span>grama</span></h2><p>Diez días seguidos. Ya están los horarios de los primeros partidos de Liga Núñez en la fase de grupos.</p></div>
     <div class="timeline" id="timeline"></div>
     <div class="legend"><span><i style="background:var(--ink)"></i>Fase de grupos</span><span><i style="background:var(--red)"></i>Eliminación directa</span><span><i style="background:var(--gold)"></i>Final</span></div>
   </section>
@@ -443,12 +446,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
         </table>
       </div>
       <div class="panel dark">
-        <span class="pending">Orden a confirmar</span>
+        <span class="pending">Horarios confirmados</span>
         <h3 class="it">Nuestros partidos</h3>
-        <div class="match"><div class="when">Fecha 1<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> La Wilson</div><div class="res">–</div></div>
-        <div class="match"><div class="when">Fecha 2<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> Social y Deportivo</div><div class="res">–</div></div>
-        <div class="match"><div class="when">Fecha 3<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> La Martona</div><div class="res">–</div></div>
-        <div class="match"><div class="when">Fecha 4<small>A confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> El Kiosco</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Dom 15/11<small>10:30 · Cancha 4</small></div><div class="vs">Liga Núñez <span>vs</span> El Kiosco</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Lun 16/11<small>10:00 · Cancha 3</small></div><div class="vs">Liga Núñez <span>vs</span> La Martona</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Mar 17/11<small>11:30 · Cancha 1</small></div><div class="vs">Liga Núñez <span>vs</span> La Wilson</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Fecha 4<small>Día y hora a confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> Social y Deportivo</div><div class="res">–</div></div>
+        <p class="mnote">El sábado 14 Liga Núñez queda libre. Horarios del fixture oficial de la Copa Potrero.</p>
       </div>
     </div>
     <h3 class="it allg-h">Todos los grupos</h3>
@@ -609,13 +613,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
 <script>
 (function(){
   // Cronograma real de la edición 2026
-  var days=[["14","Sáb","Grupos · Día 1","grp"],["15","Dom","Grupos · Día 2","grp"],["16","Lun","Grupos · Día 3","grp"],["17","Mar","Grupos · Día 4","grp"],["18","Mié","Grupos · Día 5","grp"],["19","Jue","Repechaje","ko"],["20","Vie","Octavos","ko"],["21","Sáb","Cuartos","ko"],["22","Dom","Semifinales","ko"],["23","Lun","Final","final"]];
+  var days=[["14","Sáb","Grupos · Día 1","grp","LN libre"],["15","Dom","Grupos · Día 2","grp","LN vs El Kiosco · 10:30"],["16","Lun","Grupos · Día 3","grp","LN vs La Martona · 10:00"],["17","Mar","Grupos · Día 4","grp","LN vs La Wilson · 11:30"],["18","Mié","Grupos · Día 5","grp"],["19","Jue","Repechaje","ko"],["20","Vie","Octavos","ko"],["21","Sáb","Cuartos","ko"],["22","Dom","Semifinales","ko"],["23","Lun","Final","final"]];
   var now=new Date(), tl=document.getElementById('timeline');
   days.forEach(function(d){
     var el=document.createElement('div'); el.className='day '+d[3];
     var isToday=now.getFullYear()===2026&&now.getMonth()===10&&now.getDate()===+d[0];
     if(isToday) el.className+=' today';
-    el.innerHTML='<span class="w">'+d[1]+' · nov</span><span class="d">'+d[0]+'</span><span class="p">'+d[2]+'</span>';
+    el.innerHTML='<span class="w">'+d[1]+' · nov</span><span class="d">'+d[0]+'</span><span class="p">'+d[2]+'</span>'+(d[4]?'<span class="ln">'+d[4]+'</span>':'');if(d[4]&&d[4]!=='LN libre')el.className+=' lnday';
     tl.appendChild(el);
   });
   // Plantel de muestra (vacío hasta que llegue la lista)
