@@ -661,7 +661,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();if(e.key==='ArrowRight'){at=(at+1)%list.length;show();}if(e.key==='ArrowLeft'){at=(at+list.length-1)%list.length;show();}});
     document.querySelectorAll('.tr-btn').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),nx=row.nextElementSibling;
       if(nx&&nx.classList.contains('am-strip')){nx.remove();b.setAttribute('aria-expanded','false');b.textContent='Ver fotos · '+b.dataset.n;return;}
-      var ids=AMF[b.dataset.am]||[],arr=ids.map(function(x){return 'https://drive.google.com/thumbnail?id='+x+'&sz=w2000'}),sm=ids.map(function(x){return 'https://drive.google.com/thumbnail?id='+x+'&sz=w800'});
+      var ids=AMF[b.dataset.am]||[],arr=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w2000'}),sm=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w800'});
       var st=document.createElement('div');st.className='am-strip';sm.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.referrerPolicy='no-referrer';im.loading='lazy';im.alt='Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
       row.after(st);b.setAttribute('aria-expanded','true');b.textContent='Cerrar fotos';});});})();
   // videos YouTube
