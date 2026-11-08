@@ -408,6 +408,18 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .btn-o:hover{background:rgba(255,255,255,.12)}
 .join-num{font-size:.85rem;font-weight:700;text-align:center;user-select:all}
 @media (max-width:860px){.join-in{grid-template-columns:1fr}}
+.somos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:22px 40px;background:var(--ink);color:var(--paper);padding:clamp(22px,4vw,44px);position:relative;overflow:hidden}
+.somos::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.035) 79px 80px);pointer-events:none}
+.somos-big{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:.92;text-transform:uppercase;text-wrap:balance;position:relative}
+.somos-big em{font-style:inherit;color:var(--gold-2)}
+.somos-txt{display:grid;gap:12px;align-content:start;position:relative;min-width:0}
+.somos-txt p{margin:0;font-size:.98rem;line-height:1.6;color:#d8d4c8;max-width:62ch}
+.somos-txt b{color:#fff}
+.somos-eq{margin-top:6px;display:grid;gap:8px}
+.somos-eq .lbl{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2)}
+.somos-eq div{display:flex;flex-wrap:wrap;gap:6px}
+.somos-eq i{font-style:normal;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(226,189,106,.45);padding:6px 10px;color:#f2ead9}
+@media (max-width:820px){.somos{grid-template-columns:1fr}}
 .crew{background:#1a2e24;color:#e9e1cf;border-top:1px solid rgba(220,200,164,.18)}
 .crew-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px 36px;align-items:center;padding-block:34px}
 .crew-k{display:block;font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#dcc8a4;margin-bottom:6px}
@@ -452,7 +464,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="chips" aria-hidden="true"><i style="background:var(--ink)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
   </header>
   <nav class="menu" aria-label="Secciones">
-    <a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo C</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
+    <a href="#somos">Quiénes somos</a><a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo C</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
   <div class="card hero">
@@ -476,6 +488,19 @@ footer .handles a{color:var(--paper);text-decoration:none}
       </div>
     </div>
   </div>
+
+  <section id="somos">
+    <div class="sec-head"><h2 class="it">Quiénes <span>somos</span></h2><p>Un torneo de fútbol amateur que arma su propia selección.</p></div>
+    <div class="somos">
+      <div class="somos-big it">Somos un <em>torneo</em>.<br>Esta es nuestra <em>selección</em>.</div>
+      <div class="somos-txt">
+        <p><b>Liga Núñez es un torneo de fútbol amateur de Buenos Aires.</b> Cada semana se juegan partidos en sedes como Nación, Platense, SB5 y Asturiano, con equipos que tienen su plantel, su camiseta y su gente.</p>
+        <p>Para la Copa Potrero hacemos algo distinto: elegimos a jugadores de distintos equipos del torneo y armamos una selección que representa a toda la liga. Por eso en el plantel se cruzan pibes que el resto del año son rivales.</p>
+        <p>2026 es nuestro <b>tercer año seguido</b> en la Copa Potrero. En 2024 llegamos a semifinales, en 2025 jugamos la fase de grupos y este año la jugamos de local, en Núñez.</p>
+        <div class="somos-eq"><span class="lbl">Los equipos de LN que forman la selección</span><div><i>Sabaleros</i><i>Resasix</i><i>Furgón</i><i>Concept</i><i>Mirinda</i><i>Macui</i><i>CQC / Enrique</i></div></div>
+      </div>
+    </div>
+  </section>
 
   <section id="cronograma">
     <div class="sec-head"><h2 class="it">Crono<span>grama</span></h2><p>Diez días seguidos. Ya están los horarios de los primeros partidos de Liga Núñez en la fase de grupos.</p></div>
@@ -677,11 +702,11 @@ footer .handles a{color:var(--paper);text-decoration:none}
   <div class="wrap crew-in">
     <div class="crew-txt"><span class="crew-k">Detrás de todo esto</span><h2 id="crew-h" class="it">El staff de <span>Liga Núñez</span></h2><p>Fotos, videos, redes, organización y cada detalle para que el equipo llegue a la Copa. Gracias a todos los que lo hacen posible.</p></div>
     <ul class="crew-list">
-      <li><img src="fotos-staff-anto.jpg" alt="Anto Giordano" loading="lazy"><b>Anto Giordano</b><span>Redes y social media</span></li>
+      <li><img src="fotos-staff-anto.jpg" alt="Anto Giordano" loading="lazy"><b>Anto Giordano</b><span>Marketing</span></li>
       <li><img src="fotos-staff-coco.jpg" alt="Santi Coco" loading="lazy"><b>Santi Coco</b><span>Fotografía</span></li>
-      <li><img src="fotos-staff-gaby.jpg" alt="Gaby Barletta" loading="lazy"><b>Gaby Barletta</b><span>Staff LN</span></li>
-      <li><img src="fotos-staff-leo.jpg" alt="Leo Gonzalez" loading="lazy"><b>Leo Gonzalez</b><span>Staff LN</span></li>
-      <li><img src="fotos-staff-delfi.jpg" alt="Delfi Fariña" loading="lazy"><b>Delfi Fariña</b><span>CM · Fotografía</span></li>
+      <li><img src="fotos-staff-gaby.jpg" alt="Gaby Barletta" loading="lazy"><b>Gaby Barletta</b><span>Marketing</span></li>
+      <li><img src="fotos-staff-leo.jpg" alt="Leo Gonzalez" loading="lazy"><b>Leo Gonzalez</b><span>Marketing</span></li>
+      <li><img src="fotos-staff-delfi.jpg" alt="Delfi Fariña" loading="lazy"><b>Delfi Fariña</b><span>Marketing · Fotografía</span></li>
     </ul>
   </div>
 </section>
