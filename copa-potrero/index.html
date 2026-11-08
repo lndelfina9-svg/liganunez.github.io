@@ -316,7 +316,7 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .player.pc{display:block;padding:0;border-radius:0;aspect-ratio:3/4;max-width:100%;overflow:visible;background:linear-gradient(180deg,#3a5a4a 0%,#22392e 70%);border:1px solid rgba(220,200,164,.18);color:#f2ead9;transition:transform .25s}
 .player.pc.dt{background:linear-gradient(180deg,#2a2a28 0%,#121211 75%)}
 .pc .pc-ph{position:absolute;inset:0;overflow:hidden;display:block}
-.pc .pc-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .35s ease;filter:saturate(.92) contrast(1.04)}
+.pc .pc-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block;transition:transform .35s ease;filter:saturate(.92) contrast(1.04)}
 .pc .pc-ph svg{position:absolute;left:50%;bottom:-4%;width:70%;transform:translateX(-50%);fill:rgba(220,200,164,.16)}
 .pc .pc-ph b{position:absolute;top:9%;left:0;right:0;text-align:center;font-family:var(--display);font-weight:900;font-size:3.4rem;color:rgba(220,200,164,.5)}
 .pc .pc-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,18,14,.92) 92%)}
@@ -336,6 +336,10 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .pm-box.pf .pm-vid.h iframe{aspect-ratio:16/9}
 .pf-ph{background:linear-gradient(180deg,#3a5a4a,#1d3428);aspect-ratio:4/3.4;max-height:58vh;overflow:hidden;display:grid;place-items:center}
 .pf-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.pf-ph.md{aspect-ratio:4/5;max-height:72vh}
+.pf-ph.md img{object-position:50% 18%}
+.pf-vbtn{justify-self:start;background:#dcc8a4;color:#1d3428;border:0;font:800 .72rem/1 var(--body,inherit);letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.pf-vbtn:hover{background:#f2ead9}
 .pf-ph b{font-family:var(--display);font-weight:900;font-size:6rem;color:rgba(220,200,164,.45)}
 .pf-info{padding:22px 24px 26px;display:grid;gap:12px}
 .pf-info .rol{font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#dcc8a4}
@@ -682,7 +686,9 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var staff=['Santiago Monsalvo','Carlos'];
   function ini(n){return n.split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();}
   var nick={'Mateo Grillo':'El Jeque'};
-  var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomás Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Federico Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Santiago Monsalvo':'monza'};
+  // media day: md[nombre] -> jugadores-md-<k>-cr.jpg (brazos cruzados) y -lb.jpg (libre / con pelota)
+  var md={"Vito Gaita": "vito", "Santiago Monsalvo": "monza", "Tomás Raimondo": "raimondo", "Tomás Rodríguez": "beto", "Matías Miranda": "miranda", "Joaquín Alejandro Esbry": "esbry", "Federico Carrizo": "carrizo", "Sebastián Porfirio": "porfi", "Facu Zalazar": "zalazar", "Lucas Farina": "farina", "Bruno Gaita": "gaita", "Bruno La Perla": "laperla", "Mateo Grillo": "grillo", "Joaquín Burnes": "burnes", "Daniel Vidaurre": "dani", "Carlos": "carlos", "Federico Figueroa": "figueroa", "Fabio Sisca": "sisca", "Mateo Flaherty": "flaherty"};
+  var fotos={};Object.keys(md).forEach(function(n){fotos[n]='md-'+md[n]+'-cr';});
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
   // datos del media day
   var datos={"Bruno Gaita": {"Posición": "Extremo / Delantero", "Número": "11", "Edad": "24", "Pierna hábil": "Derecha", "Equipo LN": "CQC / Enrique", "Apodo": "Gaita"}, "Lucas Farina": {"Posición": "Arquero", "Número": "23", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Macui", "Apodo": "Fari"}, "Fabio Sisca": {"Número": "2", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Furgón"}, "Facu Zalazar": {"Número": "20", "Edad": "28", "Pierna hábil": "Derecha", "Equipo LN": "Concept"}, "Bruno La Perla": {"Número": "7", "Edad": "23", "Pierna hábil": "Izquierda", "Equipo LN": "Furgón"}, "Mateo Flaherty": {"Número": "24", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Mirinda"}, "Joaquín Burnes": {"Número": "17", "Edad": "23", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Mateo Grillo": {"Número": "16", "Edad": "23", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Joaquín Alejandro Esbry": {"Número": "15", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Federico Carrizo": {"Número": "10", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Sebastián Porfirio": {"Número": "4", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Tomás Rodríguez": {"Número": "1", "Edad": "27", "Pierna hábil": "Derecha", "Equipo LN": "Resasix", "Apodo": "Beto"}, "Tomás Raimondo": {"Número": "22", "Edad": "25", "Pierna hábil": "Derecha", "Equipo LN": "Resasix"}, "Vito Gaita": {"Posición": "Central", "Número": "5", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Resasix"}, "Matías Miranda": {"Posición": "Medio", "Número": "8", "Edad": "28", "Pierna hábil": "Derecha", "Equipo LN": "Resasix", "Apodo": "Tute · Mamadera"}, "Santiago Monsalvo": {"Edad": "25", "Equipo LN": "Resasix", "Apodo": "Monza"}};
@@ -770,15 +776,18 @@ footer .handles a{color:var(--paper);text-decoration:none}
   var lnFix=[['Dom 15/11','El Kiosco','10:30 · Cancha 4'],['Lun 16/11','La Martona','10:00 · Cancha 3'],['Mar 17/11','La Wilson','11:30 · Cancha 1'],['Fecha 4','Social y Deportivo','Día y hora a confirmar']];
   function perfil(n,rol,ini){var d=datos[n]||{},k=videoDe[n],st=/Presidente|técnico|Ayudante/.test(rol);
     var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
-    var top=k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>';
+    var lb=md[n]?'jugadores-md-'+md[n]+'-lb.jpg':'';
+    var top=lb?'<div class="pf-ph md"><img src="'+lb+'" alt="'+n+'"></div>':(k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>');
     var nk=d['Apodo']||nick[n];
     var stats=st?['Edad','Equipo LN']:['Posición','Número','Edad','Pierna hábil','Equipo LN'];
     var info='<div class="pf-info"><span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+(nk?'<p class="pf-nick">“'+nk+'”</p>':'')+
       (stats.length?'<div class="pf-stats">'+stats.map(function(x){return '<div'+(x==='Equipo LN'?' class="w"':'')+'><span>'+x+'</span><b>'+(d[x]||'—')+'</b></div>'}).join('')+'</div>':'')+
       (d['Dato']?'<p class="pf-dato">'+d['Dato']+'</p>':'')+
       '<div class="pf-fx"><span>Sus partidos · Grupo C</span>'+lnFix.map(function(f){return '<div><b>'+f[0]+'</b><em>vs '+f[1]+'</em><small>'+f[2]+'</small></div>'}).join('')+'</div>'+
-      (Object.keys(d).length?(src||k?'':'<p class="soon">Foto del media day: muy pronto.</p>'):'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
-    modal(top+info,'pf');}
+      (Object.keys(d).length?(src||k||lb?'':'<p class="soon">Foto del media day: muy pronto.</p>'):'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
+    modal(top+info,'pf');
+    if(lb&&k){var box=document.querySelector('.pm-box.pf'),inf=box.querySelector('.pf-info'),bt=document.createElement('button');bt.type='button';bt.className='pf-vbtn';bt.textContent='▶ Ver su video';inf.insertBefore(bt,inf.querySelector('.pf-stats'));
+      bt.addEventListener('click',function(){var ph=box.querySelector('.pf-ph');if(ph){ph.outerHTML=vframe(k);bt.remove();}});}}
   document.querySelectorAll('#squad .player').forEach(function(p){if(videoDe[p.dataset.n]){var v=document.createElement('span');v.className='vb';v.textContent='▶ Video';p.appendChild(v);}});
   document.getElementById('squad').addEventListener('click',function(e){var p=e.target.closest('.player');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
   // Carrusel destacado: fichas grandes que pasan solas (como la presentación de peleadores)
