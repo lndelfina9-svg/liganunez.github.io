@@ -831,6 +831,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     var top=lb?'<div class="pf-ph md"><img src="'+lb+'" alt="'+n+'"></div>':(k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>');
     var nk=d['Apodo']||nick[n];
     var stats=st?['Edad','Equipo LN']:['Posición','Número','Edad','Pierna hábil','Equipo LN'];
+    if(['Carlos','Daniel Vidaurre','Federico Figueroa'].indexOf(n)>-1)stats=stats.filter(function(x){return x!=='Equipo LN';});
     var info='<div class="pf-info"><span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+(nk?'<p class="pf-nick">“'+nk+'”</p>':'')+
       (stats.length?'<div class="pf-stats">'+stats.map(function(x){return '<div'+(x==='Equipo LN'?' class="w"':'')+'><span>'+x+'</span><b>'+(d[x]||'—')+'</b></div>'}).join('')+'</div>':'')+
       (d['Dato']?'<p class="pf-dato">'+d['Dato']+'</p>':'')+
