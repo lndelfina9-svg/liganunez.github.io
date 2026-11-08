@@ -313,23 +313,24 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .mnote{font-size:.78rem;color:var(--muted);margin:10px 0 0}
 /* plantel en fichas (estilo presentación de peleadores) */
 .squad{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-.player.pc{display:block;padding:0;aspect-ratio:3/4;max-width:100%;overflow:visible;background:linear-gradient(180deg,#3a5a4a 0%,#22392e 70%);border:1px solid rgba(220,200,164,.18);color:#f2ead9;transition:transform .25s}
+.player.pc{display:block;padding:0;border-radius:0;aspect-ratio:3/4;max-width:100%;overflow:visible;background:linear-gradient(180deg,#3a5a4a 0%,#22392e 70%);border:1px solid rgba(220,200,164,.18);color:#f2ead9;transition:transform .25s}
 .player.pc.dt{background:linear-gradient(180deg,#2a2a28 0%,#121211 75%)}
 .pc .pc-ph{position:absolute;inset:0;overflow:hidden;display:block}
 .pc .pc-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .35s ease;filter:saturate(.92) contrast(1.04)}
 .pc .pc-ph svg{position:absolute;left:50%;bottom:-4%;width:70%;transform:translateX(-50%);fill:rgba(220,200,164,.16)}
 .pc .pc-ph b{position:absolute;top:9%;left:0;right:0;text-align:center;font-family:var(--display);font-weight:900;font-size:3.4rem;color:rgba(220,200,164,.5)}
 .pc .pc-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,18,14,.92) 92%)}
-.pc .pc-nm{position:absolute;left:10px;right:10px;bottom:14px;z-index:1;text-align:center;font-family:var(--display);font-weight:900;font-size:1.45rem;line-height:.95;text-transform:uppercase;color:#fff}
-.pc .pc-tag{position:absolute;left:10px;right:10px;bottom:calc(14px + 2.9rem);z-index:1;text-align:center;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
-.pc .cr{position:absolute;width:26px;height:26px;z-index:2;opacity:0;transition:opacity .2s}
+.pc .pc-lbl{position:absolute;left:10px;right:10px;bottom:14px;z-index:1;display:flex;flex-direction:column;align-items:center;gap:5px}
+.pc .pc-nm{display:block;text-align:center;font-family:var(--display);font-weight:900;font-size:1.45rem;line-height:.95;text-transform:uppercase;color:#fff}
+.pc .pc-tag{display:block;text-align:center;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.pc .cr{position:absolute;width:26px;height:26px;border-radius:0;background:none;z-index:2;opacity:0;transition:opacity .2s}
 .pc .cr.a{top:-2px;left:-2px;border-top:3px solid var(--gold);border-left:3px solid var(--gold)}
 .pc .cr.b{bottom:-2px;right:-2px;border-bottom:3px solid var(--gold);border-right:3px solid var(--gold)}
 .player.pc:hover,.player.pc:focus-visible{transform:translateY(-4px);outline:none;z-index:2}
 .player.pc:hover .cr,.player.pc:focus-visible .cr{opacity:1}
 .player.pc:hover .pc-ph img{transform:scale(1.07)}
 .player.pc .vb{z-index:3;top:8px;right:8px;background:var(--gold-2);color:var(--ink)}
-@media (max-width:520px){.squad{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pc .pc-nm{font-size:1.2rem}.pc .pc-tag{bottom:calc(14px + 2.4rem)}}
+@media (max-width:520px){.squad{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pc .pc-nm{font-size:1.2rem}}
 .pm-box.pf{width:min(560px,100%);grid-template-columns:1fr}
 .pm-box.pf .pm-vid iframe{aspect-ratio:9/16;max-height:62vh}
 .pm-box.pf .pm-vid.h iframe{aspect-ratio:16/9}
@@ -352,6 +353,14 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .pf-fx em{font-style:normal;font-weight:700}
 .pf-fx small{color:rgba(242,234,217,.6);font-size:.72rem}
 @media (max-width:520px){.pf-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-fx div{grid-template-columns:86px 1fr;gap:2px 10px}.pf-fx small{grid-column:2}}
+.spot{position:relative;overflow:hidden;margin:6px -4px 18px;padding:26px 0 30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.spot-track{display:flex;column-gap:16px;will-change:transform}
+.spot .player.pc{flex:0 0 clamp(170px,22vw,250px);width:auto;transition:transform .6s cubic-bezier(.22,.8,.2,1),opacity .6s,filter .6s;opacity:.55;filter:saturate(.6)}
+.spot .player.pc.on{transform:scale(1.12);opacity:1;filter:none;z-index:2}
+.spot .player.pc.on .cr{opacity:1}
+.spot .player.pc .vb{display:none}
+.spot .player.pc .pc-nm{font-size:1.7rem}
+@media (max-width:520px){.spot .player.pc{flex-basis:46vw}.spot .player.pc .pc-nm{font-size:1.35rem}}
 /* historia */
 .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .yr{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
@@ -525,6 +534,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     </figure>
     <div class="meet-h"><h3 class="it">Conocé <span>al plantel</span></h3><p>Los videos que venimos subiendo al Instagram. Tocá uno para verlo, o tocá a cualquier jugador para ver su perfil.</p></div>
     <div class="reel" id="reel"></div>
+    <div class="spot" id="spot" aria-label="Plantel destacado"><div class="spot-track" id="spotTrack"></div></div>
     <div class="squad" id="squad"></div>
   </section>
 
@@ -677,7 +687,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   function pcard(n,rol,tag,staffy){var p=document.createElement('button');p.type='button';p.className='player pc'+(staffy?' dt':'');p.dataset.n=n;p.dataset.r=rol;p.dataset.i=tag;
     var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
     p.innerHTML='<span class="pc-ph">'+(src?'<img src="'+src+'" alt="" loading="lazy">':'<svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="40" r="20"/><path d="M12 120c2-30 18-46 38-46s36 16 38 46z"/></svg><b>'+tag+'</b>')+'</span>'+
-      '<span class="pc-tag">'+(staffy?rol:(nick[n]?'“'+nick[n]+'”':'Jugador'))+'</span><span class="pc-nm">'+n+'</span><i class="cr a"></i><i class="cr b"></i>';
+      '<span class="pc-lbl"><span class="pc-tag">'+(staffy?rol:(nick[n]?'“'+nick[n]+'”':'Jugador'))+'</span><span class="pc-nm">'+n+'</span></span><i class="cr a"></i><i class="cr b"></i>';
     sq.appendChild(p);}
   plantel.forEach(function(n){pcard(n,nick[n]?'Jugador · '+nick[n]:'Jugador',ini(n));});
   ['Carlos','Monza','Federico Figueroa'].forEach(function(n){pcard(n,roles[n][1],roles[n][0],1);});
@@ -766,6 +776,22 @@ footer .handles a{color:var(--paper);text-decoration:none}
     modal(top+info,'pf');}
   document.querySelectorAll('#squad .player').forEach(function(p){if(videoDe[p.dataset.n]){var v=document.createElement('span');v.className='vb';v.textContent='▶ Video';p.appendChild(v);}});
   document.getElementById('squad').addEventListener('click',function(e){var p=e.target.closest('.player');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
+  // Carrusel destacado: fichas grandes que pasan solas (como la presentación de peleadores)
+  (function(){var tr=document.getElementById('spotTrack'),box=document.getElementById('spot');if(!tr)return;
+    var list=[...document.querySelectorAll('#squad .pc')].filter(function(p){return p.querySelector('.pc-ph img')});if(list.length<3){box.hidden=true;return;}
+    var n=list.length;for(var k=0;k<3;k++)list.forEach(function(p){var c=p.cloneNode(true);c.classList.add('sp');c.tabIndex=-1;tr.appendChild(c);});
+    var items=[...tr.children],idx=n,timer=null,paused=false;
+    function place(anim){var w=items[0].offsetWidth,g=parseFloat(getComputedStyle(tr).columnGap)||0;var off=idx*(w+g)-(box.clientWidth/2-w/2);
+      tr.style.transition=anim?'transform .7s cubic-bezier(.22,.8,.2,1)':'none';tr.style.transform='translateX('+(-off)+'px)';
+      items.forEach(function(it,i){it.classList.toggle('on',i===idx)});}
+    function next(){idx++;place(true);if(idx>=2*n){setTimeout(function(){idx-=n;place(false);},720);}}
+    function start(){stop();timer=setInterval(function(){if(!paused&&!document.hidden)next();},2400);}
+    function stop(){if(timer)clearInterval(timer);timer=null;}
+    box.addEventListener('mouseenter',function(){paused=true});box.addEventListener('mouseleave',function(){paused=false});
+    tr.addEventListener('click',function(e){var p=e.target.closest('.pc');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
+    window.addEventListener('resize',function(){place(false)});
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){place(false);return;}
+    requestAnimationFrame(function(){place(false);start();});})();
   // Cuenta regresiva al 14/11 9:30 (UTC-3)
   var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
