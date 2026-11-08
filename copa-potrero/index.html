@@ -713,7 +713,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   function ini(n){return n.split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();}
   var nick={'Mateo Grillo':'El Jeque'};
   // media day: md[nombre] -> jugadores-md-<k>-cr.jpg (brazos cruzados) y -lb.jpg (libre / con pelota)
-  var md={"Vito Gaita": "vito", "Santiago Monsalvo": "monza", "Tomás Raimondo": "raimondo", "Tomás Rodríguez": "beto", "Matías Miranda": "miranda", "Joaquín Alejandro Esbry": "esbry", "Federico Carrizo": "carrizo", "Sebastián Porfirio": "porfi", "Facu Zalazar": "zalazar", "Lucas Farina": "farina", "Bruno Gaita": "gaita", "Bruno La Perla": "laperla", "Mateo Grillo": "grillo", "Joaquín Burnes": "burnes", "Daniel Vidaurre": "dani", "Carlos": "carlos", "Federico Figueroa": "figueroa", "Fabio Sisca": "sisca", "Mateo Flaherty": "flaherty"};
+  var md={"Vito Gaita": "vito", "Santiago Monsalvo": "monza", "Tomás Raimondo": "raimondo", "Tomás Rodríguez": "beto", "Matías Miranda": "miranda", "Joaquín Alejandro Esbry": "esbry", "Federico Carrizo": "carrizo", "Sebastián Porfirio": "porfi", "Facu Zalazar": "zalazar", "Lucas Farina": "farina", "Bruno Gaita": "gaita", "Bruno La Perla": "laperla", "Mateo Grillo": "grillo", "Joaquín Burnes": "burnes", "Daniel Vidaurre": "dani", "Carlos": "carlos", "Federico Figueroa": "figueroa", "Fabio Sisca": "sisca", "Mateo Flaherty": "flaherty", "Juan Basualdo": "pepe"};
   var fotos={};Object.keys(md).forEach(function(n){fotos[n]='md-'+md[n]+'-cr';});
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
   // datos del media day
