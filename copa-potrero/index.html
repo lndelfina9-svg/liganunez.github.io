@@ -343,6 +343,10 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .pf-nick{margin:-4px 0 0;font-size:1rem;color:#dcc8a4}
 .pf-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(220,200,164,.2);border:1px solid rgba(220,200,164,.2)}
 .pf-stats div{background:#1d3428;padding:10px 8px;display:grid;gap:4px;min-width:0}
+.pf-stats div.w{grid-column:1/-1}
+.pf-stats b{text-transform:uppercase;overflow-wrap:break-word;hyphens:none}
+.pf-stats div:not(.w) b{font-size:1.15rem}
+.pf-info,.pf-info *,.pm-info,.pm-info *{text-transform:uppercase}
 .pf-stats span{font-size:.56rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dcc8a4}
 .pf-stats b{font-family:var(--display);font-weight:900;font-size:1.5rem;line-height:1;color:#f2ead9}
 .pf-dato{margin:0;font-size:.92rem;line-height:1.45}
@@ -675,22 +679,25 @@ footer .handles a{color:var(--paper);text-decoration:none}
   });
   // Plantel de muestra (vacío hasta que llegue la lista)
   var sq=document.getElementById('squad');
-  var plantel=['Tomás Rodríguez','Lucas Fariña','Tomi Raimondo','Sebastián Porfirio','Fabio Sisca','Matías Miranda','Fede Carrizo','Bruno La Perla','Joaquín Esbry','Joaquín Burnes','Juan Basualdo','Bruno Gaita','Facu Zalazar','Mateo Flaherty','Vito','Mateo Grillo','Daniel Vidaurre'];
-  var staff=['Monza','Carlos'];
+  var plantel=['Tomás Rodríguez','Lucas Fariña','Tomás Raimondo','Sebastián Porfirio','Fabio Sisca','Vito Gaita','Matías Miranda','Bruno Rosales','Federico Carrizo','Bruno Gaita','Joaquín Alejandro Esbry','Joaquín Burnes','Mateo Grillo','Facu Zalazar','Mateo Flaherty','Juan Basualdo','Daniel Vidaurre','Bruno La Perla'];
+  var staff=['Santiago Monsalvo','Carlos'];
   function ini(n){return n.split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();}
   var nick={'Mateo Grillo':'El Jeque'};
-  var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomi Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Fede Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Monza':'monza'};
+  var fotos={'Tomás Rodríguez':'tomas_rodriguez','Tomás Raimondo':'tomi_raimondo','Sebastián Porfirio':'sebastian_porfirio','Federico Carrizo':'fede_carrizo','Bruno Gaita':'bruno_gaita','Federico Figueroa':'fede_figueroa','Santiago Monsalvo':'monza'};
   function av(n,txt){return fotos[n]?'<img class="av" src="jugadores-'+fotos[n]+'.jpg" alt="'+n+'">':'<span class="num">'+txt+'</span>';}
+  // datos del media day
+  var datos={"Bruno Gaita": {"Posición": "Extremo / Delantero", "Número": "11", "Edad": "24", "Pierna hábil": "Derecha", "Equipo LN": "CQC / Enrique", "Apodo": "Gaita"}, "Lucas Fariña": {"Posición": "Arquero", "Número": "23", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Macui", "Apodo": "Fari"}, "Fabio Sisca": {"Número": "2", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Furgón"}, "Facu Zalazar": {"Número": "20", "Edad": "28", "Pierna hábil": "Derecha", "Equipo LN": "Concept"}, "Bruno Rosales": {"Número": "7", "Edad": "23", "Pierna hábil": "Izquierda", "Equipo LN": "Furgón"}, "Mateo Flaherty": {"Número": "24", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Mirinda"}, "Joaquín Burnes": {"Número": "17", "Edad": "23", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Mateo Grillo": {"Número": "16", "Edad": "23", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Joaquín Alejandro Esbry": {"Número": "15", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Federico Carrizo": {"Número": "10", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Sebastián Porfirio": {"Número": "4", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Sabaleros"}, "Tomás Rodríguez": {"Número": "1", "Edad": "27", "Equipo LN": "Resasix"}, "Tomás Raimondo": {"Número": "22", "Edad": "25", "Pierna hábil": "Derecha", "Equipo LN": "Resasix"}, "Vito Gaita": {"Posición": "Central", "Número": "5", "Edad": "22", "Pierna hábil": "Derecha", "Equipo LN": "Resasix"}, "Matías Miranda": {"Posición": "Medio", "Número": "8", "Edad": "28", "Pierna hábil": "Derecha", "Equipo LN": "Resasix", "Apodo": "Tute · Mamadera"}, "Santiago Monsalvo": {"Edad": "25", "Equipo LN": "Resasix", "Apodo": "Monza"}};
   // Plantel estilo fichas: foto (o frame del video), nombre abajo, ficha al tocar
   var card={'Fabio Sisca':'video_sisca','Matías Miranda':'video_tute','Mateo Flaherty':'video_mateo','Juan Basualdo':'video_pepe','Carlos':'video_carlos'};
-  var roles={'Monza':['AC','Ayudante de campo'],'Carlos':['DT','Director técnico'],'Federico Figueroa':['PR','Presidente']};
+  var roles={'Santiago Monsalvo':['CT','Cuerpo técnico'],'Carlos':['DT','Director técnico'],'Federico Figueroa':['PR','Presidente']};
+  function ptag(n){var d=datos[n]||{},nk=d['Apodo']||nick[n],a=d['Número']?'#'+d['Número']:'';var b=nk?'“'+nk.split(' · ')[0]+'”':(d['Posición']||(a?'':'Jugador'));return [a,b].filter(Boolean).join(' · ');}
   function pcard(n,rol,tag,staffy){var p=document.createElement('button');p.type='button';p.className='player pc'+(staffy?' dt':'');p.dataset.n=n;p.dataset.r=rol;p.dataset.i=tag;
     var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
     p.innerHTML='<span class="pc-ph">'+(src?'<img src="'+src+'" alt="" loading="lazy">':'<svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="40" r="20"/><path d="M12 120c2-30 18-46 38-46s36 16 38 46z"/></svg><b>'+tag+'</b>')+'</span>'+
-      '<span class="pc-lbl"><span class="pc-tag">'+(staffy?rol:(nick[n]?'“'+nick[n]+'”':'Jugador'))+'</span><span class="pc-nm">'+n+'</span></span><i class="cr a"></i><i class="cr b"></i>';
+      '<span class="pc-lbl"><span class="pc-tag">'+(staffy?rol:ptag(n))+'</span><span class="pc-nm">'+n+'</span></span><i class="cr a"></i><i class="cr b"></i>';
     sq.appendChild(p);}
   plantel.forEach(function(n){pcard(n,nick[n]?'Jugador · '+nick[n]:'Jugador',ini(n));});
-  ['Carlos','Monza','Federico Figueroa'].forEach(function(n){pcard(n,roles[n][1],roles[n][0],1);});
+  ['Carlos','Santiago Monsalvo','Federico Figueroa'].forEach(function(n){pcard(n,roles[n][1],roles[n][0],1);});
   // Galería por año (lugares listos para cargar fotos)
   var sets={ultima:['am_guayo_6','am_baires_3','am_martillazo_4','am_guayo_2','am_baires_5','am_martillazo_8','am_guayo_5','am_guayo_1','am_martillazo_5'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
   var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, los pibes en los amistosos de la previa.',
@@ -749,13 +756,12 @@ footer .handles a{color:var(--paper);text-decoration:none}
     var w=document.createElement('div');w.className='am-rec';w.dataset.for=b.dataset.rec;w.innerHTML='<video controls playsinline autoplay poster="fotos-recap_'+b.dataset.rec+'.jpg" src="video-recap_'+b.dataset.rec+'.mp4"></video>';
     row.after(w);b.setAttribute('aria-expanded','true');b.textContent='Cerrar recap';});});
   // Conocé al plantel: videos y perfiles
-  var VID={carrizo:['1YErsHMQF9MYSPks3oBs1Zs0mmwu6G0vU','Fede Carrizo',1],sisca:['1IDbxAqHcB91uei9_JC191Vmy1HV4achP','Fabio Sisca'],porfi:['14DYa44bFU6EbJ7K5Ep1ccNRRMGQZHwzw','Sebastián Porfirio',1],carlos:['1IQ8JJNKn73pHLzlkj1NAlyWAKsttIMbr','Carlos Díaz',1],tute:['1S6Wawe5Lxfu2UDl3F4CPpAYbRqTN0W0q','Matías Miranda'],mateo:['1-x_NHtMXatKSWTtmpNT06TffCnXuMoxN','Mateo Flaherty'],pepe:['1sAkOOQNBlJn4tqrguOKerrRvJ4XhWKGA','Juan Agustín Basualdo',1],topomafia:['18T-0ZJr8yWYylHTr3daOoVKq2iiLZJ7o','El Topo',0,'El Topo'],churros:['1aI6glUrHpKO2qzgB8zMWOkWXx2x_NSuQ','Churros El Topo',0,'El Topo'],pecheras:['1RcNzfcecpOTHLXEj-LO9pYLQggeVzi67','Wolfi',0,'Wolfi']};
+  var VID={carrizo:['1YErsHMQF9MYSPks3oBs1Zs0mmwu6G0vU','Federico Carrizo',1],sisca:['1IDbxAqHcB91uei9_JC191Vmy1HV4achP','Fabio Sisca'],porfi:['14DYa44bFU6EbJ7K5Ep1ccNRRMGQZHwzw','Sebastián Porfirio',1],carlos:['1IQ8JJNKn73pHLzlkj1NAlyWAKsttIMbr','Carlos Díaz',1],tute:['1S6Wawe5Lxfu2UDl3F4CPpAYbRqTN0W0q','Matías Miranda'],mateo:['1-x_NHtMXatKSWTtmpNT06TffCnXuMoxN','Mateo Flaherty'],pepe:['1sAkOOQNBlJn4tqrguOKerrRvJ4XhWKGA','Juan Agustín Basualdo',1],topomafia:['18T-0ZJr8yWYylHTr3daOoVKq2iiLZJ7o','El Topo',0,'El Topo'],churros:['1aI6glUrHpKO2qzgB8zMWOkWXx2x_NSuQ','Churros El Topo',0,'El Topo'],pecheras:['1RcNzfcecpOTHLXEj-LO9pYLQggeVzi67','Wolfi',0,'Wolfi']};
   var REEL={reel:['carrizo','sisca','tute','mateo','porfi','pepe','carlos'],reelB:['topomafia','churros','pecheras']};
   var POSTER={ortigoza:'origoza'};
   // video de cada perfil (nombre del plantel -> clave de VID)
-  var videoDe={'Fede Carrizo':'carrizo','Fabio Sisca':'sisca','Sebastián Porfirio':'porfi','Carlos':'carlos','Matías Miranda':'tute','Juan Basualdo':'pepe','Mateo Flaherty':'mateo'};
+  var videoDe={'Federico Carrizo':'carrizo','Fabio Sisca':'sisca','Sebastián Porfirio':'porfi','Carlos':'carlos','Matías Miranda':'tute','Juan Basualdo':'pepe','Mateo Flaherty':'mateo'};
   // datos del media day: {'Nombre':{'Posición':'...','Apodo':'...','Pierna hábil':'...','Dato':'...'}}
-  var datos={};
   function modal(html,cls){var m=document.createElement('div');m.className='pm';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.innerHTML='<div class="pm-box '+(cls||'')+'"><button type="button" class="pm-x">Cerrar</button>'+html+'</div>';document.body.appendChild(m);
     function close(){m.remove();document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}
     m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('pm-x'))close();});document.addEventListener('keydown',esc);}
@@ -767,12 +773,12 @@ footer .handles a{color:var(--paper);text-decoration:none}
     var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
     var top=k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>';
     var nk=d['Apodo']||nick[n];
-    var stats=st?[]:['Posición','Número','Edad','Pierna hábil'];
+    var stats=st?['Edad','Equipo LN']:['Posición','Número','Edad','Pierna hábil','Equipo LN'];
     var info='<div class="pf-info"><span class="rol">'+rol+'</span><h3 class="it">'+n+'</h3>'+(nk?'<p class="pf-nick">“'+nk+'”</p>':'')+
-      (stats.length?'<div class="pf-stats">'+stats.map(function(x){return '<div><span>'+x+'</span><b>'+(d[x]||'—')+'</b></div>'}).join('')+'</div>':'')+
+      (stats.length?'<div class="pf-stats">'+stats.map(function(x){return '<div'+(x==='Equipo LN'?' class="w"':'')+'><span>'+x+'</span><b>'+(d[x]||'—')+'</b></div>'}).join('')+'</div>':'')+
       (d['Dato']?'<p class="pf-dato">'+d['Dato']+'</p>':'')+
       '<div class="pf-fx"><span>Sus partidos · Grupo C</span>'+lnFix.map(function(f){return '<div><b>'+f[0]+'</b><em>vs '+f[1]+'</em><small>'+f[2]+'</small></div>'}).join('')+'</div>'+
-      (Object.keys(d).length?'':'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
+      (Object.keys(d).length?(src||k?'':'<p class="soon">Foto del media day: muy pronto.</p>'):'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
     modal(top+info,'pf');}
   document.querySelectorAll('#squad .player').forEach(function(p){if(videoDe[p.dataset.n]){var v=document.createElement('span');v.className='vb';v.textContent='▶ Video';p.appendChild(v);}});
   document.getElementById('squad').addEventListener('click',function(e){var p=e.target.closest('.player');if(!p)return;perfil(p.dataset.n,p.dataset.r,p.dataset.i);});
