@@ -432,6 +432,11 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .crew-list b{font-size:.78rem;line-height:1.15;color:#f2ead9}
 .crew-list span{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a99f88}
 @media (max-width:720px){.crew-in{grid-template-columns:1fr}.crew-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.visitas{display:inline-flex;align-items:center;gap:10px;margin:16px 0 0;padding:9px 16px 9px 12px;background:rgba(10,18,14,.62);border:1px solid rgba(226,189,106,.45);color:#f2ead9;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(4px)}
+.visitas b{font-family:var(--display);font-weight:900;font-size:1.35rem;letter-spacing:0;color:var(--gold-2)}
+.visitas i{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:vpulse 1.8s infinite}
+@keyframes vpulse{70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+@media (prefers-reduced-motion:reduce){.visitas i{animation:none}}
 footer{margin-top:0;background:var(--ink);color:#b9b7b0}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-block:28px}
 footer img{height:28px;width:auto}
@@ -475,6 +480,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
       <span class="badge">Copa Potrero 2026 · 3ª participación</span>
       <h1><span class="it">Liga<br>Núñez</span><span class="x it">×</span><br><span class="it" style="color:var(--gold-2)">Copa Potrero</span></h1>
       <p class="lede">Por tercer año seguido, la comunidad de Liga Núñez juega la Copa Potrero. Y este año es de local: la copa se juega en Núñez. Todo lo que necesitás saber, en un solo lugar. <em>De nuestra comunidad, a la Copa Potrero.</em></p>
+      <p class="visitas" id="visitas" hidden><i aria-hidden="true"></i><b id="visitas-n">0</b> personas ya entraron a la página</p>
     </div>
   </div>
 
@@ -882,5 +888,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
 })();
 </script>
 
+<script data-goatcounter="https://copapotrero-ln.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+(function(){var MIN=300;
+  fetch('https://copapotrero-ln.goatcounter.com/counter/TOTAL.json').then(function(r){return r.ok?r.json():null}).then(function(j){
+    if(!j)return;var n=parseInt(String(j.count).replace(/\D/g,''),10);if(!(n>=MIN))return;
+    var el=document.getElementById('visitas');document.getElementById('visitas-n').textContent=n.toLocaleString('es-AR');el.hidden=false;
+  }).catch(function(){});})();
+</script>
 </body>
 </html>
