@@ -223,6 +223,25 @@ tr.us td:first-child{color:var(--red)}
 .cp-vids video{width:100%;aspect-ratio:9/16;background:#000;display:block}
 .cp-vids figcaption{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
 @media (max-width:640px){.cp-vids figure{width:170px}}
+#dosx1{padding-block:40px 0}
+.dx{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;background:var(--ink);color:var(--paper);padding:34px clamp(18px,4vw,48px);position:relative;overflow:hidden;border-top:6px solid var(--red)}
+.dx::before{content:"2X1 2X1 2X1 2X1 2X1 2X1 2X1 2X1";position:absolute;inset:auto -20px -40px auto;font-family:var(--display);font-weight:900;font-size:9rem;line-height:.8;color:rgba(255,255,255,.04);white-space:nowrap;pointer-events:none}
+.dx-fly{min-width:0;position:relative}
+.dx-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--gold-2);padding:6px 10px}
+.dx-big{display:block;font-family:var(--display);font-weight:900;font-size:clamp(6rem,18vw,11rem);line-height:.85;margin:14px 0 6px;color:var(--paper)}
+.dx-big em{color:var(--red);font-style:normal;font-size:.7em;margin:0 .04em}
+.dx-lead{max-width:40ch;font-size:1rem;line-height:1.5;color:#d9d6cc;margin:0 0 18px}
+.dx-code{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:2px dashed var(--gold);padding:12px 14px;max-width:460px}
+.dx-code b{font-family:var(--display);font-weight:900;font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.04em;color:var(--gold-2);user-select:all}
+.dx-code button{margin-left:auto;background:var(--gold-2);color:var(--ink);border:0;font:inherit;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;cursor:pointer}
+.dx .lbl{display:block;width:100%;font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#9a988f}
+.dx-next{margin-top:16px}
+.dx-next b{font-family:var(--display);font-weight:900;font-size:1.5rem;text-transform:uppercase}
+.dx-sp{margin:16px 0 0;font-size:.78rem;color:#9a988f}
+.dx-sp b{color:#d9d6cc}
+.dx-vid{margin:0;position:relative}
+.dx-vid video{height:min(64vh,520px);aspect-ratio:9/16;width:auto;max-width:100%;display:block;background:#000;box-shadow:10px 10px 0 var(--red)}
+@media (max-width:760px){.dx{grid-template-columns:1fr}.dx-vid{justify-self:center}.dx-vid video{height:auto;width:min(78vw,320px)}}
 .am-rec{display:flex;justify-content:center;background:var(--ink);padding:14px;margin-bottom:6px}
 .am-rec video{height:min(70vh,560px);width:auto;max-width:100%;display:block;background:#000}
 /* videos */
@@ -525,10 +544,24 @@ footer .handles a{color:var(--paper);text-decoration:none}
   <section id="partidos">
     <div class="sec-head"><h2 class="it">Partidos <span>de la Copa</span></h2><p>Resultado, fotos y videos de cada partido de Liga Núñez en la Copa Potrero 2026.</p></div>
     <div class="trainings cp-games">
-      <div class="tr played"><div class="tr-date"><b>15/11</b><span>Domingo</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-el_kiosco.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Kiosco <em class="tr-w">2-1</em></h3><p>¡Ganamos! Lo dimos vuelta en el debut.</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f1" aria-expanded="false">▶ Videos · 5</button><button type="button" class="tr-mat tr-btn" data-am="f1" data-n="20" aria-expanded="false">Ver fotos · 20</button></div></div>
+      <div class="tr played"><div class="tr-date"><b>15/11</b><span>Domingo</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-el_kiosco.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Kiosco <em class="tr-w">2-1</em></h3><p>¡Ganamos! Lo dimos vuelta en el debut.</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f1" aria-expanded="false">▶ Videos · 4</button><button type="button" class="tr-mat tr-btn" data-am="f1" data-n="20" aria-expanded="false">Ver fotos · 20</button></div></div>
       <div class="tr"><div class="tr-date"><b>16/11</b><span>Lunes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_martona.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Martona</h3><p>10:00 · Cancha 3</p></div><div class="tr-mat tr-soon">Próximo partido</div></div>
       <div class="tr"><div class="tr-date"><b>17/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_wilson.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Wilson</h3><p>11:30 · Cancha 1</p></div><div class="tr-mat tr-soon">Fotos después del partido</div></div>
       <div class="tr"><div class="tr-date"><b>F4</b><span>Fecha 4</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-social_y_deportivo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Social y Deportivo</h3><p>Día y hora a confirmar</p></div><div class="tr-mat tr-soon">Fotos después del partido</div></div>
+    </div>
+  </section>
+
+  <section id="dosx1" aria-labelledby="dosx1-h">
+    <div class="dx">
+      <div class="dx-fly">
+        <span class="dx-tag">Entradas · Copa Potrero 2026</span>
+        <h2 id="dosx1-h" class="dx-big it">2<em>x</em>1</h2>
+        <p class="dx-lead">Vení a alentar a <b>Liga Núñez</b> a Ciudad Universitaria. Sacá tu entrada con el código y entrás con alguien más.</p>
+        <div class="dx-code"><span class="lbl">Código</span><b id="dxCode">2X1LIGANUÑEZ</b><button type="button" id="dxCopy">Copiar</button></div>
+        <div class="dx-next"><span class="lbl">Próximo partido</span><b id="dxNext">Lun 16/11 · 10:00 · vs La Martona</b></div>
+        <p class="dx-sp">Con <b>Oneshot</b> · <b>Churros El Topo</b> · <b>Vision Technologies</b></p>
+      </div>
+      <figure class="dx-vid"><video src="video-cp26_f1_dosx1.mp4" poster="fotos-cp26_f1_v_dosx1.jpg" controls playsinline preload="none"></video></figure>
     </div>
   </section>
 
@@ -839,8 +872,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
     draw('2024');
     var all=V['2024'].concat(V['2025']).map(function(v){return v[0]});
     document.getElementById('vmain').src=Y+all[0]+'?autoplay=1&mute=1&loop=1&playlist='+all.join(',')+'&rel=0&playsinline=1';})();
+  // 2x1: copiar código y próximo partido
+  (function(){var b=document.getElementById('dxCopy'),c=document.getElementById('dxCode');if(b)b.addEventListener('click',function(){var t=c.textContent;var ok=function(){b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar'},1600)};
+    if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,function(){var r=document.createRange();r.selectNodeContents(c);var sl=getSelection();sl.removeAllRanges();sl.addRange(r);});});
+    setTimeout(function(){var nx=document.getElementById('dxNext');if(nx&&typeof nextM!=='undefined'){var now=Date.now(),f=nextM.filter(function(m){return new Date(m[0]).getTime()>now})[0];
+      if(f){var d=new Date(f[0]),dd=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'][d.getDay()];nx.textContent=dd+' '+('0'+d.getDate()).slice(-2)+'/'+(d.getMonth()+1)+' · '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)+' · '+f[1];}}},0);})();
   // videos de partidos de la Copa
-  var CPV={f1:[['dosx1','La previa · el 2x1 para venir a alentar'],['gol','El gol del 1-1'],['vuelta','Lo dimos vuelta: 2-1'],['carlos','Carlos, nuestro DT, post remontada'],['topo','El Topo, nuestra mascota']]};
+  var CPV={f1:[['gol','El gol del 1-1'],['vuelta','Lo dimos vuelta: 2-1'],['carlos','Carlos, nuestro DT, post remontada'],['topo','El Topo, nuestra mascota']]};
   document.querySelectorAll('.tr-vid').forEach(function(b){var lbl=b.textContent;b.addEventListener('click',function(){var row=b.closest('.tr'),ex=row.parentNode.querySelector('.cp-vids[data-for="'+b.dataset.vid+'"]');
     if(ex){ex.remove();b.setAttribute('aria-expanded','false');b.textContent=lbl;return;}
     var w=document.createElement('div');w.className='cp-vids';w.dataset.for=b.dataset.vid;
