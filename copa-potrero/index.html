@@ -216,6 +216,7 @@ tr.us td:first-child{color:var(--red)}
 .tr-acts{display:flex;gap:8px;flex-wrap:wrap}
 .tr-rec{background:var(--red);border-color:var(--red);color:#fff;font-family:inherit;cursor:pointer}
 .tr-rec:hover,.tr-rec[aria-expanded="true"]{background:var(--ink);border-color:var(--ink)}
+.tr-body .tr-goals{font-size:.78rem;font-weight:700;color:var(--ink);margin-top:4px}
 .tr-w{font-style:normal;color:#2f8f5b;margin-left:6px}
 .tr.played{box-shadow:inset 4px 0 0 #2f8f5b}
 .cp-vids{display:flex;gap:10px;overflow-x:auto;padding:4px 0 14px;-webkit-overflow-scrolling:touch}
@@ -544,7 +545,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
   <section id="partidos">
     <div class="sec-head"><h2 class="it">Partidos <span>de la Copa</span></h2><p>Resultado, fotos y videos de cada partido de Liga Núñez en la Copa Potrero 2026.</p></div>
     <div class="trainings cp-games">
-      <div class="tr played"><div class="tr-date"><b>15/11</b><span>Domingo</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-el_kiosco.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Kiosco <em class="tr-w">2-1</em></h3><p>¡Ganamos! Lo dimos vuelta en el debut.</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f1" aria-expanded="false">▶ Videos · 4</button><button type="button" class="tr-mat tr-btn" data-am="f1" data-n="20" aria-expanded="false">Ver fotos · 20</button></div></div>
+      <div class="tr played"><div class="tr-date"><b>15/11</b><span>Domingo</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-el_kiosco.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Kiosco <em class="tr-w">2-1</em></h3><p>¡Ganamos! Lo dimos vuelta en el debut.</p><p class="tr-goals">⚽ Fede Carrizo (asist. Fari) · ⚽ Pepe (asist. Fede Carrizo)</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f1" aria-expanded="false">▶ Videos · 4</button><button type="button" class="tr-mat tr-btn" data-am="f1" data-n="20" aria-expanded="false">Ver fotos · 20</button></div></div>
       <div class="tr"><div class="tr-date"><b>16/11</b><span>Lunes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_martona.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Martona</h3><p>10:00 · Cancha 3</p></div><div class="tr-mat tr-soon">Próximo partido</div></div>
       <div class="tr"><div class="tr-date"><b>17/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_wilson.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Wilson</h3><p>11:30 · Cancha 1</p></div><div class="tr-mat tr-soon">Fotos después del partido</div></div>
       <div class="tr"><div class="tr-date"><b>F4</b><span>Fecha 4</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-social_y_deportivo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Social y Deportivo</h3><p>Día y hora a confirmar</p></div><div class="tr-mat tr-soon">Fotos después del partido</div></div>
@@ -878,7 +879,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     setTimeout(function(){var nx=document.getElementById('dxNext');if(nx&&typeof nextM!=='undefined'){var now=Date.now(),f=nextM.filter(function(m){return new Date(m[0]).getTime()>now})[0];
       if(f){var d=new Date(f[0]),dd=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'][d.getDay()];nx.textContent=dd+' '+('0'+d.getDate()).slice(-2)+'/'+(d.getMonth()+1)+' · '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)+' · '+f[1];}}},0);})();
   // videos de partidos de la Copa
-  var CPV={f1:[['gol','El gol del 1-1'],['vuelta','Lo dimos vuelta: 2-1'],['carlos','Carlos, nuestro DT, post remontada'],['topo','El Topo, nuestra mascota']]};
+  var CPV={f1:[['gol','1-1: gol de Fede Carrizo'],['vuelta','2-1: gol de Pepe, lo dimos vuelta'],['carlos','Carlos, nuestro DT, post remontada'],['topo','El Topo, nuestra mascota']]};
   document.querySelectorAll('.tr-vid').forEach(function(b){var lbl=b.textContent;b.addEventListener('click',function(){var row=b.closest('.tr'),ex=row.parentNode.querySelector('.cp-vids[data-for="'+b.dataset.vid+'"]');
     if(ex){ex.remove();b.setAttribute('aria-expanded','false');b.textContent=lbl;return;}
     var w=document.createElement('div');w.className='cp-vids';w.dataset.for=b.dataset.vid;
