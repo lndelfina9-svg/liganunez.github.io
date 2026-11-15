@@ -118,6 +118,8 @@ tr.us td:first-child{color:var(--red)}
 .match .vs{font-weight:800;text-transform:uppercase;font-size:.9rem;min-width:0}
 .match .vs span{color:#9a988f;font-weight:500}
 .match .res{font-family:var(--display);font-weight:900;font-size:1.6rem;color:#6d6b64}
+.match .res.win{color:#2f8f5b;display:grid;justify-items:center;line-height:1}
+.match .res small{font-family:inherit;font-size:.56rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-top:3px}
 
 /* plantel */
 .team{margin:0 0 14px;position:relative;background:var(--ink)}
@@ -412,6 +414,10 @@ section.kit .btn-ig{background:var(--gold-2);color:var(--ink)}section.kit .btn-i
 .somos::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.035) 79px 80px);pointer-events:none}
 .somos-big{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:.92;text-transform:uppercase;text-wrap:balance;position:relative}
 .somos-big em{font-style:inherit;color:var(--gold-2)}
+.somos-left{display:grid;gap:22px;align-content:start;position:relative;min-width:0}
+.somos-vid{margin:0;display:grid;gap:8px}
+.somos-vid video{width:100%;aspect-ratio:16/9;background:#000;display:block;border:1px solid rgba(226,189,106,.35)}
+.somos-vid figcaption{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
 .somos-txt{display:grid;gap:12px;align-content:start;position:relative;min-width:0}
 .somos-txt p{margin:0;font-size:.98rem;line-height:1.6;color:#d8d4c8;max-width:62ch}
 .somos-txt b{color:#fff}
@@ -498,7 +504,8 @@ footer .handles a{color:var(--paper);text-decoration:none}
   <section id="somos">
     <div class="sec-head"><h2 class="it">Quiénes <span>somos</span></h2><p>Un torneo de fútbol amateur desde 2017. Y una selección que lo representa.</p></div>
     <div class="somos">
-      <div class="somos-big it">Somos un <em>torneo</em>.<br>Y esta es nuestra <em>selección</em>.</div>
+      <div class="somos-left"><div class="somos-big it">Somos un <em>torneo</em>.<br>Y esta es nuestra <em>selección</em>.</div>
+        <figure class="somos-vid"><video src="video-institucional_fede.mp4" poster="fotos-institucional_fede.jpg" controls playsinline preload="none"></video><figcaption>Federico Figueroa · Coordinador de Liga Núñez</figcaption></figure></div>
       <div class="somos-txt">
         <p><b>Liga Núñez nació en 2017 con una idea simple: darle a los pibes el mejor torneo posible.</b> Buenas canchas, fotos de cada partido, sus goles en las redes y una comunidad que crece fecha a fecha en sedes como Nación, Platense, SB5 y Asturiano.</p>
         <p>Durante el año son rivales. Se cruzan cada semana y se dejan todo por su equipo. Pero cuando llega la Copa Potrero, los mejores de cada equipo se ponen la misma camiseta y salen a representar a toda la liga.</p>
@@ -532,23 +539,24 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="sec-head"><h2 class="it">Grupo <span>y fixture</span></h2><p>Sorteo del 4/11: Liga Núñez juega en el Grupo C. Cinco equipos, todos contra todos, del 14 al 18 de noviembre.</p></div>
     <div class="split">
       <div class="panel">
-        <span class="pending">Fase de grupos</span>
+        <span class="pending">Fase de grupos · Fecha 1 jugada</span>
         <h3 class="it">Grupo C</h3>
         <table>
           <thead><tr><th>Equipo</th><th class="n">PJ</th><th class="n">DG</th><th class="n">Pts</th></tr></thead>
           <tbody>
+            <tr class="us"><td><img class="cr" src="escudos-cp-liga_nunez.png" alt="">Liga Núñez</td><td class="n">1</td><td class="n">+1</td><td class="n">3</td></tr>
             <tr><td><img class="cr" src="escudos-cp-la_wilson.png" alt="">La Wilson</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
-            <tr class="us"><td><img class="cr" src="escudos-cp-liga_nunez.png" alt="">Liga Núñez</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
             <tr><td><img class="cr" src="escudos-cp-social_y_deportivo.png" alt="">Social y Deportivo</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
             <tr><td><img class="cr" src="escudos-cp-la_martona.png" alt="">La Martona</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
-            <tr><td><img class="cr" src="escudos-cp-el_kiosco.png" alt="">El Kiosco</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td><img class="cr" src="escudos-cp-el_kiosco.png" alt="">El Kiosco</td><td class="n">1</td><td class="n">-1</td><td class="n">0</td></tr>
           </tbody>
         </table>
+        <p class="mnote">Tabla parcial: actualizada con los partidos de Liga Núñez.</p>
       </div>
       <div class="panel dark">
         <span class="pending">Horarios confirmados</span>
         <h3 class="it">Nuestros partidos</h3>
-        <div class="match"><div class="when">Dom 15/11<small>10:30 · Cancha 4</small></div><div class="vs">Liga Núñez <span>vs</span> El Kiosco</div><div class="res">–</div></div>
+        <div class="match"><div class="when">Dom 15/11<small>10:30 · Cancha 4</small></div><div class="vs">Liga Núñez <span>vs</span> El Kiosco</div><div class="res win">2-1<small>Ganamos</small></div></div>
         <div class="match"><div class="when">Lun 16/11<small>10:00 · Cancha 3</small></div><div class="vs">Liga Núñez <span>vs</span> La Martona</div><div class="res">–</div></div>
         <div class="match"><div class="when">Mar 17/11<small>11:30 · Cancha 1</small></div><div class="vs">Liga Núñez <span>vs</span> La Wilson</div><div class="res">–</div></div>
         <div class="match"><div class="when">Fecha 4<small>Día y hora a confirmar</small></div><div class="vs">Liga Núñez <span>vs</span> Social y Deportivo</div><div class="res">–</div></div>
@@ -729,7 +737,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
 <script>
 (function(){
   // Cronograma real de la edición 2026
-  var days=[["14","Sáb","Grupos · Día 1","grp","LN libre"],["15","Dom","Grupos · Día 2","grp","LN vs El Kiosco · 10:30"],["16","Lun","Grupos · Día 3","grp","LN vs La Martona · 10:00"],["17","Mar","Grupos · Día 4","grp","LN vs La Wilson · 11:30"],["18","Mié","Grupos · Día 5","grp"],["19","Jue","Repechaje","ko"],["20","Vie","Octavos","ko"],["21","Sáb","Cuartos","ko"],["22","Dom","Semifinales","ko"],["23","Lun","Final","final"]];
+  var days=[["14","Sáb","Grupos · Día 1","grp","LN libre"],["15","Dom","Grupos · Día 2","grp","LN 2-1 El Kiosco · ¡Ganamos!"],["16","Lun","Grupos · Día 3","grp","LN vs La Martona · 10:00"],["17","Mar","Grupos · Día 4","grp","LN vs La Wilson · 11:30"],["18","Mié","Grupos · Día 5","grp"],["19","Jue","Repechaje","ko"],["20","Vie","Octavos","ko"],["21","Sáb","Cuartos","ko"],["22","Dom","Semifinales","ko"],["23","Lun","Final","final"]];
   var now=new Date(), tl=document.getElementById('timeline');
   days.forEach(function(d){
     var el=document.createElement('div'); el.className='day '+d[3];
@@ -831,11 +839,12 @@ footer .handles a{color:var(--paper);text-decoration:none}
   function vframe(k){var v=VID[k];return '<div class="pm-vid'+(v[2]?' h':'')+'"><iframe src="https://drive.google.com/file/d/'+v[0]+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+v[1]+'"></iframe></div>';}
   Object.keys(REEL).forEach(function(id){var r=document.getElementById(id);if(!r)return;REEL[id].forEach(function(k){var v=VID[k],b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver video: '+v[1]);b.innerHTML='<img src="portadas-'+k+'.jpg" alt="" loading="lazy"><span class="pl2"></span>';
     b.addEventListener('click',function(){modal(vframe(k)+'<div class="pm-info"><span class="rol">'+(v[3]||'Conocé al plantel')+'</span><h3 class="it">'+v[1]+'</h3></div>');});r.appendChild(b);});});
-  var lnFix=[['Dom 15/11','El Kiosco','10:30 · Cancha 4'],['Lun 16/11','La Martona','10:00 · Cancha 3'],['Mar 17/11','La Wilson','11:30 · Cancha 1'],['Fecha 4','Social y Deportivo','Día y hora a confirmar']];
+  var lnFix=[['Dom 15/11','El Kiosco','Ganamos 2-1'],['Lun 16/11','La Martona','10:00 · Cancha 3'],['Mar 17/11','La Wilson','11:30 · Cancha 1'],['Fecha 4','Social y Deportivo','Día y hora a confirmar']];
   function perfil(n,rol,ini){var d=datos[n]||{},k=videoDe[n],st=/Coordinador|Presidente|técnico|Ayudante|Cuerpo/.test(rol);
     var src=fotos[n]?'jugadores-'+fotos[n]+'.jpg':(card[n]?'jugadores-'+card[n]+'.jpg':'');
     var lb=md[n]?'jugadores-md-'+md[n]+'-lb.jpg':'';
-    var top=lb?'<div class="pf-ph md"><img src="'+lb+'" alt="'+n+'"></div>':(k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>');
+    if(n==='Federico Figueroa'){lb='';k='';}
+    var top=n==='Federico Figueroa'?'<div class="pf-ph" style="aspect-ratio:16/9;background:#000"><video src="video-institucional_fede.mp4" poster="fotos-institucional_fede.jpg" controls playsinline autoplay style="width:100%;height:100%;object-fit:contain"></video></div>':lb?'<div class="pf-ph md"><img src="'+lb+'" alt="'+n+'"></div>':(k?vframe(k):'<div class="pf-ph">'+(src?'<img src="'+src+'" alt="">':'<b>'+ini+'</b>')+'</div>');
     var nk=d['Apodo']||nick[n];
     var stats=st?['Edad','Equipo LN']:['Posición','Número','Edad','Pierna hábil','Equipo LN'];
     if(n==='Federico Figueroa')stats=[];
@@ -843,7 +852,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
       (stats.length?'<div class="pf-stats">'+stats.map(function(x){return '<div'+(x==='Equipo LN'?' class="w"':'')+'><span>'+x+'</span><b>'+(d[x]||'—')+'</b></div>'}).join('')+'</div>':'')+
       (d['Dato']?'<p class="pf-dato">'+d['Dato']+'</p>':'')+
       '<div class="pf-fx"><span>Sus partidos · Grupo C</span>'+lnFix.map(function(f){return '<div><b>'+f[0]+'</b><em>vs '+f[1]+'</em><small>'+f[2]+'</small></div>'}).join('')+'</div>'+
-      (Object.keys(d).length?(src||k||lb?'':'<p class="soon">Foto del media day: muy pronto.</p>'):'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
+      (n==='Federico Figueroa'?'':Object.keys(d).length?(src||k||lb?'':'<p class="soon">Foto del media day: muy pronto.</p>'):'<p class="soon">'+(k?'Datos del media day: muy pronto.':'Foto, video y datos del media day: muy pronto.')+'</p>')+'</div>';
     modal(top+info,'pf');
     if(lb&&k){var box=document.querySelector('.pm-box.pf'),inf=box.querySelector('.pf-info'),bt=document.createElement('button');bt.type='button';bt.className='pf-vbtn';bt.textContent='▶ Ver su video';inf.insertBefore(bt,inf.querySelector('.pf-stats'));
       bt.addEventListener('click',function(){var ph=box.querySelector('.pf-ph');if(ph){ph.outerHTML=vframe(k);bt.remove();}});}}
@@ -865,13 +874,15 @@ footer .handles a{color:var(--paper);text-decoration:none}
     window.addEventListener('resize',function(){place(false)});
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){place(false);return;}
     requestAnimationFrame(function(){place(false);start();});})();
-  // Cuenta regresiva al 14/11 9:30 (UTC-3)
-  var start=new Date('2026-11-14T09:30:00-03:00').getTime(), end=new Date('2026-11-23T23:59:00-03:00').getTime();
+  // Cuenta regresiva al próximo partido de LN (UTC-3)
+  var nextM=[['2026-11-16T10:00:00-03:00','vs La Martona'],['2026-11-17T11:30:00-03:00','vs La Wilson']], end=new Date('2026-11-23T23:59:00-03:00').getTime();
   function tick(){
-    var t=Date.now(), lab=document.getElementById('cd-label');
+    var t=Date.now(), lab=document.getElementById('cd-label'), nx=null;
+    for(var k=0;k<nextM.length;k++){var d=new Date(nextM[k][0]).getTime();if(d>t){nx=[d,nextM[k][1]];break;}}
     if(t>=end){lab.textContent='Copa Potrero 2026';document.getElementById('countdown').innerHTML='<div><b>FIN</b><span>torneo</span></div>';return;}
-    if(t>=start){lab.textContent='Estado';document.getElementById('countdown').innerHTML='<div><b>EN JUEGO</b><span>Copa Potrero</span></div>';return;}
-    var s=Math.floor((start-t)/1000);
+    if(!nx){lab.textContent='Estado';document.getElementById('countdown').innerHTML='<div><b>EN JUEGO</b><span>Copa Potrero</span></div>';return;}
+    lab.textContent='Faltan para el próximo partido · '+nx[1];
+    var s=Math.floor((nx[0]-t)/1000);
     document.getElementById('cd-d').textContent=Math.floor(s/86400);
     document.getElementById('cd-h').textContent=('0'+Math.floor(s%86400/3600)).slice(-2);
     document.getElementById('cd-m').textContent=('0'+Math.floor(s%3600/60)).slice(-2);
