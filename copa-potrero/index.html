@@ -216,6 +216,13 @@ tr.us td:first-child{color:var(--red)}
 .tr-acts{display:flex;gap:8px;flex-wrap:wrap}
 .tr-rec{background:var(--red);border-color:var(--red);color:#fff;font-family:inherit;cursor:pointer}
 .tr-rec:hover,.tr-rec[aria-expanded="true"]{background:var(--ink);border-color:var(--ink)}
+.tr-w{font-style:normal;color:#2f8f5b;margin-left:6px}
+.tr.played{box-shadow:inset 4px 0 0 #2f8f5b}
+.cp-vids{display:flex;gap:10px;overflow-x:auto;padding:4px 0 14px;-webkit-overflow-scrolling:touch}
+.cp-vids figure{margin:0;flex:0 0 auto;width:220px}
+.cp-vids video{width:100%;aspect-ratio:9/16;background:#000;display:block}
+.cp-vids figcaption{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
+@media (max-width:640px){.cp-vids figure{width:170px}}
 .am-rec{display:flex;justify-content:center;background:var(--ink);padding:14px;margin-bottom:6px}
 .am-rec video{height:min(70vh,560px);width:auto;max-width:100%;display:block;background:#000}
 /* videos */
@@ -475,7 +482,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="chips" aria-hidden="true"><i style="background:var(--ink)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
   </header>
   <nav class="menu" aria-label="Secciones">
-    <a href="#somos">Quiénes somos</a><a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#grupo">Grupo C</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
+    <a href="#somos">Quiénes somos</a><a href="#partidos">Partidos</a><a href="#grupo">Grupo C</a><a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
   <div class="card hero">
@@ -515,23 +522,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
     </div>
   </section>
 
-  <section id="cronograma">
-    <div class="sec-head"><h2 class="it">Crono<span>grama</span></h2><p>Diez días seguidos. Ya están los horarios de los primeros partidos de Liga Núñez en la fase de grupos.</p></div>
-    <div class="timeline" id="timeline"></div>
-    <div class="legend"><span><i style="background:var(--ink)"></i>Fase de grupos</span><span><i style="background:var(--red)"></i>Eliminación directa</span><span><i style="background:var(--gold)"></i>Final</span></div>
-  </section>
-
-  <section id="amistosos" class="kit">
-    <div class="kit-tag"><i></i><i></i>Camiseta nueva · Oneshot</div>
-    <div class="sec-head"><h2 class="it">Amis<span>tosos</span></h2><p>La preparación arrancó hace rato. Cada partido amistoso tiene su material.</p></div>
-    <div class="trainings">
-      <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="48" aria-expanded="false">Ver fotos · 48</button></div>
-      <div class="tr"><div class="tr-date"><b>18/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-el_guayo.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Guayo</h3><p>Sede a confirmar</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec" data-rec="guayo" aria-expanded="false">▶ Recap</button><button type="button" class="tr-mat tr-btn" data-am="guayo" data-n="22" aria-expanded="false">Ver fotos · 22</button></div></div>
-      <div class="tr"><div class="tr-date"><b>22/09</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-gb_sports.png" alt=""></div><div class="tr-body"><h3 class="it">vs GB Sports</h3><p>Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="gb" data-n="39" aria-expanded="false">Ver fotos · 39</button></div>
-      <div class="tr"><div class="tr-date"><b>25/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-martillazo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Martillazo</h3><p>Ituzaingó</p></div><button type="button" class="tr-mat tr-btn" data-am="martillazo" data-n="50" aria-expanded="false">Ver fotos · 50</button></div>
-      <div class="tr"><div class="tr-date"><b>28/09</b><span>Lunes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"></div><div class="tr-body"><h3 class="it">Entrenamiento</h3><p>SB5 Sports · práctica del plantel</p></div><button type="button" class="tr-mat tr-btn" data-am="entreno" data-n="19" aria-expanded="false">Ver fotos · 19</button></div>
-      <div class="tr"><div class="tr-date"><b>06/10</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-streamers.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argentina Streamers</h3><p>SB5 Sports</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
-      <div class="tr"><div class="tr-date"><b>14/10</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-argeave.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argeave</h3><p>SB5 Sports</p></div><button type="button" class="tr-mat tr-btn" data-am="argeave" data-n="49" aria-expanded="false">Ver fotos · 49</button></div>
+  <section id="partidos">
+    <div class="sec-head"><h2 class="it">Partidos <span>de la Copa</span></h2><p>Resultado, fotos y videos de cada partido de Liga Núñez en la Copa Potrero 2026.</p></div>
+    <div class="trainings cp-games">
+      <div class="tr played"><div class="tr-date"><b>15/11</b><span>Domingo</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-el_kiosco.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Kiosco <em class="tr-w">2-1</em></h3><p>¡Ganamos! Lo dimos vuelta en el debut.</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f1" aria-expanded="false">▶ Videos · 5</button><button type="button" class="tr-mat tr-btn" data-am="f1" data-n="20" aria-expanded="false">Ver fotos · 20</button></div></div>
+      <div class="tr"><div class="tr-date"><b>16/11</b><span>Lunes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_martona.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Martona</h3><p>10:00 · Cancha 3</p></div><div class="tr-mat tr-soon">Próximo partido</div></div>
+      <div class="tr"><div class="tr-date"><b>17/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_wilson.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Wilson</h3><p>11:30 · Cancha 1</p></div><div class="tr-mat tr-soon">Fotos después del partido</div></div>
+      <div class="tr"><div class="tr-date"><b>F4</b><span>Fecha 4</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-social_y_deportivo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Social y Deportivo</h3><p>Día y hora a confirmar</p></div><div class="tr-mat tr-soon">Fotos después del partido</div></div>
     </div>
   </section>
 
@@ -573,6 +570,26 @@ footer .handles a{color:var(--paper);text-decoration:none}
       <div class="g"><b>Grupo F</b><ul><li><img class="cr" src="escudos-cp-san_alberto.png" alt="">San Alberto</li><li><img class="cr" src="escudos-cp-fed_colombiana.png" alt="">Fed. Colombiana</li><li><img class="cr" src="escudos-cp-rfc.png" alt="">RFC</li><li><img class="cr" src="escudos-cp-northchamp.png" alt="">Northchamp</li><li><img class="cr" src="escudos-cp-reconquista.png" alt="">Reconquista</li></ul></div>
       <div class="g"><b>Grupo G</b><ul><li><img class="cr" src="escudos-cp-la_rosario.png" alt="">La Rosario</li><li><img class="cr" src="escudos-cp-gb_sports.png" alt="">GB Sports</li><li><img class="cr" src="escudos-cp-ciclon.png" alt="">Ciclón</li><li><img class="cr" src="escudos-cp-biri_biri.png" alt="">Biri Biri</li><li><img class="cr" src="escudos-cp-guemes_fc.png" alt="">Güemes FC</li></ul></div>
       <div class="g"><b>Grupo H</b><ul><li><img class="cr" src="escudos-cp-operativo_panda.png" alt="">Operativo Panda</li><li><img class="cr" src="escudos-cp-picapiedra.png" alt="">Picapiedra</li><li><img class="cr" src="escudos-cp-las_piedras.png" alt="">Las Piedras</li><li><img class="cr" src="escudos-cp-moron_sur.png" alt="">Morón Sur</li><li><img class="cr" src="escudos-cp-parceros_jg.png" alt="">Parceros JG</li></ul></div>
+    </div>
+  </section>
+
+  <section id="cronograma">
+    <div class="sec-head"><h2 class="it">Crono<span>grama</span></h2><p>Diez días seguidos. Ya están los horarios de los primeros partidos de Liga Núñez en la fase de grupos.</p></div>
+    <div class="timeline" id="timeline"></div>
+    <div class="legend"><span><i style="background:var(--ink)"></i>Fase de grupos</span><span><i style="background:var(--red)"></i>Eliminación directa</span><span><i style="background:var(--gold)"></i>Final</span></div>
+  </section>
+
+  <section id="amistosos" class="kit">
+    <div class="kit-tag"><i></i><i></i>Camiseta nueva · Oneshot</div>
+    <div class="sec-head"><h2 class="it">Amis<span>tosos</span></h2><p>La preparación arrancó hace rato. Cada partido amistoso tiene su material.</p></div>
+    <div class="trainings">
+      <div class="tr"><div class="tr-date"><b>09/09</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-baires.png" alt=""></div><div class="tr-body"><h3 class="it">vs Baires</h3><p>Torneo Baires · Saladillo 2041, Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="baires" data-n="48" aria-expanded="false">Ver fotos · 48</button></div>
+      <div class="tr"><div class="tr-date"><b>18/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-el_guayo.png" alt=""></div><div class="tr-body"><h3 class="it">vs El Guayo</h3><p>Sede a confirmar</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec" data-rec="guayo" aria-expanded="false">▶ Recap</button><button type="button" class="tr-mat tr-btn" data-am="guayo" data-n="22" aria-expanded="false">Ver fotos · 22</button></div></div>
+      <div class="tr"><div class="tr-date"><b>22/09</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-gb_sports.png" alt=""></div><div class="tr-body"><h3 class="it">vs GB Sports</h3><p>Mataderos</p></div><button type="button" class="tr-mat tr-btn" data-am="gb" data-n="39" aria-expanded="false">Ver fotos · 39</button></div>
+      <div class="tr"><div class="tr-date"><b>25/09</b><span>Viernes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-martillazo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Martillazo</h3><p>Ituzaingó</p></div><button type="button" class="tr-mat tr-btn" data-am="martillazo" data-n="50" aria-expanded="false">Ver fotos · 50</button></div>
+      <div class="tr"><div class="tr-date"><b>28/09</b><span>Lunes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"></div><div class="tr-body"><h3 class="it">Entrenamiento</h3><p>SB5 Sports · práctica del plantel</p></div><button type="button" class="tr-mat tr-btn" data-am="entreno" data-n="19" aria-expanded="false">Ver fotos · 19</button></div>
+      <div class="tr"><div class="tr-date"><b>06/10</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-streamers.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argentina Streamers</h3><p>SB5 Sports</p></div><div class="tr-mat tr-soon">Fotos próximamente</div></div>
+      <div class="tr"><div class="tr-date"><b>14/10</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-argeave.png" alt=""></div><div class="tr-body"><h3 class="it">vs Argeave</h3><p>SB5 Sports</p></div><button type="button" class="tr-mat tr-btn" data-am="argeave" data-n="49" aria-expanded="false">Ver fotos · 49</button></div>
     </div>
   </section>
 
@@ -770,13 +787,13 @@ footer .handles a{color:var(--paper);text-decoration:none}
   plantel.forEach(function(n){pcard(n,nick[n]?'Jugador · '+nick[n]:'Jugador',ini(n));});
   ['Carlos','Santiago Monsalvo','Federico Figueroa'].forEach(function(n){pcard(n,roles[n][1],roles[n][0],1);});
   // Galería por año (lugares listos para cargar fotos)
-  var sets={ultima:['md_bts2','am_guayo_6','am_baires_3','am_martillazo_4','am_guayo_2','am_baires_5','am_martillazo_8','am_guayo_5','am_guayo_1','am_martillazo_5'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
-  var notes={ultima:'Acá van las fotos de la última fecha jugada. Mientras arranca la Copa, el media day y los amistosos de la previa.',
+  var sets={ultima:['cp26_f1_01','cp26_f1_08','cp26_f1_11','cp26_f1_02','cp26_f1_09','cp26_f1_12','cp26_f1_03','cp26_f1_14','cp26_f1_19','cp26_f1_06','cp26_f1_16','cp26_f1_20'],media:['md_bts2','am_guayo_6','am_baires_3','am_martillazo_4','am_guayo_2','am_baires_5','am_martillazo_8','am_guayo_5','am_guayo_1','am_martillazo_5'],'2025':['plantel_cp2025','25_09','25_02','25_b0','25_03','25_b3','25_06','25_b1','25_07','25_b4','25_08','25_b6','25_01','25_b8','25_04','25_10','25_00','grupal_2025'],'2024':['24_g0','24_g6','24_g7','24_g3','24_g4','24_6','24_d7_8','24_0','24_d7_4','24_2','24_d7_9','24_5','24_d7_6','24_7','24_d7_10','24_8','24_d7_2']};
+  var notes={ultima:'Fecha 1: Liga Núñez 2-1 El Kiosco. Domingo 15/11 en Ciudad Universitaria.',
     '2025':'Copa Potrero 2025: partidos ante La Wilson, Las Piedras, Barche y Fiebre Amarilla.',
     '2024':'Copa Potrero 2024: el año que llegamos a semifinales.'};
   function gal(k){
     var g=document.getElementById('gallery');g.innerHTML='';
-    (sets[k]||[]).forEach(function(f,i){var d=document.createElement('figure');d.className='ph';d.innerHTML='<img src="fotos-'+f+'.jpg" alt="Liga Núñez en la Copa Potrero '+(f.slice(0,2)==='24'?'2024':'2025')+'" loading="'+(i<3?'eager':'lazy')+'">';g.appendChild(d);});
+    (sets[k]||[]).forEach(function(f,i){var d=document.createElement('figure');d.className='ph';d.innerHTML='<img src="fotos-'+f+'.jpg" alt="Liga Núñez en la Copa Potrero '+(f.slice(0,4)==='cp26'?'2026':f.slice(0,2)==='24'?'2024':'2025')+'" loading="'+(i<3?'eager':'lazy')+'">';g.appendChild(d);});
     document.getElementById('gal-note').textContent=notes[k];
     document.querySelectorAll('.gal-tabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.g===k?'true':'false');});
   }
@@ -802,8 +819,9 @@ footer .handles a{color:var(--paper);text-decoration:none}
     document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();if(e.key==='ArrowRight'){at=(at+1)%list.length;show();}if(e.key==='ArrowLeft'){at=(at+list.length-1)%list.length;show();}});
     document.querySelectorAll('.tr-btn').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),nx=row.nextElementSibling;
       if(nx&&nx.classList.contains('am-strip')){nx.remove();b.setAttribute('aria-expanded','false');b.textContent='Ver fotos · '+b.dataset.n;return;}
-      var ids=AMF[b.dataset.am]||[],arr=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w2000'}),sm=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w800'});
-      var st=document.createElement('div');st.className='am-strip';sm.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.referrerPolicy='no-referrer';im.loading='lazy';im.alt='Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
+      var LOC={f1:20},k=b.dataset.am,ids=AMF[k]||[],arr=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w2000'}),sm=ids.map(function(x){return 'https://lh3.googleusercontent.com/d/'+x+'=w800'});
+      if(LOC[k]){arr=[];for(var q=1;q<=LOC[k];q++)arr.push('fotos-cp26_'+k+'_'+(q<10?'0':'')+q+'.jpg');sm=arr;}
+      var st=document.createElement('div');st.className='am-strip';sm.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.referrerPolicy='no-referrer';im.loading='lazy';im.alt=LOC[k]?'Liga Núñez en la Copa Potrero 2026':'Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
       row.after(st);b.setAttribute('aria-expanded','true');b.textContent='Cerrar fotos';});});})();
   // videos YouTube
   (function(){var V={'2024':[['wQN2hoBsr6w','vs Villa La Ñata','Semifinal',1],['p_n_MV6Scvo','vs Picapiedra','Cuartos de final'],['yGMY-fihVC4','vs Argeave','Pase a cuartos'],['EDkpfH6X_IQ','vs La Gambeta','Definición por penales'],['rCZqTL1dXps','vs Monteyeres','Pase a octavos'],['uj8XkJ0ov14','vs Fenikks','Fase de grupos'],['Kwqp8U0DVUw','vs La Crema','Fase de grupos']],
@@ -821,8 +839,15 @@ footer .handles a{color:var(--paper);text-decoration:none}
     draw('2024');
     var all=V['2024'].concat(V['2025']).map(function(v){return v[0]});
     document.getElementById('vmain').src=Y+all[0]+'?autoplay=1&mute=1&loop=1&playlist='+all.join(',')+'&rel=0&playsinline=1';})();
+  // videos de partidos de la Copa
+  var CPV={f1:[['dosx1','La previa · el 2x1 para venir a alentar'],['gol','El gol del 1-1'],['vuelta','Lo dimos vuelta: 2-1'],['carlos','Carlos, nuestro DT, post remontada'],['topo','El Topo, nuestra mascota']]};
+  document.querySelectorAll('.tr-vid').forEach(function(b){var lbl=b.textContent;b.addEventListener('click',function(){var row=b.closest('.tr'),ex=row.parentNode.querySelector('.cp-vids[data-for="'+b.dataset.vid+'"]');
+    if(ex){ex.remove();b.setAttribute('aria-expanded','false');b.textContent=lbl;return;}
+    var w=document.createElement('div');w.className='cp-vids';w.dataset.for=b.dataset.vid;
+    w.innerHTML=CPV[b.dataset.vid].map(function(v){return '<figure><video controls playsinline preload="none" poster="fotos-cp26_'+b.dataset.vid+'_v_'+v[0]+'.jpg" src="video-cp26_'+b.dataset.vid+'_'+v[0]+'.mp4"></video><figcaption>'+v[1]+'</figcaption></figure>'}).join('');
+    row.after(w);b.setAttribute('aria-expanded','true');b.textContent='Cerrar videos';});});
   // recaps de amistosos
-  document.querySelectorAll('.tr-rec').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),ex=row.parentNode.querySelector('.am-rec[data-for="'+b.dataset.rec+'"]');
+  document.querySelectorAll('.tr-rec:not(.tr-vid)').forEach(function(b){b.addEventListener('click',function(){var row=b.closest('.tr'),ex=row.parentNode.querySelector('.am-rec[data-for="'+b.dataset.rec+'"]');
     if(ex){ex.remove();b.setAttribute('aria-expanded','false');b.textContent='▶ Recap';return;}
     var w=document.createElement('div');w.className='am-rec';w.dataset.for=b.dataset.rec;w.innerHTML='<video controls playsinline autoplay poster="fotos-recap_'+b.dataset.rec+'.jpg" src="video-recap_'+b.dataset.rec+'.mp4"></video>';
     row.after(w);b.setAttribute('aria-expanded','true');b.textContent='Cerrar recap';});});
