@@ -491,6 +491,30 @@ footer .handles a{color:var(--paper);text-decoration:none}
   .marks{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#goles{scroll-margin-top:20px}
+.gl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.gl{background:var(--ink);color:var(--paper);display:flex;flex-direction:column}
+.gl-ph{position:relative;display:block;border:0;padding:0;background:#0f4d43;cursor:pointer}
+.gl-ph img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+.gl-ph .pl2{position:absolute;right:14px;bottom:14px;width:54px;height:54px;border-radius:50%;background:var(--red);box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.gl-ph .pl2:after{content:"";position:absolute;left:21px;top:16px;border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.gl-t{padding:16px 18px 18px;display:grid;gap:4px}
+.gl-t span{font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.gl-t b{font-family:var(--display);font-weight:900;font-size:2rem;text-transform:uppercase;line-height:1}
+.gl-t small{font-size:.86rem;opacity:.8}
+.gl-t a{color:var(--paper);font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
+.gl-modal video{display:block;width:100%;max-height:82vh;background:#000}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.pl-form{display:flex;gap:8px;margin-top:6px}
+.pl-form input{flex:1;min-width:0;font:inherit;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:12px 14px;border:2px solid var(--paper);background:transparent;color:var(--paper)}
+.pl-form button{font:inherit;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;border:0;background:var(--red);color:#fff;cursor:pointer}
+.pl-err{color:#ff8a8a !important;font-weight:700}
+.pl-list{display:grid;gap:14px;margin-top:6px}
+.pl-list h4{margin:0 0 6px;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2)}
+.pl-list a{display:inline-block;margin:0 8px 8px 0;padding:9px 12px;border:2px solid var(--paper);color:var(--paper);text-decoration:none;font-weight:700;font-size:.86rem}
+.pl-list a:hover{background:var(--paper);color:var(--ink)}
+@media (max-width:820px){.gl-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.gl-grid{grid-template-columns:1fr}.access{grid-template-columns:1fr}}
 </style>
 <style>*{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -504,7 +528,7 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="chips" aria-hidden="true"><i style="background:var(--ink)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
   </header>
   <nav class="menu" aria-label="Secciones">
-    <a href="#somos">Quiénes somos</a><a href="#partidos">Partidos</a><a href="#grupo">Grupo C</a><a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
+    <a href="#somos">Quiénes somos</a><a href="#partidos">Partidos</a><a href="#goles">Goles</a><a href="#grupo">Grupo C</a><a href="#cronograma">Cronograma</a><a href="#amistosos">Amistosos</a><a href="#plantel">Plantel</a><a href="#sponsors">Sponsors</a><a href="#historia">Historia</a><a href="#videos">Videos</a><a href="#instagram">Instagram</a><a href="#fotos">Fotos</a><a href="#jugar">Jugá en LN</a>
   </nav>
 
   <div class="card hero">
@@ -552,6 +576,15 @@ footer .handles a{color:var(--paper);text-decoration:none}
       <div class="tr played"><div class="tr-date"><b>17/11</b><span>Martes</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_wilson.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Wilson <em class="tr-l">0-4</em></h3><p>Día difícil ante La Wilson. Esto sigue.</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f3" aria-expanded="false">▶ Videos · 4</button><button type="button" class="tr-mat tr-btn" data-am="f3" data-n="17" aria-expanded="false">Ver fotos · 17</button></div></div>
       <div class="tr played"><div class="tr-date"><b>18/11</b><span>Miércoles</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-social_y_deportivo.png" alt=""></div><div class="tr-body"><h3 class="it">vs Social y Deportivo <em class="tr-w">1-0</em></h3><p>¡Ganamos y pasamos a 16avos!</p><p class="tr-goals">⚽ Tute</p></div><div class="tr-acts"><button type="button" class="tr-mat tr-rec tr-vid" data-vid="f4" aria-expanded="false">▶ Videos · 5</button><button type="button" class="tr-mat tr-btn" data-am="f4" data-n="10" aria-expanded="false">Ver fotos · 10</button></div></div>
       <div class="tr"><div class="tr-date"><b>19/11</b><span>Jueves</span></div><div class="tr-vs"><img src="escudos-liga_nunez.png" alt="Liga Núñez"><span>vs</span><img src="escudos-cp-la_crema.png" alt=""></div><div class="tr-body"><h3 class="it">vs La Crema</h3><p>16avos de final · Horario a confirmar</p></div><div class="tr-mat tr-soon">Próximo partido</div></div>
+    </div>
+  </section>
+
+  <section id="goles">
+    <div class="sec-head"><h2 class="it">Nuestros <span>goles</span></h2><p>Cada gol de Liga Núñez en la Copa Potrero 2026. Tocá la placa para ver el gol.</p></div>
+    <div class="gl-grid">
+      <article class="gl"><button type="button" class="gl-ph" data-gv="video-cp26_f1_gol.mp4" data-gp="fotos-cp26_f1_v_gol.jpg" aria-label="Ver el gol de Fede Carrizo"><img src="fotos-cp26_gol_carrizo.jpg" alt="Gol de Fede Carrizo" loading="lazy"><span class="pl2"></span></button><div class="gl-t"><span>Fecha 1 · vs El Kiosco · 29'</span><b>Fede Carrizo</b><small>1-1, asistencia de Fari</small><a href="https://www.youtube.com/watch?v=n7NIbL7ZMpI" target="_blank" rel="noopener">Resumen en YouTube</a></div></article>
+      <article class="gl"><button type="button" class="gl-ph" data-gv="video-cp26_f1_vuelta.mp4" data-gp="fotos-cp26_f1_v_vuelta.jpg" aria-label="Ver el gol de Pepe"><img src="fotos-cp26_gol_pepe.jpg" alt="Gol de Pepe" loading="lazy"><span class="pl2"></span></button><div class="gl-t"><span>Fecha 1 · vs El Kiosco · 32'</span><b>Pepe Basualdo</b><small>2-1, lo dimos vuelta. Asistencia de Fede Carrizo</small><a href="https://www.youtube.com/watch?v=n7NIbL7ZMpI" target="_blank" rel="noopener">Resumen en YouTube</a></div></article>
+      <article class="gl"><button type="button" class="gl-ph" data-gv="video-cp26_f4_gol.mp4" data-gp="fotos-cp26_f4_v_gol.jpg" aria-label="Ver el gol de Tute"><img src="fotos-cp26_gol_tute.jpg" alt="Gol de Tute" loading="lazy"><span class="pl2"></span></button><div class="gl-t"><span>Fecha 4 · vs Social y Deportivo · 38'</span><b>Tute Miranda</b><small>1-0, el gol de la clasificación a 16avos</small><a href="https://www.youtube.com/watch?v=nygVzsxe5nY" target="_blank" rel="noopener">Resumen en YouTube</a></div></article>
     </div>
   </section>
 
@@ -701,11 +734,12 @@ footer .handles a{color:var(--paper);text-decoration:none}
   </section>
 
   <section id="videos">
-    <div class="sec-head"><h2 class="it">Partidos <span>en video</span></h2><p>Los partidos de Liga Núñez en las dos primeras Copas Potrero. Arriba corren todos en loop; tocá cualquiera para verlo con sonido.</p></div>
+    <div class="sec-head"><h2 class="it">Partidos <span>en video</span></h2><p>Los resúmenes de ESPN de cada partido de Liga Núñez en la Copa Potrero. Arriba corren todos en loop; tocá cualquiera para verlo con sonido.</p></div>
     <div class="vfeat"><div class="vframe"><iframe id="vmain" title="Liga Núñez en la Copa Potrero" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><div class="vcap"><span id="vcap-k">Reproduciendo en loop</span><b id="vcap-t">Todos los partidos de Liga Núñez</b></div></div>
     <div class="vtabs" role="tablist" aria-label="Videos por año">
-      <button type="button" role="tab" aria-selected="true" data-v="2024">2024</button>
+      <button type="button" role="tab" aria-selected="true" data-v="2026">2026</button>
       <button type="button" role="tab" aria-selected="false" data-v="2025">2025</button>
+      <button type="button" role="tab" aria-selected="false" data-v="2024">2024</button>
     </div>
     <div class="vgrid" id="vgrid"></div>
     <p class="vnote">Más partidos y resúmenes en el canal de YouTube de la <a href="https://www.youtube.com/results?search_query=copa+potrero+liga+nu%C3%B1ez" target="_blank" rel="noopener">Copa Potrero</a>.</p>
@@ -734,7 +768,10 @@ footer .handles a{color:var(--paper);text-decoration:none}
     <div class="sec-head"><h2 class="it">Fotos <span>y material</span></h2><p>Fotos aprobadas de cada jornada. Las subimos al terminar cada día.</p></div>
     <div class="access">
       <div class="tile red"><span class="eyebrow">Galería pública</span><h3 class="it">Fotos del día</h3><p>Fotos y videos aprobados de cada jornada, para jugadores, familias y sponsors.</p><span class="go">Link al Drive · próximamente</span></div>
-      <div class="tile blk"><h3 class="it">Área de cobertura</h3><p>Para el staff.</p><span class="go">Acceso con invitación</span></div>
+      <div class="tile blk" id="plFotos"><span class="eyebrow">Solo para el plantel</span><h3 class="it">Tus fotos</h3><p>Las fotos de los fotógrafos de cada partido, en alta. Poné el código que te pasamos por el grupo.</p>
+        <form class="pl-form" autocomplete="off"><label for="plCode" class="sr">Código del plantel</label><input id="plCode" type="password" placeholder="Código" autocapitalize="characters" spellcheck="false"><button type="submit">Entrar</button></form>
+        <p class="pl-err" id="plErr" hidden>Código incorrecto. Probá de nuevo.</p>
+        <div class="pl-list" id="plList" hidden></div></div>
     </div>
   </section>
 </div>
@@ -860,8 +897,23 @@ footer .handles a{color:var(--paper);text-decoration:none}
       if(LOC[k]){arr=[];for(var q=1;q<=LOC[k];q++)arr.push('fotos-cp26_'+k+'_'+(q<10?'0':'')+q+'.jpg');sm=arr;}
       var st=document.createElement('div');st.className='am-strip';sm.forEach(function(src,i){var im=document.createElement('img');im.src=src;im.referrerPolicy='no-referrer';im.loading='lazy';im.alt=LOC[k]?'Liga Núñez en la Copa Potrero 2026':'Liga Núñez en el amistoso';im.addEventListener('click',function(){open(arr,i)});st.appendChild(im);});
       row.after(st);b.setAttribute('aria-expanded','true');b.textContent='Cerrar fotos';});});})();
+  // Goles: abrir el video del gol
+  document.querySelectorAll('.gl-ph').forEach(function(b){b.addEventListener('click',function(){var m=document.createElement('div');m.className='pm';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');
+    m.innerHTML='<div class="pm-box nov gl-modal"><button type="button" class="pm-x">Cerrar</button><video src="'+b.dataset.gv+'" poster="'+b.dataset.gp+'" controls playsinline autoplay></video></div>';document.body.appendChild(m);
+    function close(){m.remove();document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}
+    m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('pm-x'))close();});document.addEventListener('keydown',esc);});});
+  // Fotos del plantel: links cifrados con el código (AES-GCM + PBKDF2)
+  (function(){var E={"s": "f4G/o7Br4ShLcrD0ts4+sQ==", "i": "zk78A1UgXlqk4xJK", "c": "CYqdG+PeUKkw3dbjUpRZdNZ892YN9ExEE+tYIxos7EF5t6FIVlbQE+OFrjREsiS13+8tuH8ldboK2fNxY9cR8w6GrupmIsN5bz45HGTBvgR18t4t663b2RTQFaBspjF0p8VbDRGAEVlkARiQfieXHOubu2aYxEt4BY/orG0SsNh3YOqVq88TX1HibvNkjVZRuVDTXj6oKt8x0o044uzxChEN1niDt4VAyWtx2csGhFcoPRMXR4wk6pFr/+AFOc90F051ezxZkpqH1iX4ytmbpBYihskrmM/DFO/WQi9WMMCurYf99MnD2eqQMNlkBya+5Hj2NOLB0iQP8D3O4DWeL/S7yrr5m+lXB/6j8WLAICBktpgLCehZqoVehjZl0pPkstrLmISEG/og0ao1yGEawucgvW3GmxreBfHDoNpy2Xn4ySUqfbEGIsGVc01vAYiH9MmMmEcXaaIfO8q7gdVgWnyS7U/lO68tWnIZkk42S/cidcdJhChilYa8MQoY8Ebcs319UiLorll7voyjMX4cQtzUtDJG/qEB5hxVTh2kxNUQ9i14kABzXMQeOv1RNbYXG5NeAbcyq+Sz0TxNefhOxBqyVHSxd6WQpEooGNyBaBD/MSNej2JqujWR3AC9wavlcvlp9Eageu/yQDr0LYvyZANtuGgEPB9jKtGN107IracJ/z0OlNALVdTNJu9L9hBzxatqZ2Eg2Krsgh1TDZrLZdlwjMcRNwUE3txJYeMB7qUanf7wmvBrjZR3TXyvaLK6CKYHK2PXjGGIadf+sN1ktmaQ1+cAkKAwJJuPa3Yl8hsEow2CIFNW6y7yOUtMPwQKx9N3BNdjUnsVnV1uGegeo4sYRR/J6r5EaPUIHRqcszJth2jg6ywb9nlcBe5oJU8BdNzSZnw0/eraaFas28n7SQgD0AxK9P0cGaV3+OuRUIxRd9Q4XSpqexYKOlyl/qsVxhkR24yf3cJY3ztWXkqTdsayyvkVpqF3Qimo06KmF6Agbmluzgs="},f=document.querySelector('.pl-form');if(!f||!window.crypto||!crypto.subtle)return;
+    function b64(x){return Uint8Array.from(atob(x),function(c){return c.charCodeAt(0)})}
+    function show(d){var l=document.getElementById('plList');l.innerHTML=d.map(function(g){return '<div><h4>'+g[0]+'</h4>'+g[1].map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">Fotos '+x[0]+' ↗</a>'}).join('')+'</div>'}).join('');l.hidden=false;f.hidden=true;document.getElementById('plErr').hidden=true;}
+    async function open(code){var k=await crypto.subtle.importKey('raw',new TextEncoder().encode(code),'PBKDF2',false,['deriveKey']);
+      var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(E.s),iterations:150000,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['decrypt']);
+      var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(E.i)},key,b64(E.c));return JSON.parse(new TextDecoder().decode(pt));}
+    try{var saved=sessionStorage.getItem('lnpl');if(saved)open(saved).then(show).catch(function(){});}catch(e){}
+    f.addEventListener('submit',function(e){e.preventDefault();var c=document.getElementById('plCode').value.trim().toUpperCase();
+      open(c).then(function(d){try{sessionStorage.setItem('lnpl',c)}catch(e){}show(d);}).catch(function(){document.getElementById('plErr').hidden=false;});});})();
   // videos YouTube
-  (function(){var V={'2024':[['wQN2hoBsr6w','vs Villa La Ñata','Semifinal',1],['p_n_MV6Scvo','vs Picapiedra','Cuartos de final'],['yGMY-fihVC4','vs Argeave','Pase a cuartos'],['EDkpfH6X_IQ','vs La Gambeta','Definición por penales'],['rCZqTL1dXps','vs Monteyeres','Pase a octavos'],['uj8XkJ0ov14','vs Fenikks','Fase de grupos'],['Kwqp8U0DVUw','vs La Crema','Fase de grupos']],
+  (function(){var V={'2026':[['nygVzsxe5nY','1-0 Social y Deportivo','Fecha 4 · ¡a 16avos!',1],['lfOySjLVRTo','0-4 La Wilson','Fecha 3'],['BBrsUpbuyPc','0-1 La Martona','Fecha 2'],['n7NIbL7ZMpI','2-1 El Kiosco','Fecha 1']],'2024':[['wQN2hoBsr6w','vs Villa La Ñata','Semifinal',1],['p_n_MV6Scvo','vs Picapiedra','Cuartos de final'],['yGMY-fihVC4','vs Argeave','Pase a cuartos'],['EDkpfH6X_IQ','vs La Gambeta','Definición por penales'],['rCZqTL1dXps','vs Monteyeres','Pase a octavos'],['uj8XkJ0ov14','vs Fenikks','Fase de grupos'],['Kwqp8U0DVUw','vs La Crema','Fase de grupos']],
     '2025':[['S8HEAzYCT2Q','vs La Wilson','Fase de grupos · rival 2026'],['RWfg07xqZxU','vs Las Piedras','Fase de grupos'],['wltd2FQha9U','vs Barche','Fase de grupos'],['8crmQbx-Ffg','vs Fiebre Amarilla','Fase de grupos']]};
     var g=document.getElementById('vgrid'),Y='https://www.youtube-nocookie.com/embed/';if(!g)return;
     function draw(y){g.innerHTML='';V[y].forEach(function(v){var d=document.createElement('article');d.className='vid'+(v[3]?' semi':'');
@@ -873,8 +925,8 @@ footer .handles a{color:var(--paper);text-decoration:none}
       g.appendChild(d);});
       document.querySelectorAll('.vtabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.v===y?'true':'false');});}
     document.querySelectorAll('.vtabs button').forEach(function(b){b.addEventListener('click',function(){draw(b.dataset.v);});});
-    draw('2024');
-    var all=V['2024'].concat(V['2025']).map(function(v){return v[0]});
+    draw('2026');
+    var all=V['2026'].concat(V['2025'],V['2024']).map(function(v){return v[0]});
     document.getElementById('vmain').src=Y+all[0]+'?autoplay=1&mute=1&loop=1&playlist='+all.join(',')+'&rel=0&playsinline=1';})();
   // 2x1: copiar código y próximo partido
   (function(){var b=document.getElementById('dxCopy'),c=document.getElementById('dxCode');if(b)b.addEventListener('click',function(){var t=c.textContent;var ok=function(){b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar'},1600)};
